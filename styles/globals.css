@@ -10,12 +10,21 @@
   }
 }
 
+@font-face {
+  font-family: TAN-PEARL;
+  src: url('/TAN-PEARL.woff');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   /* font-family: 'Tenor Sans', sans-serif; */
   
+}
+
+h1 {
+  font-family: TAN-PEARL;
 }
 
 a {

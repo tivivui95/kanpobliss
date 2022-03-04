@@ -33,7 +33,7 @@
     font-family: Tenor Sans;
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
+    font-size: 28px;
     line-height: 33px;
     display: flex;
     align-items: center;
@@ -47,12 +47,11 @@
     margin: 12px;
     font-family: Tenor Sans;
     font-style: normal;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     display: flex;
     align-items: center;
-    letter-spacing: -0.3px;
 
     color: #F8EEE4;
 
