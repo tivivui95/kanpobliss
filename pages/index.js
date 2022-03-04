@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
-import { useState } from 'react'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Link from 'next/link';
+import { useState } from 'react';
 
 function getLandingIMG() {
   const IMG = 0
@@ -41,10 +41,12 @@ function Landing1() {
       </Head>
 
       <main className={styles.bdmain}>
-        <div className='h-screen w-screen'>
-          <div className={styles.box}></div>
-          <h1 className={styles.bottomtext}>Guided by your personal in-room wellness coach..</h1>
-        </div>
+        
+            <div className='h-screen w-screen'>
+              <div className={styles.box}></div>
+              <h1 className={styles.bottomtext}>Guided by your personal in-room wellness coach..</h1>
+            </div>
+          
       </main>
     </div>
   )
@@ -60,10 +62,14 @@ function Landing2() {
       </Head>
 
       <main className={styles.bdmain}>
+      <Link href='/main'>
+          <a>
         <div className='h-screen w-screen'>
           <div className={styles.box}></div>
           <h1 className={styles.bottomtext}>Explore dining, spa fitness & self-care rituals, curated for your unique goals & needs.</h1>
         </div>
+        </a>
+        </Link>
       </main>
     </div>
   )
