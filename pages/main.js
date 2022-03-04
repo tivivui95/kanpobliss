@@ -1,11 +1,11 @@
 import Navbar, { MBFooter, Footer } from "./navbar";
 import MainStyles from '../styles/Main.module.css'
 import Image from "next/image";
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import EmblaStyles from "../styles/embla.module.css";
 import Autoplay from 'embla-carousel-autoplay';
-
+import { useState } from 'react';
 
 
 const FirstContent = () => {

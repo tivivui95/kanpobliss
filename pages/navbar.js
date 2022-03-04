@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MainStyles from '../styles/Main.module.css'
-import { useState } from "react/cjs/react.development";
+import { useState } from "react"
 
 export function MBFooter() {
     return (
