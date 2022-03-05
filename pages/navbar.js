@@ -7,8 +7,8 @@ export function MBFooter() {
     return (
         <>
         <div className={MainStyles.mbfooter}>
-            <div className='absolute bottom-4 flex justify-self-center w-screen'>
-                <div className='text-center w-screen'>©2022 Copyright all reserved by Kanpobliss</div>
+            <div className='relative pb-4 mt-12 flex justify-self-center w-screen'>
+                <div className='text-center w-screen text-xs'>©2022 Copyright all reserved by Kanpobliss</div>
             </div>
         </div>
         </>
@@ -18,12 +18,17 @@ export function MBFooter() {
 export function Footer() {
     return (
         <>
-        <div className="w-full grid-cols-6 gap-6 pl-20 p-4 hidden sm:grid nearwhite" style={{ background: "#523922" }}>
+        <div className="w-full grid-cols-6 gap-6 pl-20 p-4 pt-8 pb-8 hidden md:grid nearwhite text-sm" style={{ background: "#523922" }}>
             <div className="col-span-2">
-                <Image src="/images/Logo.svg" height={45} width={145} />
+                <Image src="/images/Logo.svg" height={60} width={180} alt='' />
+                <div className="flex flex-row">
+                    <div className="pr-4"><Image src='/images/ins.svg' height={28} width={28} alt='Instagram' /></div>
+                    <div className="pr-4"><Image src='/images/fb.svg' height={28} width={28} alt='Facebook' /></div>
+                    <div className="pr-4"><Image src='/images/yt.svg' height={28} width={28} alt='Youtube' /></div>
+                </div>
             </div>
             <div>
-                <ul className="nearwhite">
+                <ul className="nearwhite ftpad">
                     <li>
                         Body Type Assessment
                     </li>
@@ -34,19 +39,29 @@ export function Footer() {
                         Wellbeing Toolkit
                     </li>
                 </ul>
-                
-                
-                
             </div>
             <div className="">
-            <ul className="">
+            <ul className="ftpad">
                 <li>About Us</li>
                 <li>Feedback</li>
                 <li>Contact Us</li>
             </ul>
             </div>
             <div className="col-span-2">
-            Enter Email for Subscribe
+                <Image src='/images/mail.svg' alt='' width={16} height={11} className='pl-4' />
+            <span>&nbsp; Enter Email for Subscribe</span>
+            <div className="subbtn">Subscribe</div>
+            </div>
+        </div>
+        <div className="w-full  pl-20 p-4 pt-8 hidden md:flow-root nearwhite text-xs" style={{ background: "#523922" }}>
+            <div className="float-left flex flex-row">
+                <div className="pr-6">Terms and Conditions</div>
+                <div className="pr-6">Terms of Use</div>
+                <div className="pr-6">Privacy Policy</div>
+                <div className="pr-6">Disclaimer</div>
+            </div>
+            <div className="float-right pr-24">
+            ©2022 Copyright all reserved by Kanpobliss
             </div>
         </div>
         </>
@@ -126,20 +141,20 @@ export default function Navbar() {
                     <div className="w-auto inline-block" id="mobile-menu">
                         <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li className={MainStyles.lighttext}>
-                            <Link href='/'>
+                            <Link href='/11'>
                                 <a  className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Body Type Assessment</a>
                                 </Link>
                             </li>
-                            <li className={MainStyles.lighttext}><Link href='/'>
+                            <li className={MainStyles.lighttext}><Link href='#'>
                                 <a className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Body Recovery Assessmemt</a>
                                 </Link>
                             </li>
-                            <li className={MainStyles.lighttext}><Link href='/'>
+                            <li className={MainStyles.lighttext}><Link href='#'>
                                 <a className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Wellbeing Toolkit</a>
                                 </Link>
                             </li>
                             <li>
-                                <Link href='/main'>
+                                <Link href='#'>
                                 <a onClick={() => setHideBar('block')}>
                                     <button data-collapse-toggle="mobile-menu" type="button" className="inline-block pr-4" aria-controls="mobile-menu-2" aria-expanded="false">
                                         <Image src='/images/BurgerMenu.svg' width={16} height={16} />

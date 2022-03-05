@@ -25,17 +25,15 @@
 
 .mbfooter {
     font-family: Tenor Sans;
-    font-style: normal;
-    font-weight: normal;
     font-size: 1rem;
     line-height: 154%;
     /* or 15px */
     letter-spacing: -0.3px;
 
     color: #FFFFFF;
-
-    opacity: 0.5;
 }
+
+
 
 .space {
     margin-top: 5vh;

@@ -39,3 +39,20 @@ a {
 .nearwhite {
   color: #F8EEE4;
 }
+
+.ftpad li {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.subbtn {
+  text-align: center;
+  width: 160px;
+  background: #F8EEE4;
+  border-radius: 100px;
+  font-family: Tenor Sans;
+  margin-top: 20px;
+  padding: 6px;
+
+  color: #523922;
+}
