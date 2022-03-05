@@ -21,7 +21,7 @@
     color: #A56C50;
     height: max-content;
     padding: 24px;
-    min-height: 96px;
+    min-height: 56px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,16 @@
     margin: 32px;
     font-family: Tenor Sans;
     font-size: 32px;
+    line-height: 100%;
+    padding: 12px;
+    color: #523922;
+    text-align: center;
+}
+
+.head3 {
+    margin: 32px;
+    font-family: Tenor Sans;
+    font-size: 24px;
     line-height: 100%;
     padding: 12px;
     color: #523922;
