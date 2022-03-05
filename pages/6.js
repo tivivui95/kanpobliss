@@ -21,8 +21,8 @@ export default function Content5() {
                     <div className={styles.contain}>
                         <div className={styles.head2}>Do you experience any of these symptoms?</div>
                         <div className="grid md:grid-cols-2 gap-4 p-6 md:pb-10">
-                            {data.map(i => (
-                                <div className={styles.card}>
+                            {data.map(i, index => (
+                                <div className={styles.card} key={index}>
                                    {i} 
                                 </div>
                             ))}
