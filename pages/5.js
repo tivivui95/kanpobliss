@@ -8,7 +8,7 @@ export default function Content5() {
             <div className={styles.contain}>
                 <div className={styles.content}>
                     <Navbar />
-                    <div class="container mx-auto px-4 mt-12">
+                    <div className="container mx-auto px-4 mt-12">
                         <h1 className={styles.head1}>What is TCM Body Constitution?</h1>
                         <div className="text-sm">
                             <p className="nearwhite mt-4">
