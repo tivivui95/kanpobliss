@@ -19,7 +19,7 @@ export default function Content5() {
                         <div className="grid md:grid-cols-1 gap-4 p-6 md:pb-10">
                             {data.map((i, index) => (
                                 <div className={styles.card} key={index}>
-                                    <h1>{index}</h1>
+                                    <span>{index}</span>
                                    {i} 
                                 </div>
                             ))}

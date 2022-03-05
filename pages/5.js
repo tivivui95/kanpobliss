@@ -26,7 +26,7 @@ export default function Content5() {
                         Start Assessment
                         </div>
 
-                        <div className={styles.divider}></div>
+                        <div className="divider"></div>
                         <div className="nearwhite text-base">Explore more</div>
                         <div className="grid md:grid-cols-2 gap-8 pt-4 pb-4">
                             <div className="relative">
