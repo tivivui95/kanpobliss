@@ -4,9 +4,9 @@ import Navbar, { MBFooter, Footer } from "./navbar";
 import Link from "next/link";
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { DotButton, PrevButton, NextButton } from "./EmblaCarouselButtons";
+import { DotButton, PrevButton, NextButton } from "../components/EmblaCarouselButtons";
 import EmblaStyles from "../styles/embla.module.css";
-import useInterval from "./useInterval";
+import useInterval from "../components/useInterval";
 const data = [
     {
         url: '/images/21/Rectangle 15.png',
