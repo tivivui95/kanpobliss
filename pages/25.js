@@ -22,9 +22,10 @@ const iconsrc = [
     '/images/25/yt-green.svg',
 ]
 
+
 export default function Content25() {
     return (
-        <>
+        <div>
         <div>
             <div className={styles.coverimg}>
                 <div className={styles.contentcover}><Navbar /></div>
@@ -52,9 +53,9 @@ export default function Content25() {
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
                 </p>
                 <div className='divider'></div>
-                <div className="grid grid-cols-2 gap-6 pt-4 pb-4">
+                <div className="grid grid-cols-2 gap-6 pt-4 pb-2">
                     {data.map((content, index) => (
-                        <div className="relative flow-root h-72" key={index}>
+                        <div className="relative flow-root h-72 p-4 md:p-8" key={index}>
                             <div className={styles.cardtitle}>
                                     <div className='float-left w-full'>
                                         <div className='text-sm md:text-base'>{content.tag}</div>
@@ -62,8 +63,8 @@ export default function Content25() {
                                         
                                         <div className='text-xl md:text-2xl pt-6'>{content.title}</div>
                                     </div>
-                                    <div className='float-right w-full md:pr-24 pr-20 mt-56 md:mt-52 absolute'>
-                                    <div className='text-right text-base'>{username}</div>
+                                    <div className='float-right w-full md:pr-2 pr-2 mt-56 md:mt-52 absolute'>
+                                        <div className='text-right text-base'>{username}</div>
                                     </div>
                             </div>
                             <Image src={content.img} layout="fill" objectFit="cover" className={styles.imgcover} />                            
@@ -77,7 +78,7 @@ export default function Content25() {
         </div>
         
         
-        </>
+        </div>
     )
 }
 
