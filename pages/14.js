@@ -7,6 +7,34 @@ import styles from '../styles/14.module.css'
 const Content14 = () => {
     return (
         <>
+            <div className={styles.container}>
+            <div className={styles.content}>
+                <div className={styles.box}>
+                    <h3>Your body needs</h3>
+                    <h1>Mantra</h1>
+                    <div className={styles.CenterBox}>
+                        <Image className={styles.symbol} src="/images/14/Group 214.png" width={300} height={80} />
+                        <div className={styles.note}>Your yin and yang are well balanced and your vital energy, qi, is flowing harmoniously throughout your body! In TCM, your body type is called Neutral. However, yin and yang are in constant flux and can be affected by your changing lifestyle and external environment. Keep up the good work and continuously ensure the balance of yin and yang. If one becomes unbalanced in the body, illness occurs...  
+                        <a>Learn More</a> 
+                            <br/>
+                            Click on our lifestyle tips and recommendations for preventative self-care practices to help you maintain the harmony in your body!</div>
+                        <Image className={styles.signbtn1} src="/images/14/Buttons1.png" width={16} height={16} />
+                    </div>
+                    <Image className={styles.signbtn2} src="/images/14/Buttons2.png" width={16} height={16} />
+                </div>
+                <div className={styles.blur}></div>
+                <div className={styles.caution}>
+                    <div className={styles.text}>According to TCM, our body is a microcosm of the universe, where all phenomena are composed of two opposite, but mutually interconnected yin and yang energies that exist in harmony.
+                        <br/>
+                        Yin refers to the cold, damp, passive, material, and formational aspects of qi. Yin is associated with the lower parts of the body.
+                        <br/>
+                        Yang refers to the hot, warm, active, immaterial, and functional aspects of qi. Yang is associated with the upper body and back. 
+                        <br/>
+                        Given yin and yang's interconnectivity, the state of health is understood as states of balance or imbalance of yin and yang.</div>
+                    <Image className={styles.exitbtn} src="/images/14/Group 113.png" width={16} height={16} />
+                </div>
+            </div>
+            </div>
         </>
     )
 }
