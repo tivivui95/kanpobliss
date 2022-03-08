@@ -1,0 +1,62 @@
+.bdmain {
+  /* background-image: url('/images/Landing_IMG.png'); */
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  position: absolute;
+width: 30%;
+height: 100vh;
+left: 0px;
+top: 0px;
+
+background: #A56C50;
+opacity: 0.5;
+}
+
+.navbar {
+  display: flex;
+  padding: 12px;
+  flex-direction: row;
+  position: absolute;
+  left: 2rem;
+  bottom: 1rem;
+}
+
+.activenav {
+  margin: 3px;
+  width: 2rem;
+  height: 0.4rem;
+
+  background: #073E0D;
+  border-radius: 0.2rem;
+}
+
+.next {
+  margin: 3px;
+  width: 1rem;
+  height: 0.4rem;
+
+
+  background: #F8EEE4;
+  border-radius: 0.2rem;
+}
+
+.bottomtext {
+  position: absolute;
+  bottom: 10rem;
+  width: 55%;
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 60px;
+  /* or 120% */
+
+  display: flex;
+  align-items: center;
+
+  color: #F8EEE4;
+  margin-left: 5rem;
+}

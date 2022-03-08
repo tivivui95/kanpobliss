@@ -1,0 +1,35 @@
+.container {
+    background-color: #B99173;
+    margin-top: -40px;
+    height: max-content;
+    border-radius:40px 40px 0 0 ;
+    z-index: 2;
+    position: relative;
+    padding: 0;
+}
+
+.coverimg {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    padding: 0;
+    margin: 0;
+}
+
+.contentcover {
+    position: relative;
+    z-index: 100;
+}
+
+.cardtitle {
+    line-height: 154%;
+    letter-spacing: -0.3px;
+    z-index: 100;
+    color: #F8EEE4;
+    position: relative;
+}
+
+.imgcover {
+    background: #C4C4C4;
+    border-radius: 10px 10px 10px 40px;
+}
