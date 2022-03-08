@@ -3,3 +3,12 @@ import Navbar, { MBFooter, Footer } from "./navbar";
 import Link from "next/link";
 
 import styles from '../styles/14.module.css'
+
+const Content14 = () => {
+    return (
+        <>
+        </>
+    )
+}
+
+export default Content14;

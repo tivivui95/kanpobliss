@@ -1,0 +1,145 @@
+@media(orientation: portrait) {
+    .content{
+        background-image: url("/images/12/BG.png");
+        background-size:300%;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+    }
+}
+@media(orientation: landscape) {
+    .content{
+        background-image: url("/images/12/BG.png");
+        background-size: 150%;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: White;
+}
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.CenterBox{
+    position: relative;
+    width: 470px;
+    height: 548px;
+    background-image: url("/images/12/Login.png");
+    background-repeat:no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+.TextHello{
+    position: relative;
+    font-family: Tenor Sans;
+    font-weight: 400;
+    width: 80%;
+    height: 50px;
+    font-style: normal;
+    font-size: 35px;
+    line-height: 37px;
+    color: #523922;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+.inputBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.inputBox .Icon{
+    width: 40px;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.inputBox input {
+    height: 41px;
+    width: 300px;
+    border: none;
+    background-color: rgba(0,0,0,0);;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    margin-bottom: 1rem;
+
+    font-family: Tenor Sans;
+    font-size: 14px;
+    padding-left: 1rem;
+    color: #523922
+
+}
+.note{
+    width: 70%;
+    margin-bottom: 1rem;
+    font-family: Tenor Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4D2A19;
+
+}
+.checking{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    left: 0;
+}
+.sign-btn{
+    position: relative;
+    top:24%;
+    height: 40px;
+    width: 260px;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 8rem;
+}
+
+.socialSpan{
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+.a{
+    text-decoration: underline;
+    color: #523922;
+    cursor: pointer;
+}

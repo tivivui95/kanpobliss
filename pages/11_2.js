@@ -5,6 +5,10 @@ import Link from "next/link";
 import styles from '../styles/11.module.css'
 
 const Content11_2 = () => {
+    const onChangeThing = () => {
+
+    }
+
     return (
         <>
         <div className={styles.container}>
@@ -24,12 +28,12 @@ const Content11_2 = () => {
                         <div className={styles.forgetPass}>Forget Password</div>
                         <div className={styles.checking}>
                             <div>
-                                <input className={styles.checkboxs} type="checkbox" checked="checked" />
-                                <label>Remember me for Login</label>
+                                <input className={styles.checkboxs} type="checkbox" checked="checked" onChange={() => onChangeThing()}/>
+                                <label className={styles.label}>&nbsp; Remember me for Login</label>
                             </div>
                             <div>
                                 <input className={styles.checkboxs} type="checkbox" />
-                                <label>I agree to the Kanpobliss <a>Terms & Condtion</a> and <a>Privacy Policy</a></label>
+                                <label className={styles.label}>&nbsp; I agree to the Kanpobliss <a className={styles.a}>Terms & Condtion</a> and <a className={styles.a}>Privacy Policy</a></label>
                             </div>
                         </div>
                         <Image className={styles.signbtn} src="/images/11/Buttons.png" alt='' width={260} height={40} />
@@ -37,11 +41,11 @@ const Content11_2 = () => {
                     <div className={styles.footer}>
                         <div>or Sign Up Using</div>
                         <div className={styles.socialSpan}>
-                        <Image src="/images/11/Facebook.png" alt='' width={46} height={46} />
+                            <Image src="/images/11/Facebook.png" alt='' width={46} height={46} />
                             <Image src="/images/11/Twitter.png" alt=''  width={46} height={46} />
                             <Image src="/images/11/Gmail.png" alt='' width={46} height={46} />
                         </div>
-                        <div>Already has an account? <a>Sign In</a></div>
+                        <div>Already has an account? <a className={styles.a}>Sign In</a></div>
                     </div>
                 </div>
             </div>
