@@ -1,7 +1,7 @@
 @media(orientation: portrait) {
     .content{
         background-image: url("/images/11/BG.png");
-        background-size:300%;
+        background-size: 350%;
         opacity: 1;
         width: 100%;
         height: 100%;
@@ -27,21 +27,20 @@
     }
 }
 
-
 .container {
     width: 100%;
     height: 100vh;
     background-color: White;
 }
 
-.box{
+.box {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.CenterBox{
+.CenterBox {
     position: relative;
     width: 470px;
     height: 548px;
