@@ -94,6 +94,16 @@
     color: #523922
 
 }
+
+@media only screen and (max-width: 768px)  {
+    .inputBox input {
+        width: 250px;
+    }
+    .CenterBox {
+        width: 90%;
+    }
+}
+
 .note{
     width: 70%;
     margin-bottom: 1rem;

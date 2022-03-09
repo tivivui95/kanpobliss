@@ -1,7 +1,11 @@
 @media(orientation: portrait) {
-    .content{
+    .container {
         background-image: url("/images/11/BG.png");
         background-size: 350%;
+        background-repeat: no-repeat;
+    }
+    .content{
+        
         opacity: 1;
         width: 100%;
         height: 100%;
@@ -9,13 +13,17 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-repeat: no-repeat;
+        
     }
 }
 @media(orientation: landscape) {
-    .content{
+    .container {
         background-image: url("/images/11/BG.png");
         background-size: 150%;
+        background-repeat: no-repeat;
+    }
+    .content{
+        
         opacity: 1;
         width: 100%;
         height: 100%;
@@ -23,14 +31,15 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-repeat: no-repeat;
+        
     }
 }
 
 .container {
     width: 100%;
     height: 100vh;
-    background-color: White;
+    background-color: rgba(77, 42, 25, 0.4);
+    background-blend-mode: multiply;
 }
 
 .box {
@@ -65,6 +74,7 @@
     line-height: 37px;
     color: #523922;
     margin-bottom: 1rem;
+    margin-top: 78px;
     text-align: right;
 }
 .inputBox{
@@ -97,6 +107,16 @@
     color: #523922
 
 }
+
+@media only screen and (max-width: 768px)  {
+    .inputBox input {
+        width: 250px;
+    }
+    .CenterBox {
+        width: 90%;
+    }
+}
+
 .checking{
     position: relative;
     display: flex;
@@ -118,8 +138,6 @@
     color: black;
 }
 .signbtn{
-    position: relative;
-    margin-top: 12px;
     height: 40px;
     width: 260px;
     cursor: pointer;
