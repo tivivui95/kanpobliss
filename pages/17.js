@@ -10,29 +10,29 @@ const Content17 = ({ Name }) => {
         <Navbar />
         <div className={styles.contain}>
             
-        <div class={styles.box}>
-            <div class={styles.heading}>
-                {/* <img class={styles.logo" src="assets17/logo.png}> */}
+        <div className={styles.box}>
+            <div className={styles.heading}>
+                {/* <img className={styles.logo" src="assets17/logo.png}> */}
                 <Image src="/images/17/logo.png" width={140} height={140} objectFit="scale-down" alt="" />
-                <div class={styles.infor}>
-                    <h1 class={styles.hello}>Hello, {Name}!</h1>
-                    <h1 class={styles.bio}>Here're the recomnendations for you to live your wellness mantra</h1>
+                <div className={styles.infor}>
+                    <h1 className={styles.hello}>Hello, {Name}!</h1>
+                    <h1 className={styles.bio}>Here're the recomnendations for you to live your wellness mantra</h1>
                 </div>
             </div>
-            <div class={styles.choose}>Choose from one of the following</div>
-            <div class={styles.container}>
-                {/* <img src="assets17/image 7.png" alt="" class={styles.image}>
-                <img src="assets17/image 8.png" alt="" class={styles.image}>
-                <img src="assets17/image 6.png" alt="" class={styles.image}>
-                <img src="assets17/image 5.png" alt="" class={styles.image}> */}
+            <div className={styles.choose}>Choose from one of the following</div>
+            <div className={styles.container}>
+                {/* <img src="assets17/image 7.png" alt="" className={styles.image}>
+                <img src="assets17/image 8.png" alt="" className={styles.image}>
+                <img src="assets17/image 6.png" alt="" className={styles.image}>
+                <img src="assets17/image 5.png" alt="" className={styles.image}> */}
                 <Image src="/images/17/image 7.png" width={360} height={405} alt="" objectFit="scale-down" />
                 <Image src="/images/17/image 8.png" width={360} height={405} alt="" objectFit="scale-down" />
                 <Image src="/images/17/image 6.png" width={360} height={405} alt="" objectFit="scale-down" />
                 <Image src="/images/17/image 5.png" width={360} height={405} alt="" objectFit="scale-down" />
             </div>
-            <div class={styles.slider}>
-                <div class={styles.green}></div>
-                <div class={styles.white}></div>
+            <div className={styles.slider}>
+                <div className={styles.green}></div>
+                <div className={styles.white}></div>
             </div>
         </div>
         </div>
