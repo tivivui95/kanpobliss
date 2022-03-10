@@ -22,8 +22,8 @@ const Content13 = () => {
                         <br></br>
                         Any reliance by you on the information contained in this website shall be at your own risk. Kanpobliss makes no express or implied representation or warranty regarding the completeness, accuracy, reliability or currency of the information contained in the Materials. To the fullest extent permitted by law, Kanpobliss disclaims all express or implied warranties, including but not limited to, warranties of satisfactory quality, merchantability, and fitness for a particular purpose. Kanpobliss shall not be liable for any damage or loss of any kind directly or indirectly arising from or in connection with your use or inability to access www.website.com and/or use the Materials.
                         <br></br>
-                        The provision of access to other external websites is solely for your convenience and does not imply Kanpobliss's endorsement of, or affiliation or association to, the linked web sites or their operators. Kanpobliss is not responsible for the availability, accuracy or content of these external sites. Your access of any linked web site shall be at your sole risk. Kanpobliss shall not be responsible for any damage or loss to you arising from or in connection with your use of such web sites.</p>
-                    <button className={styles.resultbtn}>SEE RESULT (10S)</button>
+                        The provision of access to other external websites is solely for your convenience and does not imply Kanpobliss&apos;s endorsement of, or affiliation or association to, the linked web sites or their operators. Kanpobliss is not responsible for the availability, accuracy or content of these external sites. Your access of any linked web site shall be at your sole risk. Kanpobliss shall not be responsible for any damage or loss to you arising from or in connection with your use of such web sites.</p>
+                    <a className={styles.resultbtn}>SEE RESULT (10S)</a>
                 </div>
             </div>
         </div>

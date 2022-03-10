@@ -13,7 +13,7 @@ const Content12 = () => {
                     <div className={styles.TextBox}><Image src="/images/12/Bigtext.png" alt='' width={300} height={80} /></div>
                     <div className={styles.CenterBox}>
                         <h1 className={styles.TextHello}>Forget password</h1>
-                        <div className={styles.note}>Enter the email address associated with your account and we'll verify your profile to reset your password</div>
+                        <div className={styles.note}>Enter the email address associated with your account and we&apos;ll verify your profile to reset your password</div>
                         <div className={styles.inputBox}>
                             <div className={styles.Icon}>
                                 <Image src="/images/12/Group 50.png" alt=''layout="fill" objectFit="scale-down" />
