@@ -46,6 +46,23 @@
     text-align: center;
 }
 
+.inputBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.Icon{
+    width: 40px;
+    border-bottom: 2px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+
 @media only screen and (min-width: 768px) {
     .contain {
         width: 960px;
