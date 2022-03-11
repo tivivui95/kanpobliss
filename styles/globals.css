@@ -56,7 +56,7 @@ a {
 }
 
 .nearwhite {
-  color: #F8EEE4;
+  color: #F8EEE4 !important;
 }
 
 .ftpad li {

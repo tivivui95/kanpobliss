@@ -7,7 +7,7 @@ export function MBFooter() {
     return (
         <>
         <div className={MainStyles.mbfooter}>
-            <div className='relative pb-4 mt-12 flex justify-self-center w-screen'>
+            <div className='relative pb-4 mt-12 m-0 flex justify-self-center w-full'>
                 <div className='text-center w-screen text-xs'>©2022 Copyright all reserved by Kanpobliss</div>
             </div>
         </div>
@@ -48,9 +48,11 @@ export function Footer() {
             </ul>
             </div>
             <div className="col-span-2">
-                <Image src='/images/mail.svg' alt='' width={16} height={11} className='pl-4' />
-            <span>&nbsp; Enter Email for Subscribe</span>
-            <div className="subbtn">Subscribe</div>
+                <div className={MainStyles.inputBox}>
+                    <div className={MainStyles.Icon}><Image src='/images/mail.svg' alt='' layout="fill" objectFit="scale-down" /></div>
+                    <input type="email" placeholder="Enter Email for Subscribe" className="nearwhite" />
+                </div>
+                <div className="subbtn ml-4">Subscribe</div>
             </div>
         </div>
         <div className="w-full  pl-20 p-4 pt-8 hidden md:flow-root nearwhite text-xs" style={{ background: "#523922" }}>

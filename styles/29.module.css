@@ -1,0 +1,198 @@
+@media(max-width:1200px){
+    .logo{
+        margin-top: 8rem;
+        position: relative;
+        width: 288px;
+        height: 77px;
+    }
+    .box{
+        margin-top: 2rem;
+    }
+    .selection{
+        display: none;
+    }
+    .content{
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content .header_text{
+        font-family: Tenor Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 154%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: -0.3px;
+        color: #F8EEE4;
+    }
+    .content .agree_btn{
+        margin: -1rem 0 2rem 0;
+    }
+    .content .paragraph .part .text span{
+        display: inline;
+        flex-wrap: nowrap;
+        color:#073E0D;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .content .paragraph .part .text{
+        display: inline;
+    }
+}
+
+@media(min-width: 1200px){
+    .logo{
+        display: none;
+    }
+    .box{
+        padding: 10rem 4rem 0 4rem;
+    }
+    .selection{
+        position: relative;
+        width: 10%;
+        height: 100%;
+    }
+    .selection h3{
+        font-family: Tenor Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 154%;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.3px;
+        color: #F8EEE4;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    .selection h3:hover{
+        color: green;
+    }
+    .selection .selected{
+        color: green;
+    }
+    .content{
+        position: relative;
+        padding-left: 2rem;
+        border-left: 2px solid white;
+        width: 70%;
+        height: fit-content;
+    }
+    .content .header_text{
+        font-family: Tenor Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 154%;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.3px;
+        color: #F8EEE4;
+    }
+    .content .agree_btn{
+        margin: -5rem 0 2rem 0;
+    }
+    .content .paragraph .part .text span{
+        display: inline;
+        flex-wrap: nowrap;
+    }
+    .content .paragraph .part .text{
+        display: inline;
+    }
+}
+
+
+
+
+.contain {
+    background-color: #B99173;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
+.content .paragraph{
+    font-family: Tenor Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #F8EEE4;display: flex;
+    flex-direction: column;
+    margin: -1rem 0 3rem 0;
+}
+
+.content .agree_btn{
+    width: 330px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #073E0D;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+    font-family: Tenor Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.content .agree_btn:hover{
+    background-color: white;
+    color: #073E0D;
+}
+
+.content .header_text{
+    margin-bottom: 2rem;
+}
+
+.content .paragraph .part{
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.content .paragraph .title{
+    font-family: Tenor Sans;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #F8EEE4;
+    margin-bottom: 0.5rem;
+}
+.content .paragraph .text{
+    font-family: Tenor Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #F8EEE4;
+}
+

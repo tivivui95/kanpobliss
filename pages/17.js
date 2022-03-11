@@ -16,7 +16,7 @@ const Content17 = ({ Name }) => {
                 <Image src="/images/17/logo.png" width={140} height={140} objectFit="scale-down" alt="" />
                 <div className={styles.infor}>
                     <h1 className={styles.hello}>Hello, {Name}!</h1>
-                    <h1 className={styles.bio}>Here're the recomnendations for you to live your wellness mantra</h1>
+                    <h1 className={styles.bio}>Here&apos;re the recomnendations for you to live your wellness mantra</h1>
                 </div>
             </div>
             <div className={styles.choose}>Choose from one of the following</div>
