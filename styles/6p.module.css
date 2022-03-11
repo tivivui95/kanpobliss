@@ -46,14 +46,44 @@
     text-align: center;
 }
 
-.inputBox{
+.inputBox {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.Icon{
+
+.inputBox select {
+    height: 41px;
+    width: 300px;
+    border: none;
+    background-color: rgba(0,0,0,0);;
+    border-bottom: 1px solid #A56C50;
+    border-left: 1px solid #A56C50;
+    margin-bottom: 1rem;
+
+    font-family: Tenor Sans;
+    font-size: 14px;
+    padding-left: 1rem;
+    color: #A56C50
+
+}
+
+.submit {
+    width: 330px;
+    padding: 8px;
+    font-family: 'Tenor Sans';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #BDC2BC;
+    border-radius: 100px;
+}
+
+.Icon {
     width: 40px;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid #A56C50;
     display: flex;
     flex-direction: row;
     justify-content: center;
