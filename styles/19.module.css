@@ -6,9 +6,9 @@
         display: flex;
         flex-direction: column;
         margin: 1rem 1rem 2rem 1rem;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        width: 115%;
+        width: 100%;
     }
     .box1 .container2{
         display: flex;
@@ -16,12 +16,11 @@
         margin: 1rem 1rem 2rem 1rem;
         justify-content: center;
         align-items: center;
-        width: 115%;
+        width: 100%;
     }
     .box1 .container1 .img1{
         position: absolute;
-        left: 3%;
-        top: 13%;
+        top: 19%;
         cursor: pointer;
         width: 330px;
         height: 140px;
@@ -37,7 +36,6 @@
     }
     .box1 .container2 .img2{
         position: absolute;
-        left: 3%;
         top: 63%;
         width: 330px;
         height: 140px;
@@ -66,13 +64,11 @@
         flex-direction: column;
     }
     .box2 .container4 .content5 .card{
+        position: relative;
         width: 360px;
         height: 120px;
         cursor: pointer;
         margin: 0.5rem;
-    }
-    .box2 .container3 .content3 .block .price{
-        left: 70%;
     }
 }
 
@@ -81,12 +77,14 @@
         padding: 3rem 7rem 0 5rem;
     }
     .box1 .container1 .img1{
+        position: relative;
         width: 570px;
         height: 280px;
         margin-right: 5%;
         cursor: pointer;
     }
     .box1 .container2 .img2{
+        position: relative;
         width: 570px;
         height: 280px;
         margin-left: 5%;
@@ -125,21 +123,19 @@
         margin-bottom: 2rem;
     }
     .box2 .container4 .content4 .card{
+        position: relative;
         margin: 0.5rem;
         width: 323px;
         height: 287px;
         cursor: pointer;
-    }
-    .box2 .container3 .content3 .block .price{
-        left: 70%;
     }
 }
 
 
 
 .contain {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,8 +162,6 @@
     font-weight: normal;
     font-size: 32px;
     line-height: 37px;
-    display: flex;
-    align-items: center;
     letter-spacing: -0.3px;
     color: #F8EEE4;
     width: 100%;
@@ -195,7 +189,7 @@
 
 .box1 .container1 .ul{
     position: relative;
-    left: 15px;
+    margin-left: 15px;
 }
 
 .box1 .container2 .content2{

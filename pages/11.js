@@ -3,11 +3,17 @@ import Navbar, { MBFooter, Footer } from "./navbar";
 import Link from "next/link";
 
 import styles from '../styles/11.module.css'
+import { useState } from "react";
+import SocialLogin from "../components/socialLogin";
 
 const Content11 = () => {
+    const [ remember, onChangeRemember ] = useState(true);
 
-    const onChangeThing = () => {
-
+    const handleRemember = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        onChangeRemember(value);
     }
 
     return (
@@ -34,25 +40,23 @@ const Content11 = () => {
                         </div>
                         <div className={styles.checking}>
                             <div>
-                                <input className={styles.checkboxs} type="checkbox" checked="checked" onChange={() => onChangeThing()} />
-                                <label className={styles.label}>&nbsp; Remember me for Login</label>
+                                <label className="scheckbox text-xs -ml-5">
+                                    <input className={styles.checkboxs} type="checkbox" checked={remember} onChange={handleRemember} />
+                                    <span className="scheckmark"></span>
+                                    <span className="pl-6 text-sm nearblack">Remember me for login</span></label>
                             </div>
                             <div>
-                                <input className={styles.checkboxs} type="checkbox" />
-                                <label className={styles.label}>&nbsp; I agree to the Kanpobliss <a>Terms & Condtion</a> and <a>Privacy Policy</a></label>
+                                
+                                <label className="scheckbox text-xs -ml-5">
+                                <input className={styles.checkboxs} type="checkbox" />    
+                                <span className="scheckmark"></span>
+                                <span className="pl-6 text-sm nearblack">
+                                    I agree to the Kanpobliss <a>Terms & Condtion</a> and <a>Privacy Policy</a></span></label>
                             </div>
                         </div>
-                        <Image className={styles.signbtn} src="/images/11/Buttons.png" alt='' width={260} height={40} />
                     </div>
-                    <div className={styles.footer}>
-                        <div>or Sign Up Using</div>
-                        <div className={styles.socialSpan}>
-                            <Image src="/images/11/Facebook.png" alt='' width={46} height={46} />
-                            <Image src="/images/11/Twitter.png" alt=''  width={46} height={46} />
-                            <Image src="/images/11/Gmail.png" alt='' width={46} height={46} />
-                        </div>
-                        <div>Already has an account? <Link href='/11_2'><a className={styles.a} >Sign In</a></Link></div>
-                    </div>
+                    <Link href='#'><a className="graybtn -mt-7">Sign up</a></Link>
+                    <SocialLogin />
                 </div>
             </div>
         </div>

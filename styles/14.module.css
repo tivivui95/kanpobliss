@@ -80,17 +80,19 @@
     color: #523922;
 }
 
-.CenterBox{
+.CenterBox {
     position: relative;
     width: 470px;
     height: 548px;
-    background-image: url("/images/14/Login.png");
+    background-image: url("/images/11/login-2.png");
+    background-position: center;
+    background-size: contain;
     background-repeat:no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 0rem;
+    padding-top: 2rem;
 }
 
 @media only screen and (max-width: 768px)  {
@@ -101,10 +103,10 @@
         width: 90%;
     }
     .sign_btn1 {
-        top: 4% !important;
+        margin-top: -56px !important;
     }
     .sign_btn2 {
-        margin-top: 1.5rem !important;
+        margin-top: 0.5rem !important;
     }
 }
 

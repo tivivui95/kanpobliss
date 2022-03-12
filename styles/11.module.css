@@ -53,7 +53,9 @@
     position: relative;
     width: 470px;
     height: 548px;
-    background-image: url("/images/11/Login.png");
+    background-image: url("/images/11/login-2.png");
+    background-position: center;
+    background-size: contain;
     background-repeat:no-repeat;
     display: flex;
     flex-direction: column;
@@ -69,14 +71,26 @@
     height: 50px;
     font-family: Tenor Sans;
     font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 37px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
     color: #523922;
-    margin-bottom: 1rem;
-    margin-top: 78px;
+    margin-top: 0px;
+    padding: 12px;
     text-align: right;
 }
+
+.icontop {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    background-color: #B99173;
+    border-radius: 116px;
+    margin-bottom: -112px;
+    margin-top: 12px;
+    z-index: 1;
+}
+
 .inputBox{
     display: flex;
     flex-direction: row;
@@ -113,7 +127,8 @@
         width: 250px;
     }
     .CenterBox {
-        width: 90%;
+        width: 90vw;
+        height: calc(90vw * 1.4);
     }
 }
 
@@ -125,18 +140,21 @@
     left: 0;
 }
 .checking div{
-    margin: 0.5rem 0 0.5rem -20px;
+    margin: 0 0 0 -20px;
 }
 .label{
-    font-family: Tenor Sans;
+    font-family: Tenor Sans !important;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 14px;
     letter-spacing: 0em;
     text-align: left;
-    color: black;
+    color: #523922 !important;
 }
+
+
+
 .signbtn{
     height: 40px;
     width: 260px;
