@@ -211,3 +211,20 @@ textarea {
   padding: 4px;
   margin: 2px;
 }
+
+.greenbtn {
+  width: 260px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #073E0D;
+  border: 1px solid #073E0D;
+  z-index: 1;
+  border-radius: 48px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.greenbtn:hover {
+  background-color: #408548;
+  color: #073E0D;
+}
