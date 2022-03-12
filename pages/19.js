@@ -7,25 +7,23 @@ import styles from '../styles/19.module.css'
 const Content19 = ({RestaurantName}) => {
     return (
         <>
+        <Navbar />
         <div className={styles.contain}>
+        
             <div className={styles.box1}>
                 
 
                 
                 <div className={styles.container1}>
-                <div className="grid grid-cols-2 gap-2">
-                <div className="relative w-5/6 h-56">
-                    <Image src="/images/19/image 7.png" layout="fill" objectFit="contain" alt="" />
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
+                    <div className="relative w-5/6 h-56 hidden md:block">
+                        <Image src="/images/19/image 7.png" layout="fill" objectFit="contain" alt="" />
                     </div>
                     <div>
-                    <h1 className={styles.header1}>Braised Supreme Dried 15 Head Australian Xu Rong Abalone </h1>
-                    </div>
-                    
-                    <div>
-
-                    </div>
-                    <div>
-                        
+                        <h2 className="nearwhite text-3xl text-left">Braised Supreme Dried 15 Head Australian Xu Rong Abalone </h2>
+                        <div className="relative w-5/6 h-56 md:hidden block">
+                            <Image src="/images/19/image 7.png" layout="fill" objectFit="contain" alt="" />
+                        </div>
                         <h3 className={styles.text1}>Why we curated this for you</h3>
                         <ul className={styles.ul}>
                             <li>Provides immune support</li>
@@ -99,7 +97,11 @@ const Content19 = ({RestaurantName}) => {
                     </div>
                 </div>
             </div>
+            <br/>
+            <MBFooter />
             </div>
+            
+            <Footer />
         </>
     )
 }
