@@ -18,9 +18,12 @@ export default function Content5() {
                         <div className={styles.head3}>Tap and hold the symptom before dragging it. 1 being most relevant:</div>
                         <div className="grid md:grid-cols-1 gap-4 p-6 md:pb-10">
                             {data.map((i, index) => (
-                                <div className={styles.card} key={index}>
-                                    <span>{index}</span>
-                                   {i} 
+                                <div className={styles.card2} key={index}>
+                                    
+                                    <div className="text-left">
+                                    {index}
+                                    </div>
+                                    <span>.{i} </span>
                                 </div>
                             ))}
                             
