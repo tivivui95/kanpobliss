@@ -17,9 +17,10 @@ const data = [
 ]
 
 const iconsrc = [
-    '/images/25/fb-green.svg',
-    '/images/25/ins-green.svg',
-    '/images/25/yt-green.svg',
+    '/images/24/1.png',
+    '/images/24/2.png',
+    '/images/24/3.png',
+    '/images/24/4.png',
 ]
 
 
@@ -33,42 +34,35 @@ export default function Content25() {
             </div>
         </div>
         <div className={styles.container}>
-            <div className='container mx-auto pt-12 p-4'>
+            <div className='container mx-auto pt-12 p-4 nearwhite'>
+                <h1 className='text-4xl'>Six Healing Sound Guided Meditation</h1>
+                <div className='text-base mt-4 mb-4'>
+                    <p>
+                    Our emotions affect our health and wellbeing. The Six Healing Sounds is an ancient Qigong method that uses sound vibration to transform negative emotions into positive virtues. Each sound is associated with a different gesture, internal organ, color, season, and set of emotions. By focusing your inhale and exhale of breath, posture, visualization, and tapping into the vibration of each healing sound, you can relax, release stress, and clear your body of toxins to create long-lasting transformation.
+                    <br/>
+                    This practice is helpful to all, but is particularly effective for those with warmer body types, namely Yin deficient and Damp heat - as it helps clear heat from the body’s essential organs. Do each sound 3, 6 or 9 times. For best effect, sit on the edge of a chair. Alternatively, you can lay on the floor or in bed. Do the movements slowly and quietly, trying to remain still and focused. Begin each sound by picturing its appropriate color and smiling from the point between the eyes. 
+                    </p>
+                </div>
                 <div className='flex flex-row'>
-                    <div className='w-28 h-28 relative'>
+                    <div className='w-12 h-12 relative'>
                         <Image src='/images/25/ava.png' alt='' layout='fill' objectFit='contain'  />
                     </div>
                     <div className='grid grid-rows-2 gap-2 pl-6 pt-3'>
-                        <div><h1 className='text-4xl nearwhite'>{username}</h1></div>   
-                        <div className='flex flex-row'>
-                        {iconsrc.map((url, index) => (
-                            <div className='w-8 h-8 relative mr-3' key={index}>
-                                <Image src={url} alt='' layout='fill' objectFit='contain' />    
-                            </div>
-                        ))}
-                        </div> 
+                        <div><h1 className='text-2xl nearwhite'>{username}</h1></div>   
                     </div>
                 </div>  
                 <p className='nearwhite pt-6 pb-6'>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem... 
+                <a className='text-green-700'>More</a>
                 </p>
                 <div className='divider'></div>
-                <div className="grid grid-cols-2 gap-6 pt-4 pb-2">
-                    {data.map((content, index) => (
-                        <div className="relative flow-root h-72 p-4 md:p-8" key={index}>
-                            <div className={styles.cardtitle}>
-                                    <div className='float-left w-full'>
-                                        <div className='text-sm md:text-base'>{content.tag}</div>
-                                        <div className='w-3/4'><div className='divider'></div></div>
-                                        
-                                        <div className='text-xl md:text-2xl pt-6'>{content.title}</div>
-                                    </div>
-                                    <div className='float-right w-full md:pr-2 pr-2 mt-56 md:mt-52 absolute'>
-                                        <div className='text-right text-base'>{username}</div>
-                                    </div>
-                            </div>
-                            <Image src={content.img} layout="fill" objectFit="cover" className={styles.imgcover} />                            
+                <div className='nearwhite text-sm'>Sessions </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 pt-4 pb-2">
+                    {iconsrc.map((content, index) => (
+                        <div className='w-full h-52 relative'>
+                            <Image src={content} layout="fill" objectFit="cover" alt='' />           
                         </div>
+                                             
                     ))}
                 </div>
             </div>
