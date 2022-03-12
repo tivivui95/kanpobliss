@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "./navbar";
 import Link from "next/link";
-
 import styles from '../styles/12.module.css'
+import SocialLogin from "../components/socialLogin";
 
 const Content12 = () => {
     return (
@@ -11,7 +11,7 @@ const Content12 = () => {
             <div className={styles.content}>
                 <div className={styles.box}>
                     <div className={styles.TextBox}><Image src="/images/12/Bigtext.png" alt='' width={300} height={80} /></div>
-                    <div className={styles.CenterBox}>
+                    <div className="CenterBox">
                         <h1 className={styles.TextHello}>Forget password</h1>
                         <div className={styles.note}>Enter the email address associated with your account and we&apos;ll verify your profile to reset your password</div>
                         <div className={styles.inputBox}>
@@ -21,17 +21,10 @@ const Content12 = () => {
                             <input type="text" placeholder="Email" />
                         </div>
 
-                        <Image className={styles.signbtn} src="/images/12/Buttons.png" alt='' width={260} height={40} />
+                        
                     </div>
-                    <div className={styles.footer}>
-                        <div>or Sign Up Using</div>
-                        <div className={styles.socialSpan}>
-                            <Image src="/images/11/Facebook.png" alt='' width={46} height={46} />
-                            <Image src="/images/11/Twitter.png" alt=''  width={46} height={46} />
-                            <Image src="/images/11/Gmail.png" alt='' width={46} height={46} />
-                        </div>
-                        <div>Already has an account? <a>Sign In</a></div>
-                    </div>
+                    <Link href='#'><a className="greenbtn -mt-7">continue</a></Link>
+                    <SocialLogin />
                 </div>
             </div>
             </div>

@@ -86,10 +86,10 @@ const Content19 = ({RestaurantName}) => {
                         
                     </div>
                     <div className={styles.content5}>
-                    <div className={styles.card}>
-                    <Image src="/images/19/Card5.png" layout="fill" objectFit="contain" alt="" className={styles.card} />    
-                            </div>
-                            <div className={styles.card}>
+                        <div className={styles.card}>
+                            <Image src="/images/19/Card5.png" layout="fill" objectFit="contain" alt="" className={styles.card} />    
+                        </div>
+                        <div className={styles.card}>
                             <Image src="/images/19/Card6.png" layout="fill" objectFit="contain" alt="" className={styles.card} />    
                         </div>
                         

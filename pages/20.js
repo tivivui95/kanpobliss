@@ -10,17 +10,17 @@ import useInterval from "../components/useInterval";
 const data = [
     {
         url: '/images/21/Rectangle 15.png',
-        title: 'Evening Tension Relief Ritual',
+        title: '30mins Cycling',
         content: 'Lorem ipsum dolor sit amet.'
     },
     {
         url: '/images/21/Rectangle 16.png',
-        title: 'Relaxing bath',
+        title: '30mins HIIT',
         content: 'Lorem ipsum dolor sit amet.'
     },
     {
         url: '/images/21/Rectangle 17.png',
-        title: 'Qi-moving full body massage',
+        title: '45mins Yoga',
         content: 'Lorem ipsum dolor sit amet.'
     },
 ]
@@ -131,7 +131,7 @@ function MainContent21({ Mantra }) {
                 <Image src="/images/21/title-human.png" layout='fill' objectFit='scale-down' alt="connguoi" className='p-4 m-4 relative' />
             </div>
             <div className={styles.heading__text}>
-                <div className='text-3xl pt-4'>Best Spa treatment for <span className='tanpearl '>{Mantra}</span></div>
+                <div className='text-3xl pt-4'>Perfect Fitness & Workout for <span className='tanpearl '>{Mantra}</span></div>
             </div>
         </div>
         <div className='hidden md:block'>

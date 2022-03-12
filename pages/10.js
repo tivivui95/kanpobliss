@@ -27,7 +27,7 @@ const Content10 = () => {
                         Sign up to learn more about your unique body type. Get personalized wellness tips and recommendations!
                         </p>
                     </div>
-                    <Link href='#'><a className="greenbtn -mt-9 nearwhite">Sign up</a></Link>
+                    <Link href='#'><a className="greenbtn -mt-9">Sign up</a></Link>
                     <div className={styles.footer}>
                         <div>or Sign Up Using</div>
                         <div className={styles.socialSpan}>

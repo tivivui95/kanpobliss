@@ -198,8 +198,91 @@ a {
   transform: rotate(45deg);
 }
 
+/* Square Checkbox */
+
+/* Customize the label (the container) */
+.scheckbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.scheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.scheckbox {
+  color: #A56C50;
+}
+
+.scheckbox input:checked ~ .labelcheck {
+  color: #A56C50 !important;
+}
+
+/* Create a custom checkbox */
+.scheckmark {
+  position: absolute;
+  margin-top: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #A56C50;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.scheckbox:hover input ~ .scheckmark {
+  background-color: rgba(7, 62, 13, 0.1);
+}
+
+/* When the checkbox is checked, add a blue background */
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.scheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.scheckbox input:checked ~ .scheckmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.scheckbox .scheckmark:after {
+  left: 2px;
+  top: 2px;
+  width: 8px;
+  height: 8px;
+  border: solid #A56C50;
+  background-color: #A56C50;
+}
+
 .brown {
   color: #A56C50;
+}
+
+.nearblack {
+  color: #523922;
+}
+
+label a {
+  text-decoration: underline;
+  color: #B99173;
 }
 
 textarea {
@@ -222,9 +305,54 @@ textarea {
   border-radius: 48px;
   text-transform: uppercase;
   text-align: center;
+  color: #F8EEE4;
 }
 
 .greenbtn:hover {
-  background-color: #408548;
+  background-color: #F8EEE4;
   color: #073E0D;
+}
+
+.graybtn {
+  width: 260px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #BDC2BC;
+  border: 1px solid #BDC2BC;
+  z-index: 1;
+  border-radius: 48px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #F8EEE4;
+}
+
+.graybtn:hover {
+  background-color: #F8EEE4;
+  color: #BDC2BC;
+}
+
+.CenterBox {
+  position: relative;
+  width: 470px;
+  height: 548px;
+  background-image: url("/images/11/Login.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat:no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+@media only screen and (max-width: 768px)  {
+  .CenterBox {
+      width: 90vw;
+      height: calc(90vw * 1.16);
+  }
+}
+
+.darkred {
+  color: #8E1100;
 }
