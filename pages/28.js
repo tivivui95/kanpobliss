@@ -93,18 +93,18 @@ export default function Content25() {
         <div>
             <div className={styles.coverimg}>
                 <div className={styles.contentcover}>
-                    <div className='container mx-auto p-4 pt-16'>
-                    <div className='text-center text-xl md:text-2xl'>
+                    <div className='container mx-auto p-4 md:pt-16 pt-8'>
+                    <div className='text-center text-base md:text-2xl'>
                     I am self taught in TCM and this app is very useful for narrowing down issues in the body. The explanations are clear enough that someone who doesn't have experience/knowledge of TCM can use it to gain insight and be able to heal their body with lifestyle and diet changes.
                     </div>
-                    <div className='relative h-2 w-full mt-2 md:mt-8 mb-8'>
+                    <div className='relative h-2 w-full mt-2 md:mt-8 mb-2 md:mb-8'>
                     <Image src='/images/28/line.png' layout='fill' objectFit='scale-down' alt='' />
                     </div>
                     
                     <h1 className='text-center text-4xl'>Autumn B.</h1>
                     
                     </div>
-                    <div className='relative h-2 w-full mt-8 mb-8'>
+                    <div className='relative h-2 w-full mt-2 md:mt-8 mb-8'>
                     <Image src='/images/28/bar.png' layout='fill' objectFit='scale-down' alt='' />
                     </div>
                 </div>
