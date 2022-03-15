@@ -47,7 +47,7 @@ export default function Content25() {
                 <div className='text-center nearwhite'>
                     <h1 className='text-4xl'>Our Promise</h1>
                 </div>
-                <div className='grid grid-cols-3 gap-2'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-2'>
                     <div className='p-4'>
                         <div className='w-full relative h-40'>
                             <Image src='/images/28/img1.png' layout='fill' objectFit='contain' alt='' />
@@ -94,10 +94,10 @@ export default function Content25() {
             <div className={styles.coverimg}>
                 <div className={styles.contentcover}>
                     <div className='container mx-auto p-4 pt-16'>
-                    <div className='text-center text-2xl'>
+                    <div className='text-center text-xl md:text-2xl'>
                     I am self taught in TCM and this app is very useful for narrowing down issues in the body. The explanations are clear enough that someone who doesn't have experience/knowledge of TCM can use it to gain insight and be able to heal their body with lifestyle and diet changes.
                     </div>
-                    <div className='relative h-2 w-full mt-8 mb-8'>
+                    <div className='relative h-2 w-full mt-2 md:mt-8 mb-8'>
                     <Image src='/images/28/line.png' layout='fill' objectFit='scale-down' alt='' />
                     </div>
                     
@@ -117,7 +117,7 @@ export default function Content25() {
                 <div className='text-center nearwhite'>
                     <h1 className='text-4xl'>Our Founder</h1>
                 </div>
-                <div className='grid grid-cols-2 gap-2'>
+                <div className='grid md:grid-cols-2 gap-2'>
                     <div className='p-4 flex flex-row'>
                         <div className='w-1/2 relative h-40 mr-4'>
                             <Image src='/images/28/fd1.png' layout='fill' objectFit='contain' alt='' />
@@ -154,7 +154,7 @@ export default function Content25() {
                 <div className='text-center'>
                     <h1 className='nearwhite text-4xl'>Our Experts</h1>
                     
-                    <div className='grid grid-cols-3 gap-2'>
+                    <div className='grid  grid-cols-1 md:grid-cols-3 gap-2'>
                     <div className='p-4'>
                         <div className='w-full relative h-40'>
                             <Image src='/images/28/teach.png' layout='fill' objectFit='scale-down' alt='' />
