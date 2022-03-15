@@ -160,7 +160,7 @@ export default function Content25() {
                             <Image src='/images/28/teach.png' layout='fill' objectFit='scale-down' alt='' />
                         </div>
                         <div className='pt-4 pb-4 nearwhite'>
-                            <h1 className='text-2xl h-10'>Fraser Lau</h1>
+                            <h1 className='text-base md:text-2xl h-10'>Fraser Lau</h1>
 
                             <p>
                             Qigong Teacher
@@ -173,7 +173,7 @@ export default function Content25() {
                             <Image src='/images/28/teach.png' layout='fill' objectFit='scale-down' alt='' />
                         </div>
                         <div className='pt-4 pb-4 nearwhite'>
-                            <h1 className='text-2xl h-10'>Fraser Lau</h1>
+                            <h1 className='text-base md:text-2xl h-10'>Fraser Lau</h1>
 
                             <p>
                             Qigong Teacher</p>
@@ -184,7 +184,7 @@ export default function Content25() {
                             <Image src='/images/28/teach.png' layout='fill' objectFit='scale-down' alt='' />
                         </div>
                         <div className='pt-4 pb-4 nearwhite'>
-                            <h1 className='text-2xl h-10'>Fraser Lau</h1>
+                            <h1 className='text-base md:text-2xl h-10'>Fraser Lau</h1>
 
                             <p>
                             Qigong Teacher</p>
