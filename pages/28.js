@@ -97,14 +97,12 @@ export default function Content25() {
                     <div className='text-center text-base md:text-xl'>
                     I am self taught in TCM and this app is very useful for narrowing down issues in the body. The explanations are clear enough that someone who doesn't have experience/knowledge of TCM can use it to gain insight and be able to heal their body with lifestyle and diet changes.
                     </div>
-                    <div className='relative h-2 w-full mt-2 md:mt-6 mb-2 md:mb-6'>
+                    <div className='relative h-2 w-full mt-2 md:mt-2 mb-2 md:mb-2'>
                     <Image src='/images/28/line.png' layout='fill' objectFit='scale-down' alt='' />
                     </div>
-                    
-                    <h1 className='text-center text-4xl'>Autumn B.</h1>
-                    
+                    <h1 className='text-center text-3xl'>Autumn B.</h1>
                     </div>
-                    <div className='relative h-2 w-full mt-2 md:mt-6 mb-8'>
+                    <div className='relative h-2 w-full md:mt-2 mb-8'>
                     <Image src='/images/28/bar.png' layout='fill' objectFit='scale-down' alt='' />
                     </div>
                 </div>

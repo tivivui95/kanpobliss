@@ -32,6 +32,8 @@ export default function Content27() {
                 </div>
             </div>
         </div>
+        <MBFooter />
+        <Footer />
         </>
     )
 }

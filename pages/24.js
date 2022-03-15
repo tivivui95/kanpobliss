@@ -57,9 +57,9 @@ export default function Content25() {
                 </p>
                 <div className='divider'></div>
                 <div className='nearwhite text-sm'>Sessions </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 pt-4 pb-2">
+                <div className="grid grid-cols-4 md:grid-cols-4 gap-2 pt-4 pb-2">
                     {iconsrc.map((content, index) => (
-                        <div className='w-full h-52 relative'>
+                        <div className='w-full h-12 md:h-52 relative'>
                             <Image src={content} layout="fill" objectFit="cover" alt='' />           
                         </div>
                                              
