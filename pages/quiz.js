@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "./navbar";
 import styles from '../styles/6p.module.css';
-import { useState , useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import Content10 from "./10";
 const Allquestion = [
     {
         question: 'Which of the following describes your usual appetite and digestion?',
@@ -69,7 +70,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -106,7 +107,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -147,7 +148,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -188,7 +189,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -229,7 +230,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -270,7 +271,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -303,7 +304,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -336,7 +337,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -369,7 +370,7 @@ const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },
@@ -388,29 +389,32 @@ const MantraList = [
 
 ]
 
-const Answer = ({onChangeResult, data, ind, arrInd}) => {
-    const [ check, onChecked ] = useState(false);
+const Answer = ({ onChangeResult, data, ind, arrInd }) => {
+    const [check, onChecked] = useState(false);
     const handleChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         onChecked(value);
         onChangeResult(value, ind, arrInd);
-      }
+    }
     return (
         <>
-        <label>
-          <input type="checkbox" value={check} onChange={handleChange} />
-            {data}
-        </label>
+            <label className={styles.cardcover}>
+                
+                <input type="checkbox" value={check} onChange={handleChange} />
+                <div className={styles.card}>
+                {data}
+                </div>
+            </label>
         </>
     )
 }
 
-const RenderQuestion = ({questionJs, handleNext}) => {
-    const [ ans, onChangeAns ] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+const RenderQuestion = ({ questionJs, handlePrev, handleNext }) => {
+    const [ans, onChangeAns] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
     const updateData = (value, ind) => {
         let new_arr = ans;
-        new_arr[ind] = value;
+        ind != 100 ? new_arr[ind] = value: new_arr[0] = value
         onChangeAns(new_arr);
         console.log(value, ' and ', ind);
         console.log(ans);
@@ -426,23 +430,24 @@ const RenderQuestion = ({questionJs, handleNext}) => {
 
     return (
         <>
-        <h1>{questionJs.question}</h1>
-        {/* <div>{ans}</div> */}
-        <div>
-            {questionJs.answer.map((answers, index) => (
-                <div key={index}>
-                    <Answer data={answers.data} ind={answers.ind} arrInd={index} onChangeResult={HandleAns} />
-                    {/* <h3>{ans.ind}</h3> */}
-                </div>
-            ))}
-        </div>
-        <a onClick={() => handleNext(ans, questionJs.answer)}>Next</a>
+            <h2 className={styles.head2}>{questionJs.question}</h2>
+            {/* <div>{ans}</div> */}
+            <div className="grid md:grid-cols-2 gap-4 p-6 md:pb-10">
+                {questionJs.answer.map((answers, index) => (
+                    <div key={index}>
+                        <Answer data={answers.data} ind={answers.ind} arrInd={index} onChangeResult={HandleAns} />
+                        {/* <h3>{ans.ind}</h3> */}
+                    </div>
+                ))}
+            </div>
+            <a onClick={() => handleNext(ans, questionJs.answer)} className={styles.nextbtn}><div className={styles.nextsign}></div></a>
+            <a onClick={() => handlePrev(ans, questionJs.answer)} className={styles.prevbtn}><div className={styles.prevsign}></div></a>
         </>
     )
 }
 
 const DragResult = ({ top3, allAns, showResult }) => {
-    const [ mantra, onChangeMantra ] = useState(0);
+    const [mantra, onChangeMantra] = useState(0);
     let res = [];
     top3.map((element) => {
         let i = 0;
@@ -453,27 +458,28 @@ const DragResult = ({ top3, allAns, showResult }) => {
     })
     return (
         <>
-        <ul>
-            {res.map((el, index) => (<li key={index} onClick={onChangeMantra(el[1])}>{el[0]}</li>))}
-        </ul>
-        <a onClick={showResult(mantra)}>Submit</a>
+            <ul>
+                {res.map((el, index) => (<li key={index} onClick={onChangeMantra(el[1])}>{el[0]}</li>))}
+            </ul>
+            <a onClick={showResult(mantra)}>Submit</a>
         </>
     )
 }
 
 export default function Main() {
-    const [ curPage, onChangePage ] = useState(0);
-    const [ result, onChangeResult ] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-    const [ showItem, onChangeShow ] = useState(false);
-    const [ sortedArr, onChangeSortedArr ] = useState([]);
-    const [ anslists, onChangeAnsLists ] = useState([]);
-    const [ mantra, onChangeMantra ] = useState(0);
-    const [ dragList, onChangeDragList ] = useState([]);
-    const [ showMantra, onShowMantra ] = useState(false);
+    const [curPage, onChangePage] = useState(0);
+    const [result, onChangeResult] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    const [showItem, onChangeShow] = useState(false);
+    const [sortedArr, onChangeSortedArr] = useState([]);
+    const [anslists, onChangeAnsLists] = useState([]);
+    const [mantra, onChangeMantra] = useState(0);
+    const [dragList, onChangeDragList] = useState([]);
+    const [showMantra, onShowMantra] = useState(false);
 
     const onSubmit = () => {
         let resSorted = result;
         resSorted[0] = 0;
+        onChangePage(0);
         console.log('before: ', resSorted);
         // resSorted.sort(function(a, b){return b - a});        
         console.log('after', resSorted);
@@ -497,13 +503,13 @@ export default function Main() {
             anslists.map((el) => {
                 el[1] == element ? i = el[1] : null
             })
-            res.push([anslists[i][0], anslists[i][1]]);
+            anslists[i] != null ? res.push([anslists[i][0], anslists[i][1]]): null
         })
         onChangeDragList(res);
     }
 
     const DragResult = ({ top3, allAns }) => {
-        
+
         let res = [];
         top3.map((element) => {
             let i = 0;
@@ -531,43 +537,75 @@ export default function Main() {
                 });
                 onChangeResult(new_arr);
                 onChangeAnsLists(temp_ans_list);
-                // console.log(result);
-                // console.log(curPage);
+            }
+        }
+    }
+
+    const handlePrevPage = (resArr, ansList) => {
+        if (resArr.reduce((a, b) => a + b, 0) > 0) {
+            curPage > 0 ? onChangePage(curPage - 1) : onChangePage(curPage);
+            if (curPage > 0) {
+                let new_arr = result;
+                let temp_ans_list = anslists;
+                resArr.map((resInd, index) => {
+                    new_arr[resInd]--;
+                    resInd > 0 ? temp_ans_list.push([ansList[index].data, ansList[index].ind]) : null;
+                });
+                onChangeResult(new_arr);
+                onChangeAnsLists(temp_ans_list);
             }
         }
     }
 
     return (
         <>
-        <div className={styles.container}>
-            <Navbar />
-            <div className={showMantra ? 'block' : 'hidden'}>Your body needs {MantraList[mantra]}</div>
-            <div className="container mx-auto">
-                <div className={showItem && !showMantra ? 'block' : 'hidden'}>
-                    {/* <ul>
-                    {sortedArr.map((element, index) => (<li key={index}>{element}</li>))}
-                    </ul> */}
-                    <ul>
-                    {dragList.map((element, index) => (<li key={index} onClick={() => onChangeMantra(element[1])}>{element[0]}</li>))}
-                    </ul>
-                    <a onClick={() => onShowMantra(true)}>Submit</a>
-                </div>
-                <div className={!showItem ? 'block' : 'hidden'}>
-                    {Allquestion.map((content, index) => (
-                        <div className={curPage == index ? 'block' : 'hidden'} key={index*100}>
-                            <RenderQuestion questionJs={content} handleNext={handleNextPage} />
+            <div className={styles.container}>
+                <div className={!showMantra ? '' : 'hidden'}><Navbar /></div>
+                
+                <div className={showMantra ? 'block' : 'hidden'}><Content10 Mantra={MantraList[mantra]} /></div>
+                <div className={!showMantra ? '' : 'hidden'}>
+                <div className="container mx-auto mt-8 mb-8 grid justify-items-center relative ">
+                    <div className={styles.contain}>
+                        
+                        <div className="container mx-auto">
+                            <div className={showItem && !showMantra ? 'block' : 'hidden'}>
+                            <div className={styles.head2}>Drag & re-order the symptoms you selected previously. </div>
+                            <div className={styles.head3}>Tap and hold the symptom before dragging it. 1 being most relevant:</div>
+                                <ul className="grid gap-2">
+                                    {dragList.map((element, index) => (
+                                    <li className={styles.card} key={index} onClick={() => onChangeMantra(element[1])}>
+                                        {element[0]}
+                                    </li>
+                                    ))}
+                                </ul>
+                                <button className='block greenbtn mt-4' onClick={() => onShowMantra(true)}>Submit</button>
+                            </div>
+                            <div className={!showItem ? 'block' : 'hidden'}>
+                                {Allquestion.map((content, index) => (
+                                    <div className={curPage == index ? 'block' : 'hidden'} key={index * 100}>
+                                        <RenderQuestion questionJs={content} handlePrev={handlePrevPage} handleNext={handleNextPage} />
+                                    </div>
+
+                                ))}                                
+                                
+                            </div>
                         </div>
-                    ))}
-                    <button className={curPage == 9 ? 'block' : 'hidden'} onClick={onSubmit}>Submit</button>
+                    </div>
+                    <div className="mt-4"></div>
+                    <div className={!showItem ? 'block' : 'hidden'}>
+                        <div className={styles.graybar}>
+                            <div className={styles.greenbar} style={{ marginLeft: curPage * 25 }}></div>
+                        </div>
+                    </div>
+                    
+                    <button className={curPage == 9 ? 'block greenbtn mt-4' : 'hidden'} onClick={onSubmit}>Submit</button>
                 </div>
 
-                    
-                
+
+                <MBFooter />
+                <Footer />
+                </div>
             </div>
-            
-            <MBFooter />
-            <Footer />
-        </div>
         </>
     )
 }

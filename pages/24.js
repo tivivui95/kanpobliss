@@ -65,6 +65,7 @@ export default function Content25() {
                                              
                     ))}
                 </div>
+                <button className='greenbtn-2 mt-2'>Start Practice</button>
             </div>
             
             <MBFooter />

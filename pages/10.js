@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import styles from '../styles/11.module.css'
 
-const Content10 = () => {
+const Content10 = ({ Mantra }) => {
 
     const onChangeThing = () => {
 
@@ -22,7 +22,7 @@ const Content10 = () => {
                     <div className={styles.CenterBox}>
                         
                         <div className="mt-12 text-xl">Your body needs</div>
-                        <h1 className="text-4xl">Mantra</h1>
+                        <h1 className="text-4xl">{Mantra}</h1>
                         <p className="text-center p-8">
                         Sign up to learn more about your unique body type. Get personalized wellness tips and recommendations!
                         </p>
