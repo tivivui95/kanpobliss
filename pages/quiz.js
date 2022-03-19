@@ -475,6 +475,7 @@ export default function Main() {
     const [mantra, onChangeMantra] = useState(0);
     const [dragList, onChangeDragList] = useState([]);
     const [showMantra, onShowMantra] = useState(false);
+    const [ morethan3, onMoreThan3 ] = useState(false);
 
     const onSubmit = () => {
         let resSorted = result;
@@ -493,9 +494,21 @@ export default function Main() {
         }
         onChangeShow(true);
         let newmantra = [];
-        newmantra.push(mantraList[0]);
-        newmantra.push(mantraList[1]);
-        newmantra.push(mantraList[2]);
+        if (mantraList[0] != mantraList[1]) {
+            onChangeMantra(mantraList[0]);
+            onShowMantra(true);
+        } else if (mantraList[0] == mantraList[1] && mantraList[2] == mantraList[3] && mantraList[1] == mantraList[2])
+        {
+            for (let i = 0; i < mantraList.length; i++) {
+                if (mantraList[i] == mantraList[0]) newmantra.push(mantraList[i]);
+            }
+            onMoreThan3(true);
+        }
+        else {
+            newmantra.push(mantraList[0]);
+            newmantra.push(mantraList[1]);
+            newmantra.push(mantraList[2]);
+        }
         onChangeSortedArr(newmantra);
         let res = [];
         newmantra.map((element) => {
@@ -585,7 +598,6 @@ export default function Main() {
                                     <div className={curPage == index ? 'block' : 'hidden'} key={index * 100}>
                                         <RenderQuestion questionJs={content} handlePrev={handlePrevPage} handleNext={handleNextPage} />
                                     </div>
-
                                 ))}                                
                                 
                             </div>
