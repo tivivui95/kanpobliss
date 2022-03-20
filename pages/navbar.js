@@ -30,7 +30,10 @@ export function Footer() {
             <div>
                 <ul className="nearwhite ftpad">
                     <li>
+                        <Link href='/quiz'>
                         Body Type Assessment
+                        </Link>
+                        
                     </li>
                     <li>
                         Body Recovery Assessment
@@ -97,7 +100,7 @@ export default function Navbar() {
                             </li>
 
                             <li className="mt-8">
-                            <Link href='/main'>
+                            <Link href='/quiz'>
                             <a>
                             Body Recovery Assessment
                             </a>
@@ -121,7 +124,7 @@ export default function Navbar() {
                             </a>
                             </Link>
                             </li>
-                            <li className="mt-8"><Link href='/main'>
+                            <li className="mt-8"><Link href='/signin'>
                             <a>
                             Logout
                             </a>
