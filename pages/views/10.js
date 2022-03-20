@@ -26,7 +26,7 @@ const Content10 = ({ Mantra }) => {
                         Sign up to learn more about your unique body type. Get personalized wellness tips and recommendations!
                         </p>
                     </div>
-                    <Link href='#'><a className="greenbtn -mt-9">Sign up</a></Link>
+                    <Link href='/signup'><a className="greenbtn -mt-9">Sign up</a></Link>
 
                 </div>
             </div>
