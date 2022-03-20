@@ -55,3 +55,7 @@ export const RenderQuestion = ({ questionJs, handlePrev, handleNext }) => {
         </>
     )
 }
+
+export const RenderBonus = ({ data, onSub}) => {
+    
+}

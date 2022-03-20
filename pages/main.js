@@ -6,19 +6,23 @@ import useEmblaCarousel from "embla-carousel-react";
 import EmblaStyles from "../styles/embla.module.css";
 import Autoplay from 'embla-carousel-autoplay';
 import { useState } from 'react';
+import Link from "next/link";
 
 
 const FirstContent = () => {
     return (
         <>
             <div className="flex flex-col w-40 md:w-full">
-                <div className="w-full block h-56 md:h-80 relative">
+                <Link href='/quiz'>
+                    <a>
+                    <div className="w-full block h-56 md:h-80 relative">
                     <Image src='/images/4/Body Type.png' alt='' layout="fill" objectFit="cover" className="rounded-lg" />
-                </div>
-                <h1 className="nearwhite mt-4">Body Type Assessment</h1>
-                <p className={MainStyles.content}>Discover your unique body type. Get meals and wellness guide just for you!</p>
+                    </div>
+                    <h1 className="nearwhite mt-4">Body Type Assessment</h1>
+                    <p className={MainStyles.content}>Discover your unique body type. Get meals and wellness guide just for you!</p>
+                    </a>
+                </Link>
             </div>
-            
         </>
     )
 }
