@@ -4,7 +4,7 @@ import styles from '../styles/6p.module.css';
 import { useState, useEffect } from 'react';
 import Content10 from "./views/10";
 import {Allquestion, MantraList} from '../components/quiz/quiz1data';
-import { Answer, RenderQuestion } from "../components/quiz/QuesList";
+import { RenderQuestion, RenderBonus } from "../components/quiz/QuesList";
 import App from '../components/quiz/dragItems';
 
 export default function Main() {
@@ -15,7 +15,6 @@ export default function Main() {
     const [mantra, onChangeMantra] = useState(0);
     const [dragl, setDragL] = useState([]);
     const [showMantra, onShowMantra] = useState(false);
-    const [ morethan3, onMoreThan3 ] = useState(false);
 
     const [winReady, setwinReady] = useState(false);
 
@@ -80,18 +79,38 @@ export default function Main() {
         console.log(dragl);
     }
 
-    // const DragResult = ({ top3, allAns }) => {
-
-    //     let res = [];
-    //     top3.map((element) => {
-    //         let i = 0;
-    //         allAns.map((el) => {
-    //             el[1] == element ? i = el[1] : null
-    //         })
-    //         res.push([allAns[i][0], allAns[i][1]]);
-    //     })
-    //     onChangeDragList(res);
-    // }
+    const onSecondSubmit = (anss) => {
+        let resSorted = [];
+        anss.map((el, indx) => indx < 11 ? resSorted.push(el): null);
+        onChangePage(0);
+        console.log('result', resSorted);
+        console.log('ans List: ', anslists);
+        let res = [];
+        for (let inx = 0; inx < 3; inx++) {
+            const matraEl = resSorted[inx];
+            let checkStop = true;
+                let i = 0;
+                while (checkStop) {
+                    anslists[i][1] == matraEl ? checkStop = false: i++
+                }
+                res.push(anslists[i]);
+        }
+        console.log('res',res);
+        onResultTie(false);
+        onChangeShow(true);
+        
+        let convertDrag = [];
+        res.map((cont, idx) => {
+            convertDrag.push({
+                content: cont[0],
+                ind: cont[1],
+                id: `item-${idx}`
+            })
+        })
+        console.log('convert Drag: ', convertDrag);
+        setDragL(convertDrag);
+        console.log(dragl);
+    }
 
     const showResultMantra = (Mantra) => {
         onChangeMantra(Mantra[0].ind);
@@ -136,15 +155,16 @@ export default function Main() {
             <div className={styles.container}>
                 <div className={!showMantra ? '' : 'hidden'}><Navbar /></div>
                 {showMantra ? <div><Content10 Mantra={MantraList[mantra]} /></div> : <div className={!showMantra ? '' : 'hidden'}>
-                <div className="container mx-auto mt-8 mb-8 grid justify-items-center relative ">
+                <div className="container mx-auto md:mt-8 mb-8 grid justify-items-center relative ">
                     <div className={styles.contain}>
                         
                         <div className="container mx-auto">
+                            {resultTie ? <RenderBonus data={dragl} onSub={onSecondSubmit} />: 
+                            <>
                             <div className={showItem && !showMantra ? 'block' : 'hidden'}>
                             <div className={styles.head2}>Drag & re-order the symptoms you selected previously. </div>
                             <div className={styles.head3}>Tap and hold the symptom before dragging it. 1 being most relevant:</div>
                                 {winReady && showItem && !showMantra ? <App allItems={dragl} onSub={showResultMantra} /> : null}
-                                {/* <button className='block greenbtn mt-4' onClick={() => onShowMantra(true)}>Submit</button> */}
                             </div>
                             <div className={!showItem ? 'block' : 'hidden'}>
                                 {Allquestion.map((content, index) => (
@@ -154,6 +174,9 @@ export default function Main() {
                                 ))}                                
                                 
                             </div>
+                            </>
+                            }
+                            
                         </div>
                     </div>
                     <div className="mt-4"></div>

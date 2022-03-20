@@ -43,7 +43,7 @@ export const RenderQuestion = ({ questionJs, handlePrev, handleNext }) => {
     return (
         <>
             <h2 className={styles.head2}>{questionJs.question}</h2>
-            <div className="grid md:grid-cols-2 gap-4 p-6 md:pb-10">
+            <div className="grid md:grid-cols-2 gap-2 md:gap-4 pt-2 pb-2 md:pb-10">
                 {questionJs.answer.map((answers, index) => (
                     <div key={index}>
                         <Answer data={answers.data} ind={answers.ind} arrInd={index} onChangeResult={HandleAns} />
@@ -57,5 +57,34 @@ export const RenderQuestion = ({ questionJs, handlePrev, handleNext }) => {
 }
 
 export const RenderBonus = ({ data, onSub}) => {
-    
+    const [ans, onChangeAns] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    const updateData = (value, ind) => {
+        let new_arr = ans;
+        ind != 100 ? new_arr[ind] = value: new_arr[0] = value
+        onChangeAns(new_arr);
+        console.log(value, ' and ', ind);
+        console.log(ans);
+    }
+    const HandleAns = (value, ind, arrInd) => {
+        console.log(value);
+        if (value == true) {
+            updateData(ind, arrInd);
+        } else {
+            updateData(0, arrInd);
+        }
+    }
+
+    return (
+        <>
+            <h2 className={styles.head2}>Choose 3 options: </h2>
+            <div className="grid md:grid-cols-2 gap-4 p-6 md:pb-10">
+                {data.map((answers, index) => (
+                    <div key={index}>
+                        <Answer data={answers.content} ind={answers.ind} arrInd={index} onChangeResult={HandleAns} />
+                    </div>
+                ))}
+            </div>
+            <button className='greenbtn' onClick={() => onSub(ans)}>Submit</button>
+        </>
+    )
 }

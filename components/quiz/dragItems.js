@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-
+import styles from '../../styles/6p.module.css';
 // fake data generator
 const getItems = (count) => Array.from({length: count}, (v, k) => k).map(k => ({
   id: `item-${k}`,
@@ -25,16 +25,15 @@ const getItemStyle = (draggableStyle, isDragging) => ({
   margin: `0 0 ${grid}px 0`,
   
   // change background colour if dragging
-  background: isDragging ? 'lightgreen' : 'grey',
-  
-  // styles we need to apply on draggables
+  background: isDragging ? '#B99173' : 'none',
+
   ...draggableStyle
 });
 
 const getListStyle = (isDraggingOver) => ({
-  background: isDraggingOver ? 'lightblue' : 'lightgrey',
-  padding: grid,
-  width: 250
+//   background: isDraggingOver ? 'lightblue' : 'lightgrey',
+//   padding: grid,
+//   width: 250
 });
       
 export default class App extends React.Component {
@@ -75,6 +74,7 @@ export default class App extends React.Component {
             >
               {this.state.items.map((item, index) => (
                 <Draggable
+                 
                   key={item.id}
                   draggableId={item.id}
                   index={index}
@@ -85,6 +85,7 @@ export default class App extends React.Component {
                         ref={provided.innerRef}
                         {...provided.dragHandleProps}
                         {...provided.draggableProps}
+                        className={styles.card}
                         style={getItemStyle(
                           provided.draggableProps.style,
                           snapshot.isDragging
@@ -101,9 +102,17 @@ export default class App extends React.Component {
             </div>
            )}
         </Droppable>
-        <button className="greenbtn" onClick={() => this.props.onSub(this.state.items)}>
+        <div className="block md:hidden">
+        <button className="greenbtn-2 mt-4" onClick={() => this.props.onSub(this.state.items)}>
             Submit
         </button>
+        </div>
+        <div className="hidden md:block">
+        <button className="greenbtn mt-4" onClick={() => this.props.onSub(this.state.items)}>
+            Submit
+        </button>
+        </div>
+        
       </DragDropContext>
       
      ); 

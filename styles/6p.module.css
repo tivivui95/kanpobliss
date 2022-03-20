@@ -1,6 +1,6 @@
 .contain {
     width: 100%;
-    padding: 48px;
+    padding: 24px;
     border-radius: 48px;
     background-color: rgba(0, 0, 0, 0);
     position: relative;
@@ -140,7 +140,7 @@
 
   @media only screen and (max-width: 768px) {
     .nextbtn {
-        left: 324px !important;
+        left: 340px !important;
     }
     .prevbtn {
         left: 20px !important;
@@ -150,6 +150,23 @@
     }
     .greenbar {
         width: 25px !important;
+    }
+    .head2 {
+        font-size: 24px;
+        color: #F8EEE4;
+    }
+    .head3 {
+        font-size: 20px;
+        color: #F8EEE4;
+    }
+    .card {
+        border: 1px solid #F8EEE4;
+        color: #F8EEE4;
+        height: 56px;
+        font-size: 14px;
+    }
+    .cardcover input:checked ~ .card {
+        border: 1px solid #A56C50;
     }
   }
 
