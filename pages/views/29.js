@@ -1,10 +1,21 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 import styles from '../../styles/29.module.css'
 
-const Content29 = () => {
+const Content29 = ({ onNav }) => {
+    const [ agree, onShowAgree ] = useState(false);
+    const [ second, onChangeSecond ] = useState(10);
+    useEffect(() => {
+        setTimeout(function() {
+            onChangeSecond(second--);
+        }, 1000);
+        setTimeout(function() {
+            onShowAgree(true);
+        }, 10000);
+    })
     return (
         <>
         <Navbar />
@@ -65,7 +76,10 @@ const Content29 = () => {
                                     <br></br>Kanpobliss reserves the right to edit, modify, and change this Agreement at any time. We shall let our users know of these changes through electronic mail. This Agreement is an understanding between Kanpobliss and the user, and this supersedes and replaces all prior agreements regarding the use of this website.</p>
                             </div>
                         </div>
-                        <button className={styles.agree_btn}>Agree</button>
+                        {agree ? 
+                        <button onClick={() => onNav(false)} className={styles.agree_btn}>Agree</button>
+                        :
+                        <button className={styles.agree_btn}>Agree (Wait {second > 0 ? second: null}s)</button> }                        
                     </div>
                 </div>
             </div>

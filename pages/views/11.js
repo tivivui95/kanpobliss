@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
-
+import Term from './29';
 import styles from '../../styles/11.module.css'
 import { useState } from "react";
 import SocialLogin from "../../components/socialLogin";
 
-const Content11 = () => {
+const Content11 = ({ Mantra }) => {
     const [ remember, onChangeRemember ] = useState(true);
+    const [ disclaim, onShowDisclaim ] = useState(false);
 
     const handleRemember = (event) => {
         const target = event.target;
@@ -18,6 +19,8 @@ const Content11 = () => {
 
     return (
         <>
+        {disclaim ?
+        <Term onNav={onShowDisclaim} />:
         <div className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.box}>
@@ -51,15 +54,15 @@ const Content11 = () => {
                                 <input className={styles.checkboxs} type="checkbox" />    
                                 <span className="scheckmark"></span>
                                 <span className="pl-6 text-sm nearblack">
-                                    I agree to the Kanpobliss <a>Terms & Condtion</a> and <a>Privacy Policy</a></span></label>
+                                    I agree to the Kanpobliss <a onClick={() => onShowDisclaim(true)}>Terms & Condtion</a> and <a>Privacy Policy</a></span></label>
                             </div>
                         </div>
                     </div>
-                    <Link href='#'><a className="graybtn -mt-7">Sign up</a></Link>
-                    <SocialLogin />
+                    <Link href={'/disclaimer?Mantra=' + Mantra}><a className="graybtn -mt-7">Sign up</a></Link>
+                    <SocialLogin Mantra={Mantra} />
                 </div>
             </div>
-        </div>
+        </div> }
         </>
     )
 }

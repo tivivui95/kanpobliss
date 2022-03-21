@@ -3,12 +3,15 @@ import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
 import { MantraList } from "../../components/quiz/quiz1data";
 import { diet, lifestyle } from "../../components/welltipsdata";
+import { useRouter } from "next/router";
 
 import styles from '../../styles/16.module.css'
 
 const Content16 = ({ Mantra }) => {
+    const router = useRouter();
 
     const getMantraInd = () => {
+        // const getMantra = Mantra != '' ? Mantra: router.query.Mantra;
         let i = 0;
         while (MantraList[i] != Mantra) i++;
         return i;

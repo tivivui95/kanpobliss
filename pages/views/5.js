@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
-import styles from '../../styles/5p.module.css'
+import Link from "next/link";
+import styles from '../../styles/5p.module.css';
 
-export default function Content5() {
+
+export default function Content5({ onNav }) {
     return (
         <>
             <div className={styles.contain}>
@@ -21,10 +23,12 @@ export default function Content5() {
                             Recommendations provided in our body type assessment are not prescriptive but are intended to guide you to make daily choices more wisely for your unique body. We encourage you to embrace the change and empower you to build lasting positive habits.
                             </p>
                         </div>
-                        
+                        <Link href={onNav}>
                         <div className={styles.startbtn}>
                         Start Assessment
                         </div>
+                        </Link>
+                        
 
                         <div className="divider"></div>
                         <div className="nearwhite text-base">Explore more</div>

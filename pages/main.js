@@ -13,7 +13,7 @@ const FirstContent = () => {
     return (
         <>
             <div className="flex flex-col w-40 md:w-full">
-                <Link href='/quiz'>
+                <Link href='/body-type'>
                     <a>
                     <div className="w-full block h-56 md:h-80 relative">
                     <Image src='/images/4/Body Type.png' alt='' layout="fill" objectFit="cover" className="rounded-lg" />

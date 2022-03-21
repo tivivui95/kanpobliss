@@ -3,8 +3,10 @@ import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
 import styles from '../../styles/12.module.css'
 import SocialLogin from "../../components/socialLogin";
+import { useRouter } from "next/router";
 
-const Content12 = () => {
+const Content12 = ({ Mantra }) => {
+    const router = useRouter();
     return (
         <>
             <div className={styles.container}>
@@ -23,7 +25,7 @@ const Content12 = () => {
 
                         
                     </div>
-                    <Link href='#'><a className="greenbtn -mt-7">continue</a></Link>
+                    <Link href={'/signin?Mantra=' + Mantra}><a className="greenbtn -mt-7">continue</a></Link>
                     <SocialLogin />
                 </div>
             </div>

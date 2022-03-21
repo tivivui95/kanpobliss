@@ -1,16 +1,22 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
+import Disclaimer from './29';
+import React, { useState } from "react";
 
 import styles from '../../styles/11.module.css'
 
 const Content10 = ({ Mantra }) => {
+
+    const [ disclaim, onShowDisclaim ] = useState(false);
 
     const onChangeThing = () => {
 
     }
 
     return (
+        <>
+        {!disclaim ?
         <>
         <div className={styles.container}>
             <div className={styles.content}>
@@ -26,11 +32,15 @@ const Content10 = ({ Mantra }) => {
                         Sign up to learn more about your unique body type. Get personalized wellness tips and recommendations!
                         </p>
                     </div>
-                    <Link href={'/signin?Mantra=' + Mantra}><a className="greenbtn -mt-9">Sign up</a></Link>
+                    <Link href={'/signup?Mantra=' + Mantra}><a className="greenbtn -mt-9">Sign up</a></Link>
 
                 </div>
             </div>
         </div>
+        <a onClick={() => onShowDisclaim(true)} className="absolute bottom-3 nearwhite text-center w-full">Disclaimer</a>
+        </>: <Disclaimer onNav={onShowDisclaim} /> }
+        
+        
         </>
     )
 }

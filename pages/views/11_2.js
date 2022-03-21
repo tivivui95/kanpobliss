@@ -6,7 +6,7 @@ import styles from '../../styles/11.module.css';
 import { useState } from "react";
 import SocialLogin from "../../components/socialLogin";
 
-const Content11_2 = ({ onLogin }) => {
+const Content11_2 = ({ Mantra, onLogin }) => {
     const [ remember, onChangeRemember ] = useState(true);
     const [ wrong, onWrongLogin ] = useState("");
 
@@ -80,7 +80,10 @@ const Content11_2 = ({ onLogin }) => {
                         </div>
                         <div className="flow-root">
                             <div className="float-right nearblack">
+                                <Link href={'/forgot?Mantra=' + Mantra}>
                                 Forget Password
+                                </Link>
+                                
                             </div>
                         
                         </div>

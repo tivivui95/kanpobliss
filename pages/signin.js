@@ -1,5 +1,5 @@
 import Content112 from './views/11_2';
-import Content16 from './views/16';
+import Content13 from './views/13';
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -9,7 +9,7 @@ export default function({ Mantra }) {
     console.log(router.query);
     return (
         <>
-        {!login ? <Content112 onLogin={onLogin} /> : <Content16 Mantra={router.query.Mantra} />}
+        {!login ? <Content112 Mantra={router.query.Mantra} onLogin={onLogin} /> : <Content13 Mantra={router.query.Mantra} />}
         </>
     )
 }
