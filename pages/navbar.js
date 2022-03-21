@@ -112,13 +112,13 @@ export default function Navbar() {
                             </a>
                             </Link>
                             </li>
-                            <li className="mt-8"><Link href='/main'>
+                            <li className="mt-8"><Link href='/feedback'>
                             <a>
                             Feedback
                             </a>
                             </Link>
                             </li>
-                            <li className="mt-8"><Link href='/main'>
+                            <li className="mt-8"><Link href='/about-us'>
                             <a>
                             About Us
                             </a>

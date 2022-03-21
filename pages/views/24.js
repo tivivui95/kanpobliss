@@ -24,7 +24,7 @@ const iconsrc = [
 ]
 
 
-export default function Content25() {
+export default function Content24() {
     return (
         <div>
         <div>
