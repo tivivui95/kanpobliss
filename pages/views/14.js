@@ -29,7 +29,7 @@ const Content14 = ({ Mantra, onNext }) => {
                     <div className={styles.CenterBox}>
                         
                         
-                        <div className="text-sm p-4 md:pl-20 md:pr-20">{NeedsData[getMantraInd]}</div>
+                        <div className="text-sm p-4 md:pl-20 md:pr-20">{NeedsData[getMantraInd()]}</div>
                         
                     </div>
                     <button onClick={()=>onNext(true)} className={styles.sign_btn1}>WELLNES TIPS</button>
