@@ -26,7 +26,6 @@ const iconsrc = [
 
 export default function Content24() {
   const router = useRouter();
-  console.log("router :>> ", router);
 
   return (
     <div>
@@ -43,13 +42,20 @@ export default function Content24() {
           />
           <div className={styles.buttonView}>
             <button
+              className={styles.buttonPlay}
               onClick={() =>
                 router.push(
                   `/guide-practice/details/${router.query.details}/play`
                 )
               }
             >
-              Play
+              <i className="bi bi-play-fill"></i>
+            </button>
+            <button
+              className={styles.buttonBack}
+              onClick={() => router.push(`/guide-practice`)}
+            >
+              <i className="bi bi-arrow-left-short"></i>
             </button>
           </div>
         </div>
