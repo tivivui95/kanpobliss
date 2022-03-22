@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
-import NeedsData from "../../components/quiz/needdata";
-import MantraList from "../../components/quiz/quiz1data";
+import {NeedsData} from "../../components/quiz/needdata";
+import {MantraList} from "../../components/quiz/quiz1data";
 
 import styles from '../../styles/14.module.css'
 
