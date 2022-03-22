@@ -1,7 +1,8 @@
 import styles from '../../styles/2245.module.css'
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
-import MainStyles from '../styles/Main.module.css';
+// import MainStyles from '../styles/Main.module.css';
+import MainStyles from '../../styles/Main.module.css';
 export default function Content27() {
     return (
         <>

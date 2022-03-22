@@ -67,7 +67,5 @@ export default function Home() {
       {load ? <Landing text={data[0]} opacity={opa} pos={data[1]} imgUrl={data[2]} />: Mstate >= 12 ? 
       <Main /> : null}
     </>
-    
-    
-  )
+  );
 }
