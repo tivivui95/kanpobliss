@@ -138,12 +138,12 @@ export default function Navbar() {
             <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link href='/'>
-                        <a className="flex items-center">
-                            <Image src="/images/Logo.svg" height={45} width={145} />
+                        <a className="md:flex items-center md:relative hidden w-56 h-10 mt-12">
+                            <Image src="/images/Logo.svg" layout="fill" objectFit="scale-down" alt='' />
                         </a>
                     </Link>
                     
-                    <div className="w-auto inline-block" id="mobile-menu">
+                    <div className="w-auto inline-block md:relative absolute right-2 top-4" id="mobile-menu">
                         <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li className={MainStyles.lighttext}>
                             <Link href='/11'>

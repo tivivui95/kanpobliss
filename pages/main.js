@@ -8,6 +8,13 @@ import Autoplay from 'embla-carousel-autoplay';
 import { useState } from 'react';
 import Link from "next/link";
 
+const IntroDrawer = ({ text, pos }) => {
+    return (
+        <>
+        
+        </>
+    )
+}
 
 const FirstContent = () => {
     return (
