@@ -4,6 +4,16 @@ import Link from "next/link";
 
 import styles from '../../styles/15.module.css'
 
+import { hightlight } from "../../components/quiz/needdata";
+import MantraList from "../../components/quiz/quiz1data";
+
+const indx = (Mantra) => {
+    MantraList.map((cont, ind) => {
+        if (cont == Mantra) return ind;
+    })
+}
+
+
 const Content15 = ({Mantra}) => {
     return (
         <>
@@ -15,7 +25,8 @@ const Content15 = ({Mantra}) => {
                     <div className={styles.CenterBox}>
                         {/* <img className={styles.symbol" src="/images/14/Group 214.png}> */}
                         <Image src="/images/14/Group 214.png" width={116} height={116} alt="" />
-                        <div className={styles.note}>Your yin and yang are well balanced and your vital energy, qi, is flowing harmoniously throughout your body! In TCM, your body type is called Neutral. However, yin and yang are in constant flux and can be affected by your changing lifestyle and external environment. Keep up the good work and continuously ensure the balance of yin and yang. If one becomes unbalanced in the body, illness occurs...  
+                        <div className={styles.note}>
+                            {hightlight[indx(Mantra)]}
                         <a className={styles.learn}>Learn More</a> 
                             <br/>
                             Click on our lifestyle tips and recommendations for preventative self-care practices to help you maintain the harmony in your body!</div>

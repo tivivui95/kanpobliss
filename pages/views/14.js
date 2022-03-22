@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
+import { NeedsData } from "../../components/quiz/needdata";
+import MantraList from "../../components/quiz/quiz1data";
 
 import styles from '../../styles/14.module.css'
+
+const indx = (Mantra) => {
+    MantraList.map((cont, ind) => {
+        if (cont == Mantra) return ind;
+    })
+}
 
 const Content14 = ({ Mantra, onNext }) => {
     return (
@@ -19,10 +27,7 @@ const Content14 = ({ Mantra, onNext }) => {
                     <div className={styles.CenterBox}>
                         
                         
-                        <div className="text-sm p-4 md:pl-20 md:pr-20">Your yin and yang are well balanced and your vital energy, qi, is flowing harmoniously throughout your body! In TCM, your body type is called Neutral. However, yin and yang are in constant flux and can be affected by your changing lifestyle and external environment. Keep up the good work and continuously ensure the balance of yin and yang. If one becomes unbalanced in the body, illness occurs...  
-                        <a className={styles.learn}>Learn More</a> 
-                            <br/>
-                            Click on our lifestyle tips and recommendations for preventative self-care practices to help you maintain the harmony in your body!</div>
+                        <div className="text-sm p-4 md:pl-20 md:pr-20">{NeedsData[indx(Mantra)]}</div>
                         
                     </div>
                     <button onClick={()=>onNext(true)} className={styles.sign_btn1}>WELLNES TIPS</button>
