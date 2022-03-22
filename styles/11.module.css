@@ -98,7 +98,7 @@
   width: 300px;
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .inputBoxChange .passwordBtn {
   font-size: 14px;
