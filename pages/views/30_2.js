@@ -6,7 +6,7 @@ import styles from "../../styles/11.module.css";
 import { useState } from "react";
 import SocialLogin from "../../components/socialLogin";
 
-const Content11 = ({ Mantra }) => {
+const Content30_2 = ({ Mantra }) => {
   const [remember, onChangeRemember] = useState(true);
   const [disclaim, onShowDisclaim] = useState(false);
 
@@ -34,7 +34,7 @@ const Content11 = ({ Mantra }) => {
                 />
               </div>
               <div className={styles.CenterBox}>
-                <h1 className={styles.TextHello}>Hello Friend!</h1>
+                <h1 className={styles.TextHello}>Change Password</h1>
                 <div className={styles.inputBox}>
                   <div className={styles.Icon}>
                     <Image
@@ -79,40 +79,11 @@ const Content11 = ({ Mantra }) => {
                   </div>
                   <input type="password" placeholder="Confirm Password" />
                 </div>
-                <div className={styles.checking}>
-                  <div>
-                    <label className="scheckbox text-xs -ml-5">
-                      <input
-                        className={styles.checkboxs}
-                        type="checkbox"
-                        checked={remember}
-                        onChange={handleRemember}
-                      />
-                      <span className="scheckmark"></span>
-                      <span className="pl-6 text-sm nearblack">
-                        Remember me for login
-                      </span>
-                    </label>
-                  </div>
-                  <div>
-                    <label className="scheckbox text-xs -ml-5">
-                      <input className={styles.checkboxs} type="checkbox" />
-                      <span className="scheckmark"></span>
-                      <span className="pl-6 text-sm nearblack">
-                        I agree to the Kanpobliss{" "}
-                        <a onClick={() => onShowDisclaim(true)}>
-                          Terms & Condtion
-                        </a>{" "}
-                        and <a>Privacy Policy</a>
-                      </span>
-                    </label>
-                  </div>
-                </div>
               </div>
-              <Link href={"/disclaimer?Mantra=" + Mantra}>
-                <a className="graybtn -mt-7">Sign up</a>
+
+              <Link href={"#"}>
+                <a className="greenbtn -mt-7">UPDATE Password</a>
               </Link>
-              <SocialLogin Mantra={Mantra} />
             </div>
           </div>
         </div>
@@ -121,4 +92,4 @@ const Content11 = ({ Mantra }) => {
   );
 };
 
-export default Content11;
+export default Content30_2;
