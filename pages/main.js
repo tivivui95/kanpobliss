@@ -3,6 +3,7 @@ import MainStyles from '../styles/Main.module.css'
 import Image from "next/image";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import EmblaCarouselReact from "embla-carousel-react";
 import EmblaStyles from "../styles/embla.module.css";
 import Autoplay from 'embla-carousel-autoplay';
 import { useState } from 'react';
@@ -80,6 +81,7 @@ function MainImageSlider() {
       });
     return (
         <>
+        
         <div className={EmblaStyles.embla}>
         <div className={EmblaStyles.embla__viewport} ref={viewportRef}>
             <div className={EmblaStyles.embla__container}>

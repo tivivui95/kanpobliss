@@ -32,13 +32,13 @@ export default function Content5({ onNav }) {
 
                         <div className="divider"></div>
                         <div className="nearwhite text-base">Explore more</div>
-                        <div className="grid md:grid-cols-2 gap-8 pt-4 pb-4">
+                        <div className="grid md:grid-cols-2 md:gap-8 gap-4 pt-4 pb-4">
                             <div className="relative">
-                                <h1 className={styles.cardtitle}>Body Recovery Assessment</h1>
+                                <h1 className={styles.cardtitle}>Body Recovery</h1>
                                 <Image src='/images/5/image 2.png' layout="fill" objectFit="cover" className={styles.imgcover} />                            
                             </div>
                             <div className="relative">
-                                <h1 className={styles.cardtitle}>Wellbeing Toolkit</h1>
+                                <h1 className={styles.cardtitle}>Guided Practices</h1>
                                 <Image src='/images/5/Rectangle 15.png' layout="fill" objectFit="cover" className={styles.imgcover} />                            
                             </div>
                         </div>
