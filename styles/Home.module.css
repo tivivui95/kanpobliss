@@ -20,8 +20,8 @@ opacity: 0.5;
   padding: 12px;
   flex-direction: row;
   position: absolute;
-  left: 2rem;
-  bottom: 1rem;
+  left: 10vw;
+  bottom: 35vh;
   z-index: 4;
 }
 
@@ -33,6 +33,7 @@ opacity: 0.5;
   background: #073E0D;
   border-radius: 0.2rem;
   transition: width 1s;
+  transition: background 1s;
 }
 
 .next {
@@ -44,6 +45,7 @@ opacity: 0.5;
   background: #F8EEE4;
   border-radius: 0.2rem;
   transition: width 1s;
+  transition: background 1s;
   
 }
 
@@ -123,5 +125,9 @@ opacity: 0.5;
     font-size: 6vh;
     line-height: 6.5vh;
     bottom: 10vh;
+  }
+  .navbar {
+    left: 10vw;
+    bottom: 5vh;
   }
 }

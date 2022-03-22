@@ -76,7 +76,7 @@ export const RenderBonus = ({ data, onSub}) => {
 
     return (
         <>
-            <h2 className={styles.head2}>Choose 3 options: </h2>
+            <h2 className={styles.head2}>Out of what you selected previously, select 3 symptoms that you feel is most severe now.</h2>
             <div className="grid md:grid-cols-2 gap-4 p-6 md:pb-10">
                 {data.map((answers, index) => (
                     <div key={index}>

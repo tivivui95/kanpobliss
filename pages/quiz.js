@@ -55,12 +55,15 @@ export default function Main() {
         } else {
             
             mantraList.map((matraEl) => {
-                let checkStop = true;
                 let i = 0;
-                while (checkStop) {
-                    anslists[i][1] == matraEl ? checkStop = false: i++
+                if (anslists) {
+                    while (i < anslists.length) {
+                        if (anslists[i])
+                        anslists[i][1] == matraEl ? res.push(anslists[i]): null;
+                        i++;
+                    }
                 }
-                res.push(anslists[i]);
+                
             })
             onResultTie(true);
             onChangeShow(true);
@@ -86,14 +89,19 @@ export default function Main() {
         console.log('result', resSorted);
         console.log('ans List: ', anslists);
         let res = [];
-        for (let inx = 0; inx < 3; inx++) {
+        for (let inx = 0; inx < resSorted.length; inx++) {
             const matraEl = resSorted[inx];
-            let checkStop = true;
                 let i = 0;
-                while (checkStop) {
-                    anslists[i][1] == matraEl ? checkStop = false: i++
+                while (true) {
+                    if (anslists[i])
+                    if (anslists[i][1] == matraEl) {
+                        res.push(anslists[i]);
+                        i++;
+                        break;
+                    } else i++;
+                    else break;
                 }
-                res.push(anslists[i]);
+                
         }
         console.log('res',res);
         onResultTie(false);
@@ -182,7 +190,7 @@ export default function Main() {
                     <div className="mt-4"></div>
                     <div className={!showItem ? 'block' : 'hidden'}>
                         <div className={styles.graybar}>
-                            <div className={styles.greenbar} style={{ marginLeft: curPage * 25 }}></div>
+                            <div className={styles.greenbar} style={{ width: 25 + curPage * 25 }}></div>
                         </div>
                     </div>
                     

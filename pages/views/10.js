@@ -2,13 +2,18 @@ import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
 import Disclaimer from './29';
+import Content9 from "./9";
+
 import React, { useState } from "react";
 
-import styles from '../../styles/11.module.css'
+
+import styles from '../../styles/11.module.css';
+
 
 const Content10 = ({ Mantra }) => {
 
     const [ disclaim, onShowDisclaim ] = useState(false);
+    const [ info, onGetInfo ] = useState(true);
 
     const onChangeThing = () => {
 
@@ -16,7 +21,7 @@ const Content10 = ({ Mantra }) => {
 
     return (
         <>
-        {!disclaim ?
+        {!disclaim && !info ?
         <>
         <div className={styles.container}>
             <div className={styles.content}>
@@ -38,7 +43,7 @@ const Content10 = ({ Mantra }) => {
             </div>
         </div>
         <a onClick={() => onShowDisclaim(true)} className="absolute bottom-3 nearwhite text-center w-full">Disclaimer</a>
-        </>: <Disclaimer onNav={onShowDisclaim} /> }
+        </>: info ? <Content9 onChange={onGetInfo} /> : <Disclaimer onNav={onShowDisclaim} /> }
         
         
         </>

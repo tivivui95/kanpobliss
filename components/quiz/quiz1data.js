@@ -36,7 +36,7 @@ export const Allquestion = [
             },
             {
                 data: 'Not applicable',
-                ind: 0,
+                ind: 100,
             },
         ]
     },

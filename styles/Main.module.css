@@ -23,6 +23,10 @@
     color: #F8EEE4;
 }
 
+.roundedcustomfull {
+    border-radius: 10px !important;
+}
+
 .mbfooter {
     font-family: Tenor Sans;
     font-size: 1rem;
@@ -70,6 +74,7 @@
 
 .moonimg {
     mix-blend-mode: screen;
+    left: -20px !important;
     /* transform: rotate(-180deg); */
 }
 

@@ -146,7 +146,7 @@ export default function Navbar() {
                     <div className="w-auto inline-block md:relative absolute right-2 top-4" id="mobile-menu">
                         <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li className={MainStyles.lighttext}>
-                            <Link href='/11'>
+                            <Link href='/quiz'>
                                 <a  className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Body Type Assessment</a>
                                 </Link>
                             </li>

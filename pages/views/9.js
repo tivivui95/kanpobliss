@@ -4,10 +4,58 @@ import styles from '../../styles/6p.module.css';
 import MainStyles from '../../styles/Main.module.css';
 import { useState } from "react";
 
-export default function Content9() {
+const InputData = ( {text} ) => {
+    const [check, setChecked] = useState(false);
+    const handleInputChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        setChecked(value);
+    }
+    return (
+        <label className="checkbox text-xs -ml-4">
+                                <input
+                                    name="isGoing"
+                                    type="checkbox"
+                                    checked={check}
+                                    onChange={handleInputChange}
+                                />
+                                <span className="checkmark"></span>
+                                <span className="labelcheck text-sm">&#160; &#160; &#160;
+                                {text}</span>
+                            </label>
+    )
+}
+
+const Q1 = [
+    'Stress management',
+    'Diet & weight management',
+    'Improve immunity',
+    'Healthy sleep habits ',
+    'Others'
+]
+
+const Q2 = [
+    'Breathwork & meditation',
+    'Fitness workout',
+    'Diet detox',
+    'Spa massage & treatment',
+    'Yoga',
+    'Others'
+]
+
+const Q3 = [
+    'Movement meditation',
+    'Self massage',
+    'Sound healing',
+    'Plant medicine',
+    'Others'
+]
+
+export default function Content9({ onChange }) {
     const [age, onChangeAge] = useState('Choose your age range:');
     const [gender, onChangeGender] = useState(0);
     const [check1st, on1stChecked] = useState(false);
+
     const handleAge = (event) => {
         onChangeAge(event.target.value)
     }
@@ -17,9 +65,9 @@ export default function Content9() {
     const handleInputChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
         on1stChecked(value);
     }
+
     return (
         <>
         <Navbar />
@@ -59,37 +107,20 @@ export default function Content9() {
                             </div>
                         </div>
                         <div className="text-left">
-                            <div className="test-base brown">*What are your current wellbeing goals?</div>
-                            <label className="checkbox text-xs -ml-4">
-                                <input
-                                    name="isGoing"
-                                    type="checkbox"
-                                    checked={check1st}
-                                    onChange={handleInputChange}
-                                />
-                                <span className="checkmark"></span>
-                                <span className="labelcheck text-sm">&#160; &#160; &#160;
-                                Stress management</span>
-                            </label>
-                            <label className="checkbox text-xs -ml-4">
-                                <input
-                                    name="isGoing"
-                                    type="checkbox"
-                                    checked={check1st}
-                                    onChange={handleInputChange}
-                                />
-                                <span className="checkmark"></span>
-                                <span className="labelcheck text-sm">&#160; &#160; &#160;
-                                Diet & weight management</span>
-                            </label>
-                            <textarea value='Others' onChange={handleInputChange} />
+                            <div className="ml-4 test-base brown">*What are your current wellbeing goals?</div>
+                            {Q1.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
+                            <textarea className="ml-4 w-5/6" value='Others' onChange={handleInputChange} />
+                            <div className="ml-4 test-base brown">What are your current wellness practices?</div>
+                            {Q2.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
+                            <div className="ml-4 test-base brown">Which of these wellness practices interest you?</div>
+                            {Q3.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
                         </div>
-                        <div className={styles.submit}>Submit Answers</div>
+                        <div onClick={() => onChange(false)} className={styles.submit}>Submit Answers</div>
                         <br />
                     </div>
-                    <div className="md:mt-4">
+                    {/* <div className="md:mt-4">
                         <Image src='/images/6/next.png' alt="" width={420} height={40} />
-                    </div>
+                    </div> */}
 
                 </div>
 
