@@ -6,13 +6,15 @@ import MantraList from "../../components/quiz/quiz1data";
 
 import styles from '../../styles/14.module.css'
 
-const indx = (Mantra) => {
-    MantraList.map((cont, ind) => {
-        if (cont == Mantra) return ind;
-    })
-}
+
 
 const Content14 = ({ Mantra, onNext }) => {
+    const getMantraInd = () => {
+        // const getMantra = Mantra != '' ? Mantra: router.query.Mantra;
+        let i = 0;
+        while (MantraList[i] != Mantra) i++;
+        return i;
+    }
     return (
         <>
             <div className={styles.container}>
@@ -27,7 +29,7 @@ const Content14 = ({ Mantra, onNext }) => {
                     <div className={styles.CenterBox}>
                         
                         
-                        <div className="text-sm p-4 md:pl-20 md:pr-20">{NeedsData[indx(Mantra)]}</div>
+                        <div className="text-sm p-4 md:pl-20 md:pr-20">{NeedsData[getMantraInd]}</div>
                         
                     </div>
                     <button onClick={()=>onNext(true)} className={styles.sign_btn1}>WELLNES TIPS</button>

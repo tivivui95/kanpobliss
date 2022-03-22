@@ -7,14 +7,14 @@ import styles from '../../styles/15.module.css'
 import { hightlight } from "../../components/quiz/needdata";
 import MantraList from "../../components/quiz/quiz1data";
 
-const indx = (Mantra) => {
-    MantraList.map((cont, ind) => {
-        if (cont == Mantra) return ind;
-    })
-}
-
-
 const Content15 = ({Mantra}) => {
+    
+    const getMantraInd = () => {
+        let i = 0;
+        while (MantraList[i] != Mantra) i++;
+        return i;
+    }
+
     return (
         <>
         <div className={styles.container}>
@@ -26,7 +26,7 @@ const Content15 = ({Mantra}) => {
                         {/* <img className={styles.symbol" src="/images/14/Group 214.png}> */}
                         <Image src="/images/14/Group 214.png" width={116} height={116} alt="" />
                         <div className={styles.note}>
-                            {hightlight[indx(Mantra)]}
+                            {hightlight[getMantraInd]}
                         <a className={styles.learn}>Learn More</a> 
                             <br/>
                             Click on our lifestyle tips and recommendations for preventative self-care practices to help you maintain the harmony in your body!</div>
