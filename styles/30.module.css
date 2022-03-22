@@ -15,6 +15,52 @@
     flex-wrap: wrap;
     padding: 0 0 0 0;
   }
+
+  .bodyItem .bodyLeft{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px
+  }
+  .bodyCotent .bodyTitle{
+    font-size: 16px !important;
+  }
+  
+  .bodyCotent .bodyRight{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+  
+  .bodyCotent .bodyDate{
+    font-size: 16px !important;
+    color: #ffffff;
+    line-height:27.4px;
+    padding-left: 5px
+  }
+  
+  .bodyCotent .bodyBtn{
+    width: 117px !important;
+    height: 30px !important;
+    background: #073E0D;
+    font-size: 14px !important;
+  }
+}
+
+@media only screen and (max-width: 768px){
+   .container{
+      justify-content: center;
+      padding: 0px !important;
+  }
+ .container .block{
+      padding: 1rem !important;
+      width: 45%;
+      height: 320px;
+  }
+ 
+   .container .block .price{
+      position: relative;
+  }
+
 }
 
 @media (orientation: landscape) {
@@ -28,6 +74,26 @@
     flex-direction: row;
     justify-content: flex-start;
   }
+
+  .bodyItem .bodyLeft{
+    width: 37px;
+    height: 37px;
+  }
+  .bodyCotent {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+  }
+ .container .block{
+    padding: 0.5rem;
+    width: 329.65px;
+    height: 244.98px;
+}
+.container .block .price{
+    position: relative;
+}
+
+
 }
 
 .contain {
@@ -36,6 +102,7 @@
   min-height: 100vh;
   width: 100%;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .box {
@@ -49,6 +116,10 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+
+.bio {
+  color: #ffffff
 }
 
 .heading .infor .hello {
@@ -109,4 +180,140 @@
 .recommend .selection .buttonRe:hover {
   background-color: #073e0d;
   border: 2px solid #073e0d;
+}
+
+
+.bodyItem {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top:20px
+
+}
+.bodyItem .bodyLeft{
+  background-color: #F8EEE4;
+  border-radius: 50%;
+}
+
+.bodyCotent .bodyTitle{
+  font-size: 25px;
+  color: #ffffff;
+  line-height:27.4px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.bodyCotent .bodyRight{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px
+}
+
+.bodyCotent .bodyDate{
+  font-size: 18px;
+  color: #ffffff;
+  line-height:27.4px;
+  padding-left: 5px
+}
+
+.bodyCotent .bodyBtn{
+  width: 177px;
+  height: 40px;
+  background: #073E0D;
+  color: #ffffff;
+  border-radius: 100px;
+}
+
+.slider {
+  margin-top: 30px;
+}
+.slider i {
+  color: #ffffff;
+  font-size: 20px;
+  display: inline-block;
+}
+.slider .title {
+  color: #ffffff;
+  font-size: 20px;
+  display: inline-block;
+}
+
+ .container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0;
+}
+
+
+.container .block{
+  padding: 0.5rem;
+  background: #F8EEE4;
+  border-radius: 10px 10px 10px 40px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* cursor: pointer; */
+}
+
+ .container .block .heading{
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.3px;
+  color: #B99173;
+  border-bottom: 2px solid #B99173;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+ .container .block .text{
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 115.5%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.3px;
+
+  color: #523922;
+  cursor: pointer;
+}
+
+
+.container .block .note{
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 115.5%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.3px;
+
+  color: #B99173;
+
+}
+
+
+.container .block .price{
+  position: relative;
+  font-family: Tenor Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 115.5%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #B99173;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;  
 }
