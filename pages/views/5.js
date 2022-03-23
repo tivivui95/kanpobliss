@@ -11,7 +11,7 @@ export default function Content5({ onNav }) {
                 <div className={styles.content}>
                     <Navbar />
                     <div className="container mx-auto px-4 mt-12">
-                        <h1 className={styles.head1}>Title - About Body Constitution Assessment</h1>
+                        <h1 className={styles.head1}>About Body Constitution Assessment</h1>
                         <div className="text-sm">
                             <p className="nearwhite mt-4">
                                 TCM (Traditional Chinese Medicine) is an individualized health and wellbeing system, based on the principle that different body constitutions, i.e., types, respond differently to the same lifestyle choices or environmental factors. Your body constitution is made up of your body's structural and functional characteristics, your temperament, your body's adaptability to environmental changes and susceptibility to disease. It is partly genetically determined and partly acquired based on your lifestyle and environment. In TCM, your body constitution forms the foundation of diagnosis, disease treatment and prevention.
