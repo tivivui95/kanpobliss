@@ -1,6 +1,6 @@
 export const Allquestion = [
     {
-        question: 'Which of the following describes your usual appetite and digestion?',
+        question: 'Which of the following describes your usual appetite and digestion? Select all that apply. ',
         answer: [
             {
                 data: 'Poor digestion',
@@ -41,7 +41,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Which of the following describes your usual bowel movement?',
+        question: 'Which of the following describes your usual bowel movement? Select all that apply. ',
         answer: [
             {
                 data: 'Profuse clear urination',
@@ -70,7 +70,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Which of the following describes your usual mental and emotional state?',
+        question: 'Which of the following describes your usual mental and emotional state? Select all that apply. ',
         answer: [
             {
                 data: 'Emotionally stable',
@@ -107,7 +107,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Which of the following describes your usual physical appearance?',
+        question: 'Which of the following describes your usual physical appearance? Select all that apply. ',
         answer: [
             {
                 data: 'Dark eye bags',
@@ -148,7 +148,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Which of the following describes your skin complexion?',
+        question: 'Which of the following describes your skin complexion? Select all that apply. ',
         answer: [
             {
                 data: 'Sallow complexion',
@@ -230,7 +230,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Which of the following describes how your body feels from changes in weather or environment? ',
+        question: 'Which of the following describes how your body feels from changes in weather or environment? Select all that apply. ',
         answer: [
             {
                 data: 'Body is hot to touch, frequent low grade fever',
@@ -271,7 +271,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Do you often experience any of these symptoms? Select all that apply.',
+        question: 'Do you often (i.e., 2-3 time a week) experience any of these symptoms? Select all that apply.',
         answer: [
             {
                 data: 'Bodyache across differents areas of the body',
@@ -304,7 +304,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Do you often experience any of these symptoms? Select all that apply.',
+        question: 'Do you often (i.e., 2-3 time a week) experience any of these symptoms? Select all that apply.',
         answer: [
             {
                 data: 'Thick yellowish tongue coating',
@@ -337,7 +337,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: '(Optional) Do you often experience any of these women\'s health conditions? Select all that apply.',
+        question: '(Optional) Do you often (i.e., 2-3 time a week) experience any of these women\'s health conditions? Select all that apply.',
         answer: [
             {
                 data: 'Severe PMS and tender breasts before periods',
