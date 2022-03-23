@@ -53,9 +53,9 @@ export function Footer() {
                 <div className="col-span-2">
                     <div className={MainStyles.inputBox}>
                         <div className={MainStyles.Icon}><Image src='/images/mail.svg' alt='' layout="fill" objectFit="scale-down" /></div>
-                        <input type="email" placeholder="Enter Email for Subscribe" className="nearwhite" />
+                        <input type="email" placeholder="Enter Email" className="nearwhite" />
                     </div>
-                    <div className="subbtn ml-4">Subscribe</div>
+                    <div className="subbtn ml-4">SUBSCRIBE</div>
                 </div>
             </div>
             <div className="w-full  pl-20 p-4 pt-8 hidden md:flow-root nearwhite text-xs" style={{ background: "#523922" }}>
@@ -91,7 +91,7 @@ export default function Navbar() {
                         </div>
                         <ul className="float-right text-right mt-16 nearwhite">
                             <li className="mt-8">
-                                <Link href='/main'>
+                                <Link href='/body-type'>
                                     <a>
                                         Body Constitution
                             </a>
