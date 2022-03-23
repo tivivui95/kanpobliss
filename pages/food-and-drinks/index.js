@@ -1,28 +1,30 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { useRouter } from "next/router";
 import Image from "next/image";
-import Navbar, { MBFooter, Footer } from "../navbar";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { fetchAPI } from "../../lib/api";
 import styles from "../../styles/18.module.css";
+import Navbar, { Footer, MBFooter } from "../navbar";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 // eslint-disable-next-line react/display-name
 export default function ({ listRes, listDishes }) {
-  console.log("nnnnnnnnn  ", listRes);
-  console.log("nnnnnnnnn  ", listDishes);
   const router = useRouter();
   const [listRestaurant, setListRestaurant] = useState([...listRes]);
+  const [listDish, setListDish] = useState([...listDishes]);
   const [currentTab, setCurrentTab] = useState("All");
 
   useEffect(() => {
     if (currentTab === "All") {
-      // setListContents(defaultContents);
+      setListDish([...listDishes]);
     } else {
-      // let newList = defaultContents.filter((item) => item.title === currentTab);
-      // setListContents(newList);
+      let newRes = listDishes.filter(item=>item.nameResOrSpa===currentTab);
+      setListDish([...newRes]);
     }
   }, [currentTab]);
+
+  console.log("listRestaurant :>> ", listRestaurant);
+  console.log("listDish :>> ", listDish);
 
   return (
     <>
@@ -63,100 +65,16 @@ export default function ({ listRes, listDishes }) {
               ))}
             </div>
             <div className={styles.container}>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant A</h3>
-                  <h3 className={styles.text}>
-                    Braised Supreme Dried 15 Head Australian Xu Rong Abalone
-                  </h3>
-                  <h3 className={styles.note}>Contains Shellfish, Gluten</h3>
+              {listDish.map((item, index) => (
+                <div key={index} className={styles.block} onClick={()=>router.push(`/food-and-drinks/${item._id}`)}>
+                  <div>
+                    <h3 className={styles.heading}>{`${item.nameResOrSpa}`}</h3>
+                    <h3 className={styles.text}>{item.name}</h3>
+                    <h3 className={styles.note}>{item.description}</h3>
+                  </div>
+                  <h3 className={styles.price}>{`S$ ${item.benefit}`}</h3>
                 </div>
-                <h3 className={styles.price}>S$ 298.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant B</h3>
-                  <h3 className={styles.text}>
-                    Four Treasure Soup, sea cucumber, fish maw, dried Hokkaido
-                    scallop, crab meat
-                  </h3>
-                  <h3 className={styles.note}>Contains Shellfish, Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 28.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant E</h3>
-                  <h3 className={styles.text}>
-                    Wat Tan Black Bean Beef Ho Fun
-                  </h3>
-                  <h3 className={styles.note}>Contains Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 32.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant C</h3>
-                  <h3 className={styles.text}>
-                    Crispy Duck <br />
-                    Salad, watermelon, pomelo, cashew nut, macadamia nut,
-                    shallot, spicy yuzu sauce.
-                  </h3>
-                  <h3 className={styles.note}>
-                    Contains Gluten, Nuts or / and Peanuts
-                  </h3>
-                </div>
-                <h3 className={styles.price}>S$ 22.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant D</h3>
-                  <h3 className={styles.text}>
-                    Market Seasonal Chinese Greens, cooked any style
-                  </h3>
-                  <h3 className={styles.note}>Vegetarian</h3>
-                </div>
-                <h3 className={styles.price}>S$ 14.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant G</h3>
-                  <h3 className={styles.text}>Qi moving cocktail</h3>
-                  <h3 className={styles.note}>Contains Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 36.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant A</h3>
-                  <h3 className={styles.text}>
-                    Braised Supreme Dried 15 Head Australian Xu Rong Abalone
-                  </h3>
-                  <h3 className={styles.note}>Contains Shellfish, Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 298.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant B</h3>
-                  <h3 className={styles.text}>
-                    Four Treasure Soup, sea cucumber, fish maw, dried Hokkaido
-                    scallop, crab meat
-                  </h3>
-                  <h3 className={styles.note}>Contains Shellfish, Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 28.00</h3>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant E</h3>
-                  <h3 className={styles.text}>
-                    Wat Tan Black Bean Beef Ho Fun
-                  </h3>
-                  <h3 className={styles.note}>Contains Gluten</h3>
-                </div>
-                <h3 className={styles.price}>S$ 32.00</h3>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -175,62 +93,41 @@ export default function ({ listRes, listDishes }) {
 }
 
 export async function getStaticProps(context) {
-  // get list restaurants
-  // call api return two array
-  // array1: list restaurants {idRes:1, nameRes:'Name'}
-  // array2: list dishes {idRes, isDish, nameRes, nameDish}
+  const allDishes = await fetchAPI("Restaurant/getAll");
+  const allRes = await fetchAPI("Partner/getAll");
 
-  let listRes = [
-    {
-      id: 1,
-      name: "Restaurant 1",
-    },
-    {
-      id: 2,
-      name: "Restaurant 2",
-    },
-  ];
+  if (allDishes.result.statusCode !== 200 || allRes.result.statusCode !== 200) {
+    return {
+      notFound: true,
+    };
+  }
 
-  let listDishes = [
-    {
-      idRes: 1,
-      nameRes: "Restaurant 1",
-      idDish: 11,
-      nameDish: "Ga kho xa",
-    },
-    {
-      idRes: 1,
-      nameRes: "Restaurant 1",
-      idDish: 12,
-      nameDish: "Heo kho xa",
-    },
-    {
-      idRes: 1,
-      nameRes: "Restaurant 1",
-      idDish: 13,
-      nameDish: "Bo kho xa",
-    },
-    {
-      idRes: 2,
-      nameRes: "Restaurant 2",
-      idDish: 11,
-      nameDish: "Ga kho xa",
-    },
-    {
-      idRes: 2,
-      nameRes: "Restaurant 2",
-      idDish: 12,
-      nameDish: "Heo kho xa",
-    },
-    {
-      idRes: 3,
-      nameRes: "Restaurant 2",
-      idDish: 13,
-      nameDish: "Bo kho xa",
-    },
-  ];
+  let _listRes = [...allRes.result.partners];
+  let _listDishes = [...allDishes.result.restaurants];
+
+  let listRes = _listRes.filter((item) => item.type === "Restaurant");
+
+  let listDishes = _listDishes.map((item, index) => {
+    const findIdx = listRes.filter(
+      (element) => element._id === item.idResOrSpa
+    );
+    if(findIdx.length > 0) {
+      return {
+        ...item,
+        nameResOrSpa: findIdx[0].name,
+      }
+    } else {
+      return {
+        ...item,
+      }
+    }
+    
+  });
 
   return {
-    props: { listRes, listDishes }, // will be passed to the page component as props
+    props: {
+      listRes,
+      listDishes,
+    },
   };
 }

@@ -5,28 +5,18 @@ import { useState, useEffect } from "react";
 import styles from "../../styles/19.module.css";
 import { useRouter } from "next/router";
 import LoadPageModal from "../../components/LoadPageModal";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { fetchAPI } from "../../lib/api";
 
-const DishDetail = ({ dishId }) => {
+const DishDetail = ({dishData, listResOther}) => {
+  
   const router = useRouter();
 
+  const [listDish, setListDish] = useState([]);
   const [detailData, setDetailData] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const getDetailData = async (id) => {
-    try {
-      //   call api get dish by id
-      console.log("id :>> ", id);
-    } catch (error) {
-      console.log("error :>> ", error);
-    }
-  };
-
-  useEffect(() => {
-    if (router.query.dishId) {
-      getDetailData();
-    }
-  }, [router.query.dishId]);
+  console.log('dishData :>> ', dishData);
+  console.log('listResOther :>> ', listResOther);
 
   return (
     <>
@@ -45,7 +35,7 @@ const DishDetail = ({ dishId }) => {
               </div>
               <div>
                 <h2 className="nearwhite text-3xl text-left">
-                  Braised Supreme Dried 15 Head Australian Xu Rong Abalone{" "}
+                  {dishData.name||'Name'}
                 </h2>
                 <div className="relative w-5/6 h-56 md:hidden block">
                   <Image
@@ -67,7 +57,7 @@ const DishDetail = ({ dishId }) => {
           </div>
           <div className={styles.container2}>
             <div className={styles.content2}>
-              <h1 className={styles.header2}>Enjoy it at RestaurantName</h1>
+              <h1 className={styles.header2}>{`Enjoy it at ${dishData.nameResOrSpa}`}</h1>
               <h3 className={styles.text2}>
                 Discover a dining experience built on craft, service and
                 ambience. Madame Fan offers Cantonese cuisine in a contemporary
@@ -89,33 +79,26 @@ const DishDetail = ({ dishId }) => {
           <div className={styles.container3}>
             <h1 className={styles.header3}>Other recommended dishes</h1>
             <div className={styles.content3}>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant A</h3>
-                  <h3 className={styles.text}>
-                    Crispy Duck Salad, watermelon, pomelo, cashew nut, macadamia
-                    nut, shallot, spicy yuzu sauce.
-                  </h3>
-                  <h3 className={styles.note}>
-                    Contains Gluten, Nuts or / and Peanuts
-                  </h3>
-                </div>
-                <div className="flow-root">
-                  <h3 className="float-right">S$ 22.00</h3>
-                </div>
-              </div>
-              <div className={styles.block}>
-                <div>
-                  <h3 className={styles.heading}>Restaurant A</h3>
-                  <h3 className={styles.text}>
-                    Market Seasonal Chinese Greens, cooked any style
-                  </h3>
-                  <h3 className={styles.note}>Vegetarian</h3>
-                </div>
-                <div className="flow-root">
-                  <h3 className="float-right">S$ 14.00</h3>
-                </div>
-              </div>
+              {listResOther.map((item,index)=>(
+ <div key={index} className={styles.block} onClick={()=>router.push(`/food-and-drinks/${item._id}`)}>
+ <div>
+   <h3 className={styles.heading}>{item.nameResOrSpa}</h3>
+   <h3 className={styles.text}>
+     {item.name}
+   </h3>
+   <h3 className={styles.note}>
+     {item.description}
+   </h3>
+ </div>
+ <div className="flow-root">
+   <h3 className="float-right">{`S$ ${item.benefit}`}</h3>
+ </div>
+</div>
+              ))}
+             
+
+
+
             </div>
           </div>
           <div className={styles.container4}>
@@ -172,11 +155,83 @@ const DishDetail = ({ dishId }) => {
 
 export default DishDetail;
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [
-//       // { params: { ... } }
-//     ],
-//     fallback: true, // false or 'blocking'
-//   };
-// }
+export async function getStaticPaths() {
+  const allDishes = await fetchAPI("Restaurant/getAll");
+
+  if (allDishes.result.statusCode !== 200) {
+    return {
+      notFound: true,
+    };
+  }
+   const paths = allDishes.result.restaurants.map(item => {
+  return {
+    params: {
+      dishId: `${item._id}`
+    }
+  }
+ });
+
+  return {
+    paths: [
+      ...paths,
+    ],
+    fallback: true,
+  }
+}
+
+
+export async function getStaticProps({ params }) {
+  const allDishes = await fetchAPI("Restaurant/getAll");
+  const allRes = await fetchAPI("Partner/getAll");
+
+  if (allDishes.result.statusCode !== 200 || allRes.result.statusCode !== 200) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let _listRes = [...allRes.result.partners];
+  let _listDishes = [...allDishes.result.restaurants];
+
+  let listRes = _listRes.filter((item) => item.type === "Restaurant");
+
+  let listDishes = _listDishes.map((item, index) => {
+    const findIdx = listRes.filter(
+      (element) => element._id === item.idResOrSpa
+    );
+    if(findIdx.length > 0) {
+      return {
+        ...item,
+        nameResOrSpa: findIdx[0].name,
+      }
+    } else {
+      return {
+        ...item,
+      }
+    }
+  });
+
+
+  let _dishData = listDishes.filter(item=>item._id===params.dishId);
+  let dishData;
+  let listResOther = [];
+  if(_dishData.length>0) {
+    dishData = {..._dishData[0]};
+    let listResOtherTemp1 = listDishes.filter(item=>item.idResOrSpa===_dishData[0].idResOrSpa);
+    let listResOtherTemp = listResOtherTemp1.filter(item=>item._id!==_dishData[0]._id);
+
+    if(listResOtherTemp.length>2) {
+      listResOther.push(listResOtherTemp[0])
+      listResOther.push(listResOtherTemp[1])
+    } else {
+      listResOther=[...listResOtherTemp]
+    }
+  } else {
+    dishData = {};
+    listResOther = []
+  }
+
+  return {
+    props: { dishData, listResOther },
+  }
+}
