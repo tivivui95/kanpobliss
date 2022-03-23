@@ -11,16 +11,16 @@ export default function Content5({ onNav }) {
                 <div className={styles.content}>
                     <Navbar />
                     <div className="container mx-auto px-4 mt-12">
-                        <h1 className={styles.head1}>What is TCM Body Constitution?</h1>
+                        <h1 className={styles.head1}>Title - About Body Constitution Assessment</h1>
                         <div className="text-sm">
                             <p className="nearwhite mt-4">
-                                TCM (Traditional Chinese Medicine) is an individualized health and wellbeing system, where different body types respond differently to same lifestyle choices or environmental changes. Your TCM body type (formally known as body constitution) forms the foundation of diagnosis, disease treatment and prevention. Your body type is made up of structural and functional characteristics, temperament, adaptability to environmental changes and susceptibility to disease. It is partly genetically determined and partly acquired.
+                                TCM (Traditional Chinese Medicine) is an individualized health and wellbeing system, based on the principle that different body constitutions, i.e., types, respond differently to the same lifestyle choices or environmental factors. Your body constitution is made up of your body's structural and functional characteristics, your temperament, your body's adaptability to environmental changes and susceptibility to disease. It is partly genetically determined and partly acquired based on your lifestyle and environment. In TCM, your body constitution forms the foundation of diagnosis, disease treatment and prevention.
                             </p>
                             <p className="nearwhite mt-4">
-                                Your TCM body type teaches you how to make the right lifestyle choices for your own body, to restore balance within and with the surrounding environment. Depending of whether your body type is stable or not, it can be affected by lifestyle or environmental changes and/or major life events.
+                                By understanding your body constitution, you can learn how to make the right lifestyle choices for your own body, to restore balance within and with the surrounding environment. Depending on whether your body constitution is stable or not, you may be more or less affected by lifestyle, environmental changes and/or major life events.
                             </p>
                             <p className="nearwhite mt-4">
-                                Recommendations provided in our body type assessment are not prescriptive but are intended to guide you to make daily choices more wisely for your unique body. We encourage you to develop more awareness of our whole self and empower you to build lasting positive habits.
+                                Our personalized wellness tips and recommendations offered in at the end of this assessment are not prescriptive but are intended to guide you in making daily choices more wisely for the unique needs of your body. We encourage you to develop greater awareness of your body as a whole, and hope to empower you to build lasting positive habits.
                             </p>
                         </div>
                         <Link href={onNav}>
