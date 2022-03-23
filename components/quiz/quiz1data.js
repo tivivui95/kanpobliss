@@ -189,7 +189,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Do / did you commonly exhibit any of these characteristics?',
+        question: 'Do / did you commonly exhibit any of these characteristics? Select all that apply.',
         answer: [
             {
                 data: 'Weak and soft voice',
