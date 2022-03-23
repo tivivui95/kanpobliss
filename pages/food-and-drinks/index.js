@@ -1,12 +1,29 @@
+/* eslint-disable import/no-anonymous-default-export */
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import styles from "../../styles/18.module.css";
 
-const Content18 = ({ Mantra }) => {
-  const [listRestaurant, setListRestaurant] = useState(["All"]);
+// eslint-disable-next-line import/no-anonymous-default-export
+// eslint-disable-next-line react/display-name
+export default function ({ listRes, listDishes }) {
+  console.log("nnnnnnnnn  ", listRes);
+  console.log("nnnnnnnnn  ", listDishes);
+  const router = useRouter();
+  const [listRestaurant, setListRestaurant] = useState([...listRes]);
+  const [currentTab, setCurrentTab] = useState("All");
+
+  useEffect(() => {
+    if (currentTab === "All") {
+      // setListContents(defaultContents);
+    } else {
+      // let newList = defaultContents.filter((item) => item.title === currentTab);
+      // setListContents(newList);
+    }
+  }, [currentTab]);
+
   return (
     <>
       <div className={styles.containbox}>
@@ -20,20 +37,30 @@ const Content18 = ({ Mantra }) => {
               objectFit="scale-down"
               alt=""
             />
-            <h1 className={styles.text}>
-              Perfect Dishes & Drinks for {Mantra}
-            </h1>
+            <h1 className={styles.text}>Perfect Dishes & Drinks for {}</h1>
           </div>
 
           <div className={styles.content}>
             <div className={styles.selection}>
-              <button className={styles.button}>All</button>
-              <button className={styles.button}>Madam Fan</button>
-              <button className={styles.button}>Akira</button>
-              <button className={styles.button}>Tonic Bar</button>
-              <button className={styles.button}>Madam Fan</button>
-              <button className={styles.button}>Akira</button>
-              <button className={styles.button}>Tonic Bar</button>
+              <button
+                className={`${styles.button} ${
+                  currentTab === "All" ? styles.buttonActive : ""
+                }`}
+                onClick={() => setCurrentTab("All")}
+              >
+                All
+              </button>
+              {listRestaurant.map((item, index) => (
+                <button
+                  key={index}
+                  className={`${styles.button} ${
+                    currentTab === item.name ? styles.buttonActive : ""
+                  }`}
+                  onClick={() => setCurrentTab(item.name)}
+                >
+                  {item.name}
+                </button>
+              ))}
             </div>
             <div className={styles.container}>
               <div className={styles.block}>
@@ -145,6 +172,65 @@ const Content18 = ({ Mantra }) => {
       </div>
     </>
   );
-};
+}
 
-export default Content18;
+export async function getStaticProps(context) {
+  // get list restaurants
+  // call api return two array
+  // array1: list restaurants {idRes:1, nameRes:'Name'}
+  // array2: list dishes {idRes, isDish, nameRes, nameDish}
+
+  let listRes = [
+    {
+      id: 1,
+      name: "Restaurant 1",
+    },
+    {
+      id: 2,
+      name: "Restaurant 2",
+    },
+  ];
+
+  let listDishes = [
+    {
+      idRes: 1,
+      nameRes: "Restaurant 1",
+      idDish: 11,
+      nameDish: "Ga kho xa",
+    },
+    {
+      idRes: 1,
+      nameRes: "Restaurant 1",
+      idDish: 12,
+      nameDish: "Heo kho xa",
+    },
+    {
+      idRes: 1,
+      nameRes: "Restaurant 1",
+      idDish: 13,
+      nameDish: "Bo kho xa",
+    },
+    {
+      idRes: 2,
+      nameRes: "Restaurant 2",
+      idDish: 11,
+      nameDish: "Ga kho xa",
+    },
+    {
+      idRes: 2,
+      nameRes: "Restaurant 2",
+      idDish: 12,
+      nameDish: "Heo kho xa",
+    },
+    {
+      idRes: 3,
+      nameRes: "Restaurant 2",
+      idDish: 13,
+      nameDish: "Bo kho xa",
+    },
+  ];
+
+  return {
+    props: { listRes, listDishes }, // will be passed to the page component as props
+  };
+}
