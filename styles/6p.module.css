@@ -171,9 +171,7 @@
     .cardcover input:checked ~ .card {
         border: 1px solid #A56C50;
     }
-    .onmb {
-        color: #F8EEE4 !important;
-    }
+
   }
 
 .greenbar {

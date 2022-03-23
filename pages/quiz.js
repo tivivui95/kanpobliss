@@ -140,6 +140,7 @@ export default function Main() {
                 onChangeAnsLists(temp_ans_list);
             }
         }
+        curPage == 9 ? onSubmit(): null;
     }
 
     const handlePrevPage = (resArr, ansList) => {
@@ -194,11 +195,6 @@ export default function Main() {
                             <div className={styles.greenbar} style={{ width: 25 + curPage * 25 }}></div>
                         </div>
                     </div>
-                    
-                    <button className={curPage == 9 ? 'hidden md:block greenbtn mt-4' : 'hidden'} onClick={onSubmit}>Submit</button>
-                    <div className="p-6 w-full relative">
-                        <button className={curPage == 9 ? 'md:hidden block greenbtn-2 mt-4' : 'hidden'} onClick={onSubmit}>Submit</button>
-                        </div>
                 </div>
 
 

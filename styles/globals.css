@@ -368,6 +368,10 @@ textarea {
     width: 90vw;
     height: calc(90vw * 1.16);
   }
+  .onmb {
+    color: #F8EEE4 !important;
+}
+
 }
 
 .darkred {
