@@ -271,7 +271,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Do you often experience any of these symptoms?',
+        question: 'Do you often experience any of these symptoms? Select all that apply.',
         answer: [
             {
                 data: 'Bodyache across differents areas of the body',
@@ -304,7 +304,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: 'Do you often experience any of these symptoms?',
+        question: 'Do you often experience any of these symptoms? Select all that apply.',
         answer: [
             {
                 data: 'Thick yellowish tongue coating',
@@ -337,7 +337,7 @@ export const Allquestion = [
         ]
     },
     {
-        question: '(Optional) Do you often experience any of these women\'s health conditions?',
+        question: '(Optional) Do you often experience any of these women\'s health conditions? Select all that apply.',
         answer: [
             {
                 data: 'Severe PMS and tender breasts before periods',

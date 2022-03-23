@@ -24,7 +24,7 @@ const FirstContent = () => {
                 <Link href='/body-type'>
                     <a>
                         <div className="w-full block h-56 md:h-80 relative md:hidden">
-                            <Image src='/images/4/Body Type.png' alt='' height={224} width='120%' objectFit="cover" className={MainStyles.roundedcustomfull} />
+                            <Image src='/images/4/Body Type.png' alt='' height={100} width='80%' objectFit="cover" className={MainStyles.roundedcustomfull} />
                         </div>
                         <div className="w-full hidden md:block h-56 md:h-80 relative">
                             <Image src='/images/4/Body Type.png' alt='' layout="fill" objectFit="cover" className={MainStyles.roundedcustomfull} />
@@ -48,7 +48,7 @@ const SecondContent = () => {
                 <div className="w-full h-96 md:h-96 relative hidden md:block">
                     <Image src='/images/4/image 2.png' alt='' layout="fill" objectFit="cover" className="rounded-3xl" />
                 </div>
-                <h1 className="nearwhite md:mt-80 w-80 md:ml-4 md:text-2xl md:w-full md:pt-6  md:rotate-0 rotate-90 -ml-36 mt-40 absolute z-20">Body Recovery Assessment</h1>
+                <h1 className="nearwhite md:mt-80 w-80 md:ml-4 md:text-2xl md:w-full md:pt-6  md:rotate-0 rotate-90 -ml-36 mt-40 absolute z-20">Body Recovery</h1>
                 {/* <p className={MainStyles.content}>Recover from jet-lag or nourish an upset stomach? Get back to feeling your best!</p> */}
             </div>
 
@@ -111,8 +111,7 @@ function Content() {
     return (
         <>
             <div className="ml-12 mb-4 mt-6 md:container md:mx-auto md:pl-8 md:pr-8">
-                <Image src='/images/image 14.png' className={MainStyles.moonimg} width={100} height={100} objectFit='scale-down' alt="" />
-            // <div className={MainStyles.head1}>Hello, &nbsp;<h1>friend!</h1></div>
+                <Image src='/images/image 14.png' className={MainStyles.moonimg} width={100} height={80} objectFit='scale-down' alt="" />
                 <div className={MainStyles.head1}><h1>Welcome</h1></div>
                 <div className={MainStyles.head2}>How would you like to get started?</div>
                 <div className={MainStyles.space}></div>
