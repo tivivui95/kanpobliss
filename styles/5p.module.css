@@ -1,5 +1,5 @@
 .contain {
-    background-color: #B99173;
+    background-color: #A56C50;
 }
 
 .content {
@@ -8,6 +8,8 @@
     background-position: center;
     background-size: cover;
 }
+
+
 
 .head1 {
     font-family: TAN - PEARL;
@@ -56,6 +58,9 @@
     .cardtitle {
         padding-top: 60px;
         padding-bottom: 60px;
+    }
+    .content {
+        background-image: url('../public/images/5/bg-mb.png');
     }
 }
 

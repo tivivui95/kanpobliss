@@ -6,6 +6,8 @@
     position: relative;
 }
 
+
+
 .container {
     background-color: #B99173;
 }
@@ -140,7 +142,8 @@
 
   @media only screen and (max-width: 768px) {
     .nextbtn {
-        left: 340px !important;
+        left: auto !important;
+        right: 20px;
     }
     .prevbtn {
         left: 20px !important;
@@ -168,6 +171,9 @@
     .cardcover input:checked ~ .card {
         border: 1px solid #A56C50;
     }
+    .onmb {
+        color: #F8EEE4 !important;
+    }
   }
 
 .greenbar {
@@ -179,6 +185,7 @@
 }
 
 .graybar {
+    /* margin-top: 24px; */
     width: 250px;
     height: 6px;
     border-radius: 16px;
@@ -186,7 +193,7 @@
 }
 
 .nextbtn {
-    bottom: -36px;
+    bottom: -48px;
     left: 640px;
     position: absolute;
     display: block;
@@ -218,7 +225,7 @@
 }
 
 .prevbtn {
-    bottom: -36px;
+    bottom: -48px;
     left: 290px;
     position: absolute;
     display: block;

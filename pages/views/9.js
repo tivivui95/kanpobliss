@@ -54,7 +54,7 @@ const Q3 = [
 export default function Content9({ onChange }) {
     const [age, onChangeAge] = useState('Choose your age range:');
     const [gender, onChangeGender] = useState(0);
-    const [check1st, on1stChecked] = useState(false);
+    const [check1st, on1stChecked] = useState("Please write down in details.");
 
     const handleAge = (event) => {
         onChangeAge(event.target.value)
@@ -64,8 +64,8 @@ export default function Content9({ onChange }) {
     }
     const handleInputChange = (event) => {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        on1stChecked(value);
+        // const value = target.type === 'textarea' ? target.checked : target.value;
+        on1stChecked(target.value);
     }
 
     return (
@@ -78,6 +78,7 @@ export default function Content9({ onChange }) {
 
                     <div className={styles.contain}>
                         <div className={styles.head2}>Tell us more about you </div>
+                        <div className={styles.onmb}>
                         <div className="grid md:grid-cols-2 gap-2 w-full">
                             <div>
                                 <div className={styles.inputBox}>
@@ -109,7 +110,7 @@ export default function Content9({ onChange }) {
                         <div className="text-left">
                             <div className="ml-4 test-base brown">*What are your current wellbeing goals?</div>
                             {Q1.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
-                            <textarea className="ml-4 w-5/6" value='Others' onChange={handleInputChange} />
+                            <textarea className="ml-4 w-5/6" value={check1st} onChange={handleInputChange} />
                             <div className="ml-4 test-base brown">What are your current wellness practices?</div>
                             {Q2.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
                             <div className="ml-4 test-base brown">Which of these wellness practices interest you?</div>
@@ -118,6 +119,8 @@ export default function Content9({ onChange }) {
                         <div onClick={() => onChange(false)} className={styles.submit}>Submit Answers</div>
                         <br />
                     </div>
+                        </div>
+                        
                     {/* <div className="md:mt-4">
                         <Image src='/images/6/next.png' alt="" width={420} height={40} />
                     </div> */}

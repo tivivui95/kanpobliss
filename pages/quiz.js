@@ -188,7 +188,8 @@ export default function Main() {
                         </div>
                     </div>
                     <div className="mt-4"></div>
-                    <div className={!showItem ? 'block' : 'hidden'}>
+                    <div className={!showItem ? 'block relative justify-center mt-4' : 'hidden'}>
+                        <div className="text-center text-sm -mt-3 nearwhite">{curPage + 1} / 10</div>
                         <div className={styles.graybar}>
                             <div className={styles.greenbar} style={{ width: 25 + curPage * 25 }}></div>
                         </div>
