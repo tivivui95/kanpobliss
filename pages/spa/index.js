@@ -12,6 +12,7 @@ import {
 import EmblaStyles from "../../styles/embla.module.css";
 import useInterval from "../../components/useInterval";
 import { fetchAPI } from "../../lib/api";
+import { useRouter } from "next/router";
 
 const data = [
   {
@@ -31,7 +32,9 @@ const data = [
   },
 ];
 
-const EmblaCarousel = ({ slides, imgurls }) => {
+const EmblaCarousel = ({ imgurls }) => {
+  const router = useRouter();
+  
   const [viewportRef, embla] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -72,10 +75,10 @@ const EmblaCarousel = ({ slides, imgurls }) => {
               <div className={EmblaStyles.embla__slide} key={index}>
                 <div className="overflow-hidden h-96 relative">
                   <div className="flex flex-col w-40 md:w-full">
-                    <div className="w-full block h-56 md:h-96 relative">
+                    <div className="w-full block h-56 md:h-96 relative" style={{cursor: 'pointer'}} onClick={() => router.push(`/spa/${data._id}`)}>
                       <div className={styles.main__img}>
                         <Image
-                          src={data.url}
+                          src={data.images.length!==0?data.images[0]:'/images/21/spa_bg.jpg'}
                           alt=""
                           layout="fill"
                           objectFit="cover"
@@ -84,10 +87,10 @@ const EmblaCarousel = ({ slides, imgurls }) => {
                       </div>
                       <div className={styles.itemcontent}>
                         <h1 className="nearwhite text-2xl md:text-4xl p-4">
-                          {data.title}
+                          {data.name||"Name"}
                         </h1>
                         <p className="nearwhite p-4 text-base md:text-xl">
-                          {data.content}
+                          {data.description||"Description"}
                         </p>
                       </div>
                     </div>
@@ -121,10 +124,10 @@ const MBContent21 = ({ alldata }) => {
           <div key={index}>
             <div className="overflow-hidden h-56 relative">
               <div className="flex flex-col w-full md:w-full">
-                <div className="w-full block h-56 relative">
+                <div className="w-full block h-56 relative" style={{cursor: 'pointer'}} onClick={() => router.push(`/spa/${data._id}`)}>
                   <div className={styles.main__img}>
                     <Image
-                      src={data.url}
+                      src={data.images.length!==0?data.images[0]:'/images/21/spa_bg.jpg'}
                       alt=""
                       layout="fill"
                       objectFit="cover"
@@ -133,10 +136,10 @@ const MBContent21 = ({ alldata }) => {
                   </div>
                   <div className={styles.itemcontent}>
                     <h1 className="nearwhite text-2xl md:text-4xl md:p-4">
-                      {data.title}
+                    {data.name||"Name"}
                     </h1>
                     <p className="nearwhite md:p-4 text-base md:text-xl">
-                      {data.content}
+                    {data.description||"Description"}
                     </p>
                   </div>
                 </div>
@@ -150,10 +153,10 @@ const MBContent21 = ({ alldata }) => {
 };
 
 export default function Spa({ listSpa, listSpaDetails }) {
+  const router = useRouter();
+
   let Mantra = "Mantra";
-  console.log("listSpaDetails :>> ", listSpaDetails);
-  console.log("listSpa :>> ", listSpa);
-  // return <MainContent21 Mantra="Mantra" />;
+  
   return (
     <div className={styles.bg}>
       <Navbar />
@@ -174,16 +177,16 @@ export default function Spa({ listSpa, listSpaDetails }) {
             </div>
           </div>
         </div>
-        <div className="hidden md:block">
-          <EmblaCarousel slides={[0, 1, 2]} imgurls={data} />
+        <div className="hidden md:block" >
+          <EmblaCarousel imgurls={listSpaDetails} />
         </div>
         <div className="md:hidden">
-          <MBContent21 alldata={data} />
+          <MBContent21 alldata={listSpaDetails} />
         </div>
 
-        <div className="float-root pb-4">
+        <div className="float-root pb-4" style={{marginBottom: '75px', marginTop: '15px', marginRight: "80px"}}>
           <div className="float-right">
-            <Link href="#">
+            <Link href="/recommend">
               <a className={styles.btnitem}>ALL RECOMMENDATIONS</a>
             </Link>
           </div>

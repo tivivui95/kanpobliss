@@ -10,8 +10,6 @@ import { fetchAPI } from "../../lib/api";
 const DishDetail = ({ dishData, listResOther }) => {
   const router = useRouter();
 
-  const [listDish, setListDish] = useState([]);
-  const [detailData, setDetailData] = useState({});
   const [loading, setLoading] = useState(true);
 
   console.log("dishData :>> ", dishData);
