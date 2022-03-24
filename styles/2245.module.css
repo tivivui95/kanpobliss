@@ -30,6 +30,9 @@
   height: 70px;
   border-radius: 50%;
   background-color: #f8eee4;
+  position: absolute;
+  top: 50px
+  
 }
 
 .coverimg .buttonView .buttonPlay i {

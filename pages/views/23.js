@@ -130,7 +130,15 @@ const Content18 = ({ Mantra }) => {
             <div className={styles.container}>
               {listContents.map((item, index) => (
                 <div key={index} className={styles.block}>
-                  <div>
+                  <div className={styles.imageBg}>
+                  {index===0 && <img src="/images/23/mind-body.png" alt="" />}
+                    {index===1 && <img src="/images/23/detoxing.jpg" alt="" />}
+                    {index===2 && <img src="/images/23/heaven.png" alt="" />}
+                    {index===3 && <img src="/images/23/bedtime.png" alt="" />}
+                    {index===4 && <img src="/images/23/humming.png" alt="" />}
+                    {index===5 && <img src="/images/23/sex-healing.png" alt="" />}
+                  </div>
+                  <div style={{ position: "relative" }}>
                     <h3 className={styles.heading}>{item.title}</h3>
                     <h3
                       className={styles.text}
