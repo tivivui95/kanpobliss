@@ -20,8 +20,9 @@ opacity: 0.5;
   padding: 12px;
   flex-direction: row;
   position: absolute;
-  left: 2rem;
-  bottom: 1rem;
+  left: 10vw;
+  bottom: 35vh;
+  z-index: 4;
 }
 
 .activenav {
@@ -31,6 +32,8 @@ opacity: 0.5;
 
   background: #073E0D;
   border-radius: 0.2rem;
+  transition: width 1s;
+  transition: background 1s;
 }
 
 .next {
@@ -41,6 +44,9 @@ opacity: 0.5;
 
   background: #F8EEE4;
   border-radius: 0.2rem;
+  transition: width 1s;
+  transition: background 1s;
+  
 }
 
 .bottomtext {
@@ -59,4 +65,69 @@ opacity: 0.5;
 
   color: #F8EEE4;
   margin-left: 5rem;
+}
+
+.cover {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: opacity 1s ease-in;
+  -moz-transition: opacity 1s ease-in;
+   -ms-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+       transition: opacity 1s ease-in;
+}
+
+.bg {
+  font-size: 21px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.bgover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4D2A19;
+  background-blend-mode: multiply;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.plaincover {
+  position: absolute;
+  z-index: 2;
+  height: 100vh;
+  background-color: #A56C50;
+  opacity: 0.5;
+  transition: width 2s;
+}
+
+.textover {
+  position: absolute;
+  z-index: 3;
+  bottom: 40vh;
+  left: 10vw;
+  font-size: 8vh;
+  line-height: 8.5vh;
+
+  
+  -webkit-transition: opacity 1s ease-in;
+     -moz-transition: opacity 1s ease-in;
+      -ms-transition: opacity 1s ease-in;
+       -o-transition: opacity 1s ease-in;
+          transition: opacity 1s ease-in;
+}
+
+@media only screen and (max-width: 768px) {
+  .textover {
+    width: 70vw !important;
+    font-size: 6vh;
+    line-height: 6.5vh;
+    bottom: 10vh;
+  }
+  .navbar {
+    left: 0.5vw;
+    bottom: 0.5vh;
+  }
 }

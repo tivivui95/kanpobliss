@@ -7,6 +7,9 @@
         width: 106px;
         height: 106px;
         cursor: pointer;
+        background-color: #B99173;
+        border-radius: 56px;
+        border: 18px solid #B99173;
     }
     .container {
         background-image: url("/images/16/Group2.png");
@@ -49,7 +52,7 @@
     font-family: Tenor Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 47px;
     display: flex;
     align-items: center;

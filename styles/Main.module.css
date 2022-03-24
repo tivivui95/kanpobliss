@@ -12,15 +12,20 @@
 }
 
 .content {
-    margin-top: 14px;
+    /* margin-top: 14px; */
     font-family: Tenor Sans;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 15px;
     display: flex;
     align-items: center;
     letter-spacing: -0.3px;
 
     color: #F8EEE4;
+    width: 130px;
+}
+
+.roundedcustomfull {
+    border-radius: 10px !important;
 }
 
 .mbfooter {
@@ -43,8 +48,8 @@
     font-family: Tenor Sans;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 33px;
+    font-size: 32px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     letter-spacing: -0.3px;
@@ -59,7 +64,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 10px;
     display: flex;
     align-items: center;
 
@@ -70,6 +75,7 @@
 
 .moonimg {
     mix-blend-mode: screen;
+    /* left: 0px !important; */
     /* transform: rotate(-180deg); */
 }
 
@@ -99,6 +105,14 @@ border-radius: 0px 0px 0px 280px;
     }
     .space {
         margin-top: 3vh;
+    }
+    .head1 {
+        font-size: 50px;
+        line-height: 52px;
+    }
+    .head2 {
+        font-size: 32px;
+        line-height: 30px;
     }
   }
 

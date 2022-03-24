@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html, body {
-    font-family: 'Tenor Sans', sans-serif;
+  html,
+  body {
+    font-family: "Tenor Sans", sans-serif;
   }
 }
 
 @font-face {
   font-family: TAN-PEARL;
-  src: url('/TAN-PEARL.woff');
+  src: url("/TAN-PEARL.woff");
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #B99173;
+  background-color: #b99173;
   /* font-family: 'Tenor Sans', sans-serif; */
-  
 }
 
 h1 {
@@ -36,14 +36,14 @@ h2 {
   font-family: Tenor Sans;
   font-size: 32px;
   line-height: 100%;
-/* or 32px */
+  /* or 32px */
 
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.3px;
 
-color: #523922;
+  color: #523922;
 }
 
 a {
@@ -56,7 +56,7 @@ a {
 }
 
 .nearwhite {
-  color: #F8EEE4 !important;
+  color: #f8eee4 !important;
 }
 
 .ftpad li {
@@ -67,7 +67,7 @@ a {
 .subbtn {
   text-align: center;
   width: 160px;
-  background: #F8EEE4;
+  background: #f8eee4;
   border-radius: 100px;
   font-family: Tenor Sans;
   margin-top: 20px;
@@ -78,7 +78,7 @@ a {
 
 .divider {
   width: 100%;
-  border: 1px solid #F8EEE4;
+  border: 1px solid #f8eee4;
   margin-top: 6px;
   margin-bottom: 6px;
 }
@@ -113,7 +113,7 @@ a {
 }
 
 .embla__dot.is-selected:after {
-  background-color: #073E0D;
+  background-color: #073e0d;
   opacity: 1;
 }
 
@@ -145,11 +145,11 @@ a {
 }
 
 .checkbox {
-  color: #A56C50;
+  color: #a56c50;
 }
 
 .checkbox input:checked ~ .labelcheck {
-  color: #073E0D !important;
+  color: #073e0d !important;
 }
 
 /* Create a custom checkbox */
@@ -158,19 +158,19 @@ a {
   height: 18px;
   width: 18px;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #A56C50;
+  border: 1px solid #a56c50;
   border-radius: 18px;
 }
 
 /* On mouse-over, add a grey background color */
 .checkbox:hover input ~ .checkmark {
   background-color: rgba(7, 62, 13, 0.1);
-  border: 1px solid #073E0D;
+  border: 1px solid #073e0d;
 }
 
 /* When the checkbox is checked, add a blue background */
 .checkbox input:checked ~ .checkmark {
-  border: 1px solid #073E0D;
+  border: 1px solid #073e0d;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -191,7 +191,7 @@ a {
   top: 2px;
   width: 5px;
   height: 10px;
-  border: solid #073E0D;
+  border: solid #073e0d;
   border-width: 0 1px 1px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -224,11 +224,11 @@ a {
 }
 
 .scheckbox {
-  color: #A56C50;
+  color: #a56c50;
 }
 
 .scheckbox input:checked ~ .labelcheck {
-  color: #A56C50 !important;
+  color: #a56c50 !important;
 }
 
 /* Create a custom checkbox */
@@ -238,7 +238,7 @@ a {
   height: 14px;
   width: 14px;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #A56C50;
+  border: 1px solid #a56c50;
   border-radius: 2px;
 }
 
@@ -248,7 +248,6 @@ a {
 }
 
 /* When the checkbox is checked, add a blue background */
-
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .scheckmark:after {
@@ -268,12 +267,12 @@ a {
   top: 2px;
   width: 8px;
   height: 8px;
-  border: solid #A56C50;
-  background-color: #A56C50;
+  border: solid #a56c50;
+  background-color: #a56c50;
 }
 
 .brown {
-  color: #A56C50;
+  color: #a56c50;
 }
 
 .nearblack {
@@ -282,15 +281,15 @@ a {
 
 label a {
   text-decoration: underline;
-  color: #B99173;
+  color: #b99173;
 }
 
 textarea {
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #A56C50;
+  border: 1px solid #a56c50;
   border-radius: 3px;
-  color: #A56C50;
+  color: #a56c50;
   padding: 4px;
   margin: 2px;
 }
@@ -299,36 +298,54 @@ textarea {
   width: 260px;
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: #073E0D;
-  border: 1px solid #073E0D;
+  background-color: #073e0d;
+  border: 1px solid #073e0d;
   z-index: 1;
   border-radius: 48px;
   text-transform: uppercase;
   text-align: center;
-  color: #F8EEE4;
+  color: #f8eee4;
 }
 
 .greenbtn:hover {
-  background-color: #F8EEE4;
-  color: #073E0D;
+  background-color: #f8eee4;
+  color: #073e0d;
+}
+
+.greenbtn-2 {
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #073e0d;
+  border: 1px solid #073e0d;
+  z-index: 1;
+  border-radius: 48px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f8eee4;
+}
+
+.greenbtn-2:hover {
+  background-color: #f8eee4;
+  color: #073e0d;
 }
 
 .graybtn {
   width: 260px;
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: #BDC2BC;
-  border: 1px solid #BDC2BC;
+  background-color: #bdc2bc;
+  border: 1px solid #bdc2bc;
   z-index: 1;
   border-radius: 48px;
   text-transform: uppercase;
   text-align: center;
-  color: #F8EEE4;
+  color: #f8eee4;
 }
 
 .graybtn:hover {
-  background-color: #F8EEE4;
-  color: #BDC2BC;
+  background-color: #f8eee4;
+  color: #bdc2bc;
 }
 
 .CenterBox {
@@ -338,7 +355,7 @@ textarea {
   background-image: url("/images/11/Login.png");
   background-position: center;
   background-size: contain;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -346,13 +363,148 @@ textarea {
   padding-top: 2rem;
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 768px) {
   .CenterBox {
-      width: 90vw;
-      height: calc(90vw * 1.16);
+    width: 90vw;
+    height: calc(90vw * 1.16);
   }
+  .onmb {
+    color: #F8EEE4 !important;
+}
+
 }
 
 .darkred {
-  color: #8E1100;
+  color: #8e1100;
+}
+
+.rounded-sm-bl {
+  border-radius: 10px 10px 10px 30px;
+}
+
+.rounded-sm-br {
+  border-radius: 10px 10px 30px 10px;
+}
+
+.embla {
+  position: relative;
+  padding-top: 20px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 0;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.embla__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.embla__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -10px;
+}
+
+.embla__slide {
+  position: relative;
+  min-width: 40%;
+  padding-left: 14px;
+}
+
+.embla__slide__inner {
+  position: relative;
+  overflow: hidden;
+  height: 45vh;
+}
+
+.embla__button {
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+  touch-action: manipulation;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  fill: #1bcacd;
+  padding: 0;
+}
+
+.embla__button:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.embla__button__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.embla__button--prev {
+  left: 27px;
+}
+
+.embla__button--next {
+  right: 27px;
+}
+
+@media only screen and (min-width: 768px) {
+  .embla__slide__inner {
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+  }
+}
+
+.embla__dots {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.embla__dot {
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  margin-right: 7.5px;
+  margin-left: 7.5px;
+  display: flex;
+  align-items: center;
+}
+
+.embla__dot:after {
+  background-color: #efefef;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  content: "";
+}
+
+.embla__dot.is-selected:after {
+  background-color: #1bcacd;
+  opacity: 1;
 }

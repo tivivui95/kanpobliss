@@ -46,7 +46,7 @@
     }
     .selection{
         position: relative;
-        width: 10%;
+        width: 15%;
         height: 100%;
         margin-right: 12px;
     }
@@ -66,7 +66,7 @@
         
     }
     .selection h3:hover, .selection .selected{
-        color: green;
+        color: #073E0D;
     }
     .content{
         position: relative;
@@ -132,7 +132,7 @@
 }
 
 .content .resultbtn:hover{
-    background-color: green;
+    background-color: #073E0D;
 }
 
 .content .headertext{
