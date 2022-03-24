@@ -8,12 +8,14 @@ const data = [
   {
     tag: "Mindifulness",
     title: "Morning Affirmation Meditation",
-    img: "/images/25/Rectangle 19.png",
+    // img: "/images/25/Rectangle 19.png",
+    img: "/images/25/img1.png",
   },
   {
     tag: "Acupressure",
     title: "Evening Tension Relief Ritual",
-    img: "/images/25/Rectangle 20.png",
+    // img: "/images/25/Rectangle 19.png",
+    img: "/images/25/img2.png",
   },
 ];
 
@@ -34,7 +36,7 @@ export default function Content25() {
             <Navbar />
           </div>
           <Image
-            src="/images/25/bg.png"
+            src="/images/25/new_bg.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
