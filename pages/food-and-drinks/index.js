@@ -6,22 +6,37 @@ import { fetchAPI } from "../../lib/api";
 import styles from "../../styles/18.module.css";
 import Navbar, { Footer, MBFooter } from "../navbar";
 
+const NUMBER_LOAD = 6;
+
 // eslint-disable-next-line import/no-anonymous-default-export
 // eslint-disable-next-line react/display-name
 export default function ({ listRes, listDishes }) {
   const router = useRouter();
   const [listRestaurant, setListRestaurant] = useState([...listRes]);
-  const [listDish, setListDish] = useState([...listDishes]);
+  const [listDish, setListDish] = useState([
+    ...listDishes.slice(0, NUMBER_LOAD),
+  ]);
+  const [currentLoad, setCurrentLoad] = useState(1);
   const [currentTab, setCurrentTab] = useState("All");
 
   useEffect(() => {
     if (currentTab === "All") {
-      setListDish([...listDishes]);
+      let _dishes = setListDish([
+        ...listDishes.slice(0, currentLoad * NUMBER_LOAD),
+      ]);
     } else {
-      let newRes = listDishes.filter(item=>item.nameResOrSpa===currentTab);
+      let newRes = listDishes.filter(
+        (item) => item.nameResOrSpa === currentTab
+      );
       setListDish([...newRes]);
+      setCurrentLoad(1);
     }
-  }, [currentTab]);
+  }, [currentTab, currentLoad]);
+
+  const handleLoadMore = () => {
+    setCurrentLoad(currentLoad + 1);
+    console.log("ooooooooooooo");
+  };
 
   console.log("listRestaurant :>> ", listRestaurant);
   console.log("listDish :>> ", listDish);
@@ -64,10 +79,19 @@ export default function ({ listRes, listDishes }) {
                 </button>
               ))}
             </div>
+
             <div className={styles.container}>
               {listDish.map((item, index) => (
-                <div key={index} className={styles.block} onClick={()=>router.push(`/food-and-drinks/${item._id}`)}>
-                  <div>
+                <div
+                  key={index}
+                  className={styles.block}
+                  onClick={() => router.push(`/food-and-drinks/${item._id}`)}
+                >
+                  <div className={styles.imageBg}>
+                    <img src="/images/23/mind-body.png" alt="" />
+                  </div>
+
+                  <div style={{ position: "relative" }}>
                     <h3 className={styles.heading}>{`${item.nameResOrSpa}`}</h3>
                     <h3 className={styles.text}>{item.name}</h3>
                     <h3 className={styles.note}>{item.description}</h3>
@@ -75,12 +99,14 @@ export default function ({ listRes, listDishes }) {
                   <h3 className={styles.price}>{`S$ ${item.benefit}`}</h3>
                 </div>
               ))}
+              {listDish.length < listDishes.length && (
+                <button className={styles.readmore} onClick={handleLoadMore}>
+                  <a className={styles.loadmore}>Load More</a>
+                </button>
+              )}
             </div>
           </div>
 
-          <span className={styles.readmore}>
-            <a className={styles.loadmore}>Load More</a>
-          </span>
           <MBFooter />
         </div>
 
@@ -111,17 +137,16 @@ export async function getStaticProps(context) {
     const findIdx = listRes.filter(
       (element) => element._id === item.idResOrSpa
     );
-    if(findIdx.length > 0) {
+    if (findIdx.length > 0) {
       return {
         ...item,
         nameResOrSpa: findIdx[0].name,
-      }
+      };
     } else {
       return {
         ...item,
-      }
+      };
     }
-    
   });
 
   return {

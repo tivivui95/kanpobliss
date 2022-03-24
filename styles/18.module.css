@@ -50,7 +50,33 @@
   .content .container .block {
     padding: 1rem !important;
     width: 45%;
-    height: 320px;
+    height: 230px;
+    position: relative;
+  }
+  .imageBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 10px 40px;
+    width: 100%;
+    height: 100%;
+  }
+  .imageBg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 10px 40px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+  }
+  .imageBg img {
+    width: 100%;
+    height: 100% !important;
+    border-radius: 10px 10px 10px 40px;
+    object-fit: cover;
   }
 
   .content .container .block .price {
@@ -92,6 +118,32 @@
     padding: 0.5rem;
     width: 329.65px;
     height: 244.98px;
+    position: relative;
+  }
+  .imageBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 10px 40px;
+    width: 100%;
+    height: 100%;
+  }
+  .imageBg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 10px 40px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+  }
+  .imageBg img {
+    width: 100%;
+    height: 100% !important;
+    border-radius: 10px 10px 10px 40px;
+    object-fit: cover;
   }
   .content .container .block .price {
     position: relative;
@@ -106,7 +158,7 @@
   padding-right: 12px;
   width: 80%;
   height: fit-content;
-  background-color: #cfa88a;
+  /* background-color: #cfa88a; */
   display: flex;
   padding-bottom: 5rem;
 }
@@ -171,7 +223,8 @@
   display: flex;
   align-items: center;
   letter-spacing: -0.3px;
-  color: #b99173;
+  /* color: #b99173; */
+  color: white;
   border-bottom: 2px solid #b99173;
   width: 90%;
   margin-bottom: 1rem;
@@ -186,8 +239,8 @@
   display: flex;
   align-items: center;
   letter-spacing: -0.3px;
-
-  color: #523922;
+  color: white;
+  /* color: #523922; */
   cursor: pointer;
 }
 
@@ -200,8 +253,8 @@
   display: flex;
   align-items: center;
   letter-spacing: -0.3px;
-
-  color: #b99173;
+  color: white;
+  /* color: #b99173; */
 }
 
 .content .container .block .price {
@@ -214,7 +267,8 @@
   display: flex;
   align-items: center;
   text-align: right;
-  color: #b99173;
+  /* color: #b99173; */
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -223,6 +277,7 @@
 .readmore {
   margin-top: 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .readmore .loadmore {
