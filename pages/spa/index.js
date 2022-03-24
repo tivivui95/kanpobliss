@@ -149,55 +149,50 @@ const MBContent21 = ({ alldata }) => {
   );
 };
 
-function MainContent21({ Mantra }) {
+export default function Spa({ listSpa, listSpaDetails }) {
+  let Mantra = "Mantra";
+  console.log("listSpaDetails :>> ", listSpaDetails);
+  console.log("listSpa :>> ", listSpa);
+  // return <MainContent21 Mantra="Mantra" />;
   return (
-    <>
-      <div className={styles.bg}>
-        <Navbar />
-        <div className={styles.container}>
-          <div className={styles.heading}>
-            <div className={styles.heading__imgfluid}>
-              <Image
-                src="/images/21/title-human.png"
-                layout="fill"
-                objectFit="scale-down"
-                alt="connguoi"
-                className="p-4 m-4 relative"
-              />
-            </div>
-            <div className={styles.heading__text}>
-              <div className="text-3xl pt-4">
-                Best Spa treatment for{" "}
-                <span className="tanpearl ">{Mantra}</span>
-              </div>
-            </div>
+    <div className={styles.bg}>
+      <Navbar />
+      <div className={styles.container}>
+        <div className={styles.heading}>
+          <div className={styles.heading__imgfluid}>
+            <Image
+              src="/images/21/title-human.png"
+              layout="fill"
+              objectFit="scale-down"
+              alt="connguoi"
+              className="p-4 m-4 relative"
+            />
           </div>
-          <div className="hidden md:block">
-            <EmblaCarousel slides={[0, 1, 2]} imgurls={data} />
-          </div>
-          <div className="md:hidden">
-            <MBContent21 alldata={data} />
-          </div>
-
-          <div className="float-root pb-4">
-            <div className="float-right">
-              <Link href="#">
-                <a className={styles.btnitem}>ALL RECOMMENDATIONS</a>
-              </Link>
+          <div className={styles.heading__text}>
+            <div className="text-3xl pt-4">
+              Best Spa treatment for <span className="tanpearl ">{Mantra}</span>
             </div>
           </div>
         </div>
-        <MBFooter />
-        <Footer />
-      </div>
-    </>
-  );
-}
+        <div className="hidden md:block">
+          <EmblaCarousel slides={[0, 1, 2]} imgurls={data} />
+        </div>
+        <div className="md:hidden">
+          <MBContent21 alldata={data} />
+        </div>
 
-export default function Spa({ listSpa, listSpaDetails }) {
-  console.log("listSpaDetails :>> ", listSpaDetails);
-  console.log("listSpa :>> ", listSpa);
-  return <MainContent21 Mantra="Mantra" />;
+        <div className="float-root pb-4">
+          <div className="float-right">
+            <Link href="#">
+              <a className={styles.btnitem}>ALL RECOMMENDATIONS</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <MBFooter />
+      <Footer />
+    </div>
+  );
 }
 
 export async function getStaticProps(context) {
