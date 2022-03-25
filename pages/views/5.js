@@ -32,7 +32,7 @@ export default function Content5({ onNav }) {
 
                         <div className="divider"></div>
                         <div className="nearwhite text-base mt-3">Explore more</div>
-                        <div className="grid md:grid-cols-2 md:gap-8 gap-4 pt-4 pb-4">
+                        <div className="grid md:grid-cols-2 md:gap-8 gap-4 pt-4 pb-4" style={{ marginBottom: "49px" }}>
                             <div className="relative flex items-center justify-center" style={{ maxHeight: '185.12px' }}>
                                 <h1 className={styles.cardtitle}>Body Recovery</h1>
                                 <Image src='/images/5/image 2.png' layout="fill" objectFit="cover" className={styles.imgcover} />
