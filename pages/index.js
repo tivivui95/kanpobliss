@@ -19,12 +19,9 @@ const Landing = ({ text, pos, imgUrl, opacity }) => {
           <Image src={imgUrl} alt='' layout='fill' className={styles.bg} objectFit='cover' />
         </div>
         <div className={styles.navbar}>
-
             <div className={pos == 0 ? styles.activenav : styles.next}></div>
             <div className={pos == 1 ? styles.activenav : styles.next}></div>
             <div className={pos == 2 ? styles.activenav : styles.next}></div>
-
-            
       </div>
       </div>
     </>
