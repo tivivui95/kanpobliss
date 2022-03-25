@@ -3,45 +3,45 @@ import Navbar, { MBFooter, Footer } from "../navbar";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/18.module.css";
+import styles from "../../styles/23.module.css";
 
 const defaultContents = [
-    {
-        id: 0,
-        title: "Qigong",
-        text: "Mind-Body Relaxation",
-        author: "Fraser Lau",
-      },
-      {
-        id: 1,
-        title: "Nutrition",
-        text: "Detoxing From Chemicals",
-        author: "Dr.Cheryl Kam",
-      },
-      {
-        id: 2,
-        title: "Qigong",
-        text: "Unify Heaven, Human & Earth",
-        author: "Fraser Lau",
-      },
-      {
-        id: 3,
-        title: "Acupressure",
-        text: "Bedtime Wind-down Ritual",
-        author: "Re:Qi",
-      },
-      {
-        id: 4,
-        title: "Breathwork",
-        text: "Humming Bee Breathwork",
-        author: "Re:Qi",
-      },
-      {
-        id: 5,
-        title: "Qigong",
-        text: "Six Healing Sounds",
-        author: "Re:Qi",
-      },
+  {
+    id: 0,
+    title: "Qigong",
+    text: "Mind-Body Relaxation",
+    author: "Fraser Lau",
+  },
+  {
+    id: 1,
+    title: "Nutrition",
+    text: "Detoxing From Chemicals",
+    author: "Dr.Cheryl Kam",
+  },
+  {
+    id: 2,
+    title: "Qigong",
+    text: "Unify Heaven, Human & Earth",
+    author: "Fraser Lau",
+  },
+  {
+    id: 3,
+    title: "Acupressure",
+    text: "Bedtime Wind-down Ritual",
+    author: "Re:Qi",
+  },
+  {
+    id: 4,
+    title: "Breathwork",
+    text: "Humming Bee Breathwork",
+    author: "Re:Qi",
+  },
+  {
+    id: 5,
+    title: "Qigong",
+    text: "Six Healing Sounds",
+    author: "Re:Qi",
+  },
 ];
 
 const Content18 = ({ Mantra }) => {
@@ -129,28 +129,38 @@ const Content18 = ({ Mantra }) => {
             </div>
             <div className={styles.container}>
               {listContents.map((item, index) => (
-                <div
-                  key={index}
-                  className={styles.block}
-                >
-                  <div>
+                <div key={index} className={styles.block}>
+                  <div className={styles.imageBg}>
+                    {index===0 && <img src="/images/23/mind-body.png" alt="" />}
+                    {index===1 && <img src="/images/23/detoxing.jpg" alt="" />}
+                    {index===2 && <img src="/images/23/heaven.png" alt="" />}
+                    {index===3 && <img src="/images/23/bedtime.png" alt="" />}
+                    {index===4 && <img src="/images/23/humming.png" alt="" />}
+                    {index===5 && <img src="/images/23/sex-healing.png" alt="" />}
+                  </div>
+                  <div style={{ position: "relative" }}>
                     <h3 className={styles.heading}>{item.title}</h3>
-                    <h3 className={styles.text}   onClick={() => {
-                    if (item.id === 5) {
-                      router.push(`guide-practice/details/${item.id}`);
-                    } else {
-                      return;
-                    }
-                  }}>{item.text}</h3>
+                    <h3
+                      className={styles.text}
+                      onClick={() => {
+                        if (item.id === 5) {
+                          router.push(`guide-practice/details/${item.id}`);
+                        } else {
+                          return;
+                        }
+                      }}
+                    >
+                      {item.text}
+                    </h3>
                   </div>
                   <h3
                     className={styles.price}
                     onClick={() => {
-                        if (item.id === 5) {
-                            router.push(`guide-practice/authors/${item.id}`);
-                          } else {
-                            return;
-                          }
+                      if (item.id === 5) {
+                        router.push(`guide-practice/authors/${item.id}`);
+                      } else {
+                        return;
+                      }
                     }}
                   >
                     {item.author}
