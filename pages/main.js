@@ -19,7 +19,7 @@ const FirstContent = () => {
                     <div className="w-full hidden md:block h-56 md:h-80 relative">
                     <Image src='/images/4/Body Type.png' alt='' layout="fill" objectFit="cover" className={MainStyles.roundedcustomfull} />
                     </div>
-                    <h1 className="nearwhite md:mt-4 md:mb-2 -mt-8">Body Constitution</h1>
+                    <h1 className={`nearwhite md:mt-4 md:mb-2 -mt-8 ${MainStyles['title-28']}`}>Body Constitution</h1>
                     <p className={MainStyles.content}>Discover your unique body through our assessment. Learn how to attend to its needs for greater wellbeing!</p>
                     </a>
                 </Link>
@@ -36,9 +36,9 @@ const SecondContent = () => {
                     <Image src='/images/4/image 2.png' alt='' height={320} width={130} objectFit="cover" className="rounded-2xl" />
                 </div>
                 <div className="w-full h-96 md:h-96 relative hidden md:block">
-                    <Image src='/images/4/image 2.png' alt='' layout="fill" objectFit="cover"  className="rounded-3xl" />
+                    <Image src='/images/4/image 2.png' alt='' layout="fill" objectFit="cover"  className="rounded-none" />
                 </div>
-                <h1 className="nearwhite md:mt-80 w-80 md:ml-4 md:text-2xl md:w-full md:pt-6  md:rotate-0 rotate-90 -ml-36 mt-40 absolute z-20">Body Recovery Assessment</h1>
+                <h1 className="nearwhite md:mt-80 w-80 md:ml-4 md:text-2xl md:w-full md:pt-6  md:rotate-0 rotate-90 -ml-36 mt-40 absolute z-20">Body Recovery</h1>
                 {/* <p className={MainStyles.content}>Recover from jet-lag or nourish an upset stomach? Get back to feeling your best!</p> */}
             </div>
             
@@ -54,9 +54,9 @@ const ThirdContent = () => {
                     <Image src='/images/4/image 4.png' alt='' height={320} width={130} objectFit="cover" className="rounded-2xl" />
                 </div>
                 <div className="w-full h-96 md:h-96 relative hidden md:block">
-                    <Image src='/images/4/image 4.png' alt='' layout="fill" objectFit="cover" className="rounded-3xl" />
+                    <Image src='/images/4/image 4.png' alt='' layout="fill" objectFit="cover" className="rounded-none" />
                 </div>
-                <h1 className="nearwhite md:mt-80 w-80 md:rotate-0 md:ml-4 md:text-2xl md:w-full md:pt-6  rotate-90 -ml-36 mt-40 absolute z-20">Wellbeing Toolkit</h1>
+                <h1 className="nearwhite md:mt-80 w-80 md:rotate-0 md:ml-4 md:text-2xl md:w-full md:pt-6  rotate-90 -ml-36 mt-40 absolute z-20">Guided Practices</h1>
                 {/* <p className={MainStyles.content}>Tools to help you move one step closer to your wellbeing goals</p> */}
             </div>
             
