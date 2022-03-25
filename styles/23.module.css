@@ -303,37 +303,6 @@
     cursor: pointer;
     opacity: 1;
 }
-/* .content .container .block:nth-child(1){
-    background-image: url('../public/images/23/mind-body.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.content .container .block:nth-child(2){
-    background-image: url('../public/images/23/detoxing.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.content .container .block:nth-child(3){
-    background-image: url('../public/images/23/heaven.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.content .container .block:nth-child(4){
-    background-image: url('../public/images/23/bedtime.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.content .container .block:nth-child(5){
-    background-image: url('../public/images/23/humming.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.content .container .block:nth-child(6){
-    background-image: url('../public/images/23/sex-healing.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 
 .content .container .block .price:hover{
     text-decoration: underline;
