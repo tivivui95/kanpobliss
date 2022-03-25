@@ -29,12 +29,13 @@
 }
 
 .mbfooter {
+    position: absolute;
+    bottom: 0;
     font-family: Tenor Sans;
     font-size: 1rem;
     line-height: 154%;
     /* or 15px */
     letter-spacing: -0.3px;
-
     color: #FFFFFF;
 }
 

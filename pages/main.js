@@ -3,10 +3,8 @@ import MainStyles from '../styles/Main.module.css'
 import Image from "next/image";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import EmblaCarouselReact from "embla-carousel-react";
 import EmblaStyles from "../styles/embla.module.css";
-import Autoplay from 'embla-carousel-autoplay';
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Link from "next/link";
 
 const FirstContent = () => {
@@ -21,8 +19,8 @@ const FirstContent = () => {
                     <div className="w-full hidden md:block h-56 md:h-80 relative">
                     <Image src='/images/4/Body Type.png' alt='' layout="fill" objectFit="cover" className={MainStyles.roundedcustomfull} />
                     </div>
-                    <h1 className="nearwhite md:mt-4 md:mb-2 -mt-8">Body Type Assessment</h1>
-                    <p className={MainStyles.content}>Discover your unique body type. Get meals and wellness guide just for you!</p>
+                    <h1 className="nearwhite md:mt-4 md:mb-2 -mt-8">Body Constitution</h1>
+                    <p className={MainStyles.content}>Discover your unique body through our assessment. Learn how to attend to its needs for greater wellbeing!</p>
                     </a>
                 </Link>
             </div>
@@ -69,8 +67,22 @@ const ThirdContent = () => {
 function MainImageSlider() {
     const [viewportRef, embla] = useEmblaCarousel({
         align: "start",
-        skipSnaps: false
+        dragFree: true,
       });
+
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const onScroll = useCallback(() => {
+        if (!embla) return;
+        const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
+        setScrollProgress(progress * 100);
+    }, [embla, setScrollProgress]);
+
+    useEffect(() => {
+        if (!embla) return;
+        onScroll();
+        embla.on("scroll", onScroll);
+    }, [embla, onScroll]);
+
     return (
         <>
         
@@ -94,6 +106,9 @@ function MainImageSlider() {
                 </div>
             </div>
         </div>
+        </div>
+        <div className={EmblaStyles.embla__progress}>
+            <div className={EmblaStyles.embla__progress__bar} style={{ transform: `translateX(${scrollProgress}%)` }} />
         </div>
         </>
     )
