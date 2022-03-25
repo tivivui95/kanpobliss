@@ -142,7 +142,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded">
+            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded" style={{ marginBottom: "5.0606rem" }}>
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link href='/'>
                         <a className="md:flex items-center md:relative hidden w-56 h-10 mt-12">
@@ -151,7 +151,7 @@ export default function Navbar() {
                     </Link>
 
                     <div className="w-auto inline-block md:relative absolute right-2 top-4" id="mobile-menu">
-                        <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                        <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-base md:font-medium">
                             <li className={MainStyles.lighttext}>
                                 <Link href='/quiz'>
                                     <a className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Body Constitution</a>
