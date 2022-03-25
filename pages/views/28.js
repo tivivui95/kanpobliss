@@ -80,7 +80,7 @@ export default function Content25() {
                 <div className={styles.contentcover}>
                     <div className='container mx-auto p-4 md:pt-16 pt-8'>
                     <div className='text-center text-base md:text-2xl'>
-                    I am self taught in TCM and this app is very useful for narrowing down issues in the body. The explanations are clear enough that someone who doesn't have experience/knowledge of TCM can use it to gain insight and be able to heal their body with lifestyle and diet changes.
+                    I am self taught in TCM and this app is very useful for narrowing down issues in the body. The explanations are clear enough that someone who {"doesn't"} have experience/knowledge of TCM can use it to gain insight and be able to heal their body with lifestyle and diet changes.
                     </div>
                     <div className='relative h-2 w-full mt-2 md:mt-4 mb-2 md:mb-4'>
                     <Image src='/images/28/line.png' layout='fill' objectFit='scale-down' alt='' />
