@@ -100,6 +100,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 30px
   }
   .content {
     display: flex;
@@ -148,6 +149,21 @@
   .content .container .block .price {
     position: relative;
   }
+  .contain {
+   
+    position: relative;
+    flex-direction: column;
+    left: 0 !important;
+    padding-top: 5rem;
+    padding-left: 100px !important;
+    padding-right: 12px;
+    width: 100%;
+    height: fit-content;
+    /* background-color: #cfa88a; */
+    display: flex;
+    padding-bottom: 5rem;
+   
+  }
 }
 .contain {
   position: relative;
@@ -156,7 +172,7 @@
   padding-top: 5rem;
   padding-left: 12px;
   padding-right: 12px;
-  width: 80%;
+  width: 100%;
   height: fit-content;
   /* background-color: #cfa88a; */
   display: flex;

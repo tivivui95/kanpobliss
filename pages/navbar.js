@@ -119,7 +119,7 @@ export default function Navbar() {
                             </a>
                                 </Link>
                             </li>
-                            <li className="mt-8"><Link href='/aboutus'>
+                            <li className="mt-8"><Link href='/about-us'>
                                 <a>
                                     About Us
                             </a>
