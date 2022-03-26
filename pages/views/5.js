@@ -10,6 +10,9 @@ export default function Content5({ onNav }) {
             <div className={styles.contain}>
                 <div className={styles.content}>
                     <Navbar />
+                    <div className="md:hidden container mx-auto px-4">
+                        <p className="-mt-16 mb-12 text-xl" style={{ color: "#f8eee4" }}>Body Constitution</p>
+                    </div>
                     <div className="container mx-auto px-4 sm:mt-12 md:mt-0">
                         <h1 className={styles.head1}>About Body Constitution Assessment</h1>
                         <div className="text-sm md:text-base">
@@ -32,7 +35,7 @@ export default function Content5({ onNav }) {
 
                         <div className="divider"></div>
                         <div className="nearwhite text-base mt-3">Explore more</div>
-                        <div className="grid md:grid-cols-2 md:gap-8 gap-4 pt-4 pb-4">
+                        <div className="grid md:grid-cols-2 md:gap-8 gap-4 pt-4 pb-4" style={{ marginBottom: "49px" }}>
                             <div className="relative flex items-center justify-center" style={{ maxHeight: '185.12px' }}>
                                 <h1 className={styles.cardtitle}>Body Recovery</h1>
                                 <Image src='/images/5/image 2.png' layout="fill" objectFit="cover" className={styles.imgcover} />
