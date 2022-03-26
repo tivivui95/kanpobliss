@@ -7,7 +7,7 @@ import {Allquestion, MantraList} from '../components/quiz/quiz1data';
 import { RenderQuestion, RenderBonus } from "../components/quiz/QuesList";
 import App from '../components/quiz/dragItems';
 
-export default ()=> {
+export default function Main() {
     const [curPage, onChangePage] = useState(0);
     const [result, onChangeResult] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
     const [showItem, onChangeShow] = useState(false);
@@ -20,14 +20,11 @@ export default ()=> {
 
     const [ resultTie, onResultTie ] = useState(false);
 
-
-    const [isShowDialog, setShowDialog] = useState(false);
-
     useEffect(() => {
         setwinReady(true);
     }, []);
 
-    const onSubmit = () => {
+    const onSubmit = (lastresult) => {        
         let resSorted = [];
         result.map((el, indx) => indx < 11 ? resSorted.push(el): null);
         resSorted[0] = 0;
@@ -130,10 +127,6 @@ export default ()=> {
     }
 
     const handleNextPage = (resArr, ansList) => {
-        console.log('-------------------------------------------------------------------');
-        console.log(resArr);
-        console.log(ansList);
-        console.log('-------------------------------------------------------------------');
         if (resArr.reduce((a, b) => a + b, 0) > 0) {
             curPage < 9 ? onChangePage(curPage + 1) : onChangePage(curPage);
             if (curPage < 9) {
@@ -146,14 +139,8 @@ export default ()=> {
                 onChangeResult(new_arr);
                 onChangeAnsLists(temp_ans_list);
             }
-        }else{
-            curPage == 9 ? onSubmit(): showDialog();
         }
-    }
-    const showDialog=() =>{
-        //todo
-        console.log('show dialog nè',isShowDialog);
-        setShowDialog(!isShowDialog);
+        curPage == 9 ? onSubmit(): null;
     }
 
     const handlePrevPage = (resArr, ansList) => {
@@ -179,9 +166,9 @@ export default ()=> {
                 {showMantra ? <div><Content10 Mantra={MantraList[mantra]} /></div> : <div className={!showMantra ? '' : 'hidden'}>
                 <div className="container mx-auto md:mt-8 mb-8 grid justify-items-center relative ">
                     <div className={styles.contain}>
-
+                        
                         <div className="container mx-auto">
-                            {resultTie ? <RenderBonus data={dragl} onSub={onSecondSubmit} />:
+                            {resultTie ? <RenderBonus data={dragl} onSub={onSecondSubmit} />: 
                             <>
                             <div className={showItem && !showMantra ? 'block' : 'hidden'}>
                             <div className={styles.head2}>Drag & re-order the symptoms you selected previously. </div>
@@ -193,12 +180,12 @@ export default ()=> {
                                     <div className={curPage == index ? 'block' : 'hidden'} key={index * 100}>
                                         <RenderQuestion questionJs={content} handlePrev={handlePrevPage} handleNext={handleNextPage} />
                                     </div>
-                                ))}
-
+                                ))}                                
+                                
                             </div>
                             </>
                             }
-
+                            
                         </div>
                     </div>
                     <div className="mt-4"></div>
@@ -209,10 +196,14 @@ export default ()=> {
                         </div>
                     </div>
                 </div>
+
+
                 <MBFooter />
                 <Footer />
                 </div>}
-                </div>
+                
+                
+            </div>
         </>
     )
 }

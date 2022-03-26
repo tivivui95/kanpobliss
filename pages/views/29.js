@@ -33,7 +33,7 @@ const Content29 = ({ onNav }) => {
                         <div className={styles.paragraph}>
                             <div className={styles.part}>
                                 <p className={styles.text}>Last updated at 02 Feburary 2022
-                                    <br></br>Please read these terms and conditions ("terms and conditions", "terms") carefully before using kanpobliss.com website (“website”, "service") operated by Kanpobliss ("us", 'we", "our").</p>
+                                    <br></br>{`Please read these terms and conditions ("terms and conditions", "terms") carefully before using kanpobliss.com website (“website”, "service") operated by Kanpobliss ("us", 'we", "our").`}</p>
                             </div>
                             <div className={styles.part}>
                                 <h1 className={styles.title}>1. Conditions of use</h1>

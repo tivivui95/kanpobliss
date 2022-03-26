@@ -57,20 +57,11 @@ a {
 
 .nearwhite {
   color: #f8eee4 !important;
-  font-size: 12px;
 }
 
 .ftpad li {
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 16px;
-  align-items: flex-start;
 }
 
 .subbtn {
@@ -81,11 +72,8 @@ a {
   font-family: Tenor Sans;
   margin-top: 20px;
   padding: 6px;
-  color: #523922;
-}
 
-.fs-15 {
-  font-size: 15px;
+  color: #523922;
 }
 
 .divider {
@@ -308,8 +296,8 @@ textarea {
 
 .greenbtn {
   width: 260px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background-color: #073e0d;
   border: 1px solid #073e0d;
   z-index: 1;
@@ -317,7 +305,6 @@ textarea {
   text-transform: uppercase;
   text-align: center;
   color: #f8eee4;
-  font-size: 12px;
 }
 
 .greenbtn:hover {
@@ -345,6 +332,8 @@ textarea {
 
 .graybtn {
   width: 260px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background-color: #bdc2bc;
   border: 1px solid #bdc2bc;
   z-index: 1;
@@ -361,11 +350,11 @@ textarea {
 
 .CenterBox {
   position: relative;
-  width: 330px;
-  height: 420px;
+  width: 470px;
+  height: 548px;
   background-image: url("/images/11/Login.png");
   background-position: center;
-  background-size: 100% 90%;
+  background-size: contain;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -374,6 +363,16 @@ textarea {
   padding-top: 2rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .CenterBox {
+    width: 90vw;
+    height: calc(90vw * 1.16);
+  }
+  .onmb {
+    color: #F8EEE4 !important;
+}
+
+}
 
 .darkred {
   color: #8e1100;
@@ -508,19 +507,4 @@ textarea {
 .embla__dot.is-selected:after {
   background-color: #1bcacd;
   opacity: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .greenbtn {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .CenterBox {
-    width: 470px;
-    height: 548px;
-  }
-  .onmb {
-    color: #F8EEE4 !important;
-  }
 }

@@ -4,28 +4,26 @@ import styles from '../../styles/6p.module.css';
 import MainStyles from '../../styles/Main.module.css';
 import { useState } from "react";
 
-const InputData = ( {text, onChange, isChecked} ) => {
+const InputData = ( {text} ) => {
     const [check, setChecked] = useState(false);
     const handleInputChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
-        if(onChange){
-            onChange(value);
-        }
         setChecked(value);
     }
     return (
+
         <label className="checkbox text-xs -ml-4">
-            <input
-                name="isGoing"
-                type="checkbox"
-                checked={isChecked !== null || isChecked !== undefined ? isChecked : check}
-                onChange={handleInputChange}
-            />
-            <span className="checkmark"></span>
-            <span className="labelcheck text-sm onmb">&#160; &#160; &#160;
-            {text}</span>
-        </label>
+                                <input
+                                    name="isGoing"
+                                    type="checkbox"
+                                    checked={check}
+                                    onChange={handleInputChange}
+                                />
+                                <span className="checkmark"></span>
+                                <span className="labelcheck text-sm onmb">&#160; &#160; &#160;
+                                {text}</span>
+                            </label>
     )
 }
 
@@ -35,34 +33,6 @@ const Q1 = [
     'Improve immunity',
     'Healthy sleep habits ',
     'Others'
-]
-
-const Q1CheckBoxInit = [
-    {
-        id: 0,
-        label: 'Stress management',
-        value: false,
-    },
-    {
-        id: 1,
-        label: 'Diet & weight management',
-        value: false,
-    },
-    {
-        id: 2,
-        label: 'Improve immunity',
-        value: false,
-    },
-    {
-        id: 3,
-        label: 'Healthy sleep habits ',
-        value: false,
-    },
-    {
-        id: 4,
-        label: 'Others',
-        value: false,
-    }
 ]
 
 const Q2 = [
@@ -86,18 +56,6 @@ export default function Content9({ onChange }) {
     const [age, onChangeAge] = useState('Choose your age range:');
     const [gender, onChangeGender] = useState(0);
     const [check1st, on1stChecked] = useState("Please write down in details.");
-    const [q1CheckBox, setQ1CheckBox] = useState(Q1CheckBoxInit);
-
-    const _setQ1CheckBox = ({id, value}) => {
-        const _q1CheckBox = q1CheckBox.map(item => {
-            if(item.id === id){
-                item.value = value;   
-            }
-            return item;
-        })
-        console.log(_q1CheckBox);
-        setQ1CheckBox(_q1CheckBox);
-    }
 
     const handleAge = (event) => {
         onChangeAge(event.target.value)
@@ -152,22 +110,8 @@ export default function Content9({ onChange }) {
                         </div>
                         <div className="text-left">
                             <div className="ml-4 test-base brown onmb">*What are your current wellbeing goals?</div>
-                            {q1CheckBox.map((item) => (
-                                <div key={item.id}>
-                                    <InputData
-                                        isChecked={item.value}
-                                        text={item.label}
-                                        onChange={(value) => _setQ1CheckBox({id: item.id, value})}
-                                    />
-                                </div>
-                            ))}
-                            {q1CheckBox.find((item) => item.id === 4).value && (
-                                <textarea
-                                    className="ml-4 w-5/6 onmb"
-                                    value={check1st}
-                                    onChange={handleInputChange}
-                                />
-                            )}
+                            {Q1.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
+                            <textarea className="ml-4 w-5/6 onmb" value={check1st} onChange={handleInputChange} />
                             <div className="ml-4 test-base brown onmb">What are your current wellness practices?</div>
                             {Q2.map((cont, ind) => <div key={ind}><InputData text={cont} /></div>)}
                             <div className="ml-4 test-base brown onmb">Which of these wellness practices interest you?</div>

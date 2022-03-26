@@ -24,38 +24,38 @@ export function Footer() {
                     <div className="flex flex-row">
                         <div className="pr-4"><Image src='/images/ins.svg' height={28} width={28} alt='Instagram' /></div>
                         <div className="pr-4"><Image src='/images/fb.svg' height={28} width={28} alt='Facebook' /></div>
-                        <div className="pr-4"><Image src='/images/email.svg' height={28} width={28} alt='Mail' /></div>
+                        <div className="pr-4"><Image src='/images/yt.svg' height={28} width={28} alt='Youtube' /></div>
                     </div>
                 </div>
                 <div>
                     <ul className="nearwhite ftpad">
-                        <li className="fs-15">
+                        <li>
                             <Link href='/quiz'>
                                 Body Constitution
                         </Link>
 
                         </li>
-                        <li className="fs-15">
+                        <li>
                             Body Recovery
                     </li>
-                        <li className="fs-15">
+                        <li>
                             Guided Practices
                     </li>
                     </ul>
                 </div>
                 <div className="">
                     <ul className="ftpad">
-                        <li className="fs-15">My Profile</li>
-                        <li className="fs-15">About Us</li>
-                        <li className="fs-15">Feedback</li>
+                        <li>My Profile</li>
+                        <li>About Us</li>
+                        <li>Feedback</li>
                     </ul>
                 </div>
-                <div className="col-span-2 flex-column">
+                <div className="col-span-2">
                     <div className={MainStyles.inputBox}>
                         <div className={MainStyles.Icon}><Image src='/images/mail.svg' alt='' layout="fill" objectFit="scale-down" /></div>
                         <input type="email" placeholder="Enter Email" className="nearwhite" />
                     </div>
-                    <div className="subbtn">SUBSCRIBE</div>
+                    <div className="subbtn ml-4">SUBSCRIBE</div>
                 </div>
             </div>
             <div className="w-full  pl-20 p-4 pt-8 hidden md:flow-root nearwhite text-xs" style={{ background: "#523922" }}>
@@ -142,7 +142,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded" style={{ marginBottom: "5.0606rem" }}>
+            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
                     <Link href='/'>
                         <a className="md:flex items-center md:relative hidden w-56 h-10 mt-12">
@@ -151,7 +151,7 @@ export default function Navbar() {
                     </Link>
 
                     <div className="w-auto inline-block md:relative absolute right-2 top-4" id="mobile-menu">
-                        <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-base md:font-medium">
+                        <ul className="flex flex-col pt-4 md:flex-row md:items-center md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                             <li className={MainStyles.lighttext}>
                                 <Link href='/quiz'>
                                     <a className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0" aria-current="page">Body Constitution</a>
