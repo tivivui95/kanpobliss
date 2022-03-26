@@ -157,17 +157,3 @@
 .inputBox input::placeholder {
   color: #ffffff;
 }
-
-
-.header4 {
-  margin: 2rem 0 0.5rem 0;
-  font-family: Tenor Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 115.5%;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.3px;
-  color: #f8eee4;
-}
