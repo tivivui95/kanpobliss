@@ -9,6 +9,7 @@ import SocialLogin from "../../components/socialLogin";
 const Content11_2 = ({ Mantra, onLogin }) => {
     const [ remember, onChangeRemember ] = useState(true);
     const [ wrong, onWrongLogin ] = useState("");
+    const [isShowPass, setIsShowPass] = useState(false)
 
     const handleSubmit = async (event) => {
         // Stop the form from submitting and refreshing the page.
@@ -56,6 +57,10 @@ const Content11_2 = ({ Mantra, onLogin }) => {
         onChangeRemember(value);
     }
 
+    const handleShowPass = () => {
+        setIsShowPass(!isShowPass)
+    }
+
     return (
         <>
 
@@ -63,29 +68,30 @@ const Content11_2 = ({ Mantra, onLogin }) => {
         <div className={styles.content}>
         <form onSubmit={handleSubmit}>
             <div className={styles.box}>
-            <div className={styles.TextBox}><Image src="/images/11/Bigtext.png" alt='' width={300} height={80} /></div>
+            <div className={styles.TextBox}><Image src="/images/11/Bigtext.png" alt='' width={300} height={51} /></div>
                 <div className="CenterBox">
                     <h1 className={styles.TextHello}>Welcome Back!</h1>
                     <div className={styles.inputBox}>
                     <div className={styles.Icon}><Image src="/images/11/Group 2.png" alt='' layout="fill" objectFit="scale-down" /></div>
-                        <input type="text" placeholder="Username" id="first" name="first" />
+                        <input type="text" placeholder="Email" id="first" name="first" />
                     </div>
-                    <div className={styles.inputBox}>
+                    <div className={`${styles.inputBox} ${styles.inputPass}`}>
                         <div className={styles.Icon}><Image src="/images/11/Password.png" alt=''layout="fill" objectFit="scale-down" /></div>
-                        <input type="password" placeholder="Password" id="last" name="last" />
+                        <input type={isShowPass ? 'text': 'password'} placeholder="Password" id="last" name="last" className={styles.password} />
+                        <div className={styles.Icon}>
+                            <Image src={isShowPass ? '/images/11/ViewPass.png' : '/images/11/HidePass.png'} alt=''layout="fill" objectFit="scale-down" onClick={handleShowPass} width={300} height={51}/>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-2 w-5/6 -mt-2 mb-2 gap-2 text-xs">
+                    <div className={styles.rowText}>
                          <div className="text-left darkred">
                          {wrong ? <div>{wrong}</div> : null}
                         </div>
                         <div className="flow-root">
-                            <div className="float-right nearblack">
+                            <div className="float-right nearblack text-sm">
                                 <Link href={'/forgot?Mantra=' + Mantra}>
                                 Forget Password
                                 </Link>
-                                
                             </div>
-                        
                         </div>
                     </div>
                     <div className={styles.checking}>
@@ -93,7 +99,7 @@ const Content11_2 = ({ Mantra, onLogin }) => {
                             <label className="scheckbox text-xs -ml-5">
                                 <input className={styles.checkboxs} type="checkbox" checked={remember} onChange={handleRemember} />
                                 <span className="scheckmark"></span>
-                                <span className="pl-6 text-sm nearblack">Remember me for login</span></label>
+                                <span className="pl-6 text-sm nearblack">Keep me signed in for 7 days</span></label>
                         </div>
                         <div>
                             
@@ -104,14 +110,14 @@ const Content11_2 = ({ Mantra, onLogin }) => {
                                 I agree to the Kanpobliss <a>Terms & Condtion</a> and <a>Privacy Policy</a></span></label>
                         </div>
                     </div>
+                    <button type="submit" className={`greenbtn -mt-7 ${styles.signBtn}`}>Sign in</button>
                 </div>
-                <button type="submit" className="greenbtn -mt-7">Sign in</button>
                 <SocialLogin />
             </div>
+            <div className={styles.copyright}>©2022 Copyright all reserved by Kanpobliss</div>
             </form>
         </div>
         </div>
-        
         </>
     )
 }
