@@ -11,7 +11,7 @@ export default function Content5({ onNav }) {
                 <div className={styles.content}>
                     <Navbar />
                     <div className="md:hidden container mx-auto px-4">
-                        <p className="nearwhite -mt-16 mb-12 text-xl">Body Constitution</p>
+                        <p className="-mt-16 mb-12 text-xl" style={{ color: "#f8eee4" }}>Body Constitution</p>
                     </div>
                     <div className="container mx-auto px-4 sm:mt-12 md:mt-0">
                         <h1 className={styles.head1}>About Body Constitution Assessment</h1>
