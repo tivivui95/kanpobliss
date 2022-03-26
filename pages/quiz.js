@@ -6,9 +6,6 @@ import Content10 from "./views/10";
 import {Allquestion, MantraList} from '../components/quiz/quiz1data';
 import { RenderQuestion, RenderBonus } from "../components/quiz/QuesList";
 import App from '../components/quiz/dragItems';
-import {Button, Modal, ModalBody, ModalHeader} from "reactstrap";
-import RequestChooseAnswerModal from "../components/quiz";
-import ModalExample from "../components/quiz";
 
 export default ()=> {
     const [curPage, onChangePage] = useState(0);
@@ -154,6 +151,7 @@ export default ()=> {
         }
     }
     const showDialog=() =>{
+        //todo
         console.log('show dialog nè',isShowDialog);
         setShowDialog(!isShowDialog);
     }
