@@ -24,38 +24,38 @@ export function Footer() {
                     <div className="flex flex-row">
                         <div className="pr-4"><Image src='/images/ins.svg' height={28} width={28} alt='Instagram' /></div>
                         <div className="pr-4"><Image src='/images/fb.svg' height={28} width={28} alt='Facebook' /></div>
-                        <div className="pr-4"><Image src='/images/yt.svg' height={28} width={28} alt='Youtube' /></div>
+                        <div className="pr-4"><Image src='/images/email.svg' height={28} width={28} alt='Mail' /></div>
                     </div>
                 </div>
                 <div>
                     <ul className="nearwhite ftpad">
-                        <li>
+                        <li className="fs-15">
                             <Link href='/quiz'>
                                 Body Constitution
                         </Link>
 
                         </li>
-                        <li>
+                        <li className="fs-15">
                             Body Recovery
                     </li>
-                        <li>
+                        <li className="fs-15">
                             Guided Practices
                     </li>
                     </ul>
                 </div>
                 <div className="">
                     <ul className="ftpad">
-                        <li>My Profile</li>
-                        <li>About Us</li>
-                        <li>Feedback</li>
+                        <li className="fs-15">My Profile</li>
+                        <li className="fs-15">About Us</li>
+                        <li className="fs-15">Feedback</li>
                     </ul>
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 flex-column">
                     <div className={MainStyles.inputBox}>
                         <div className={MainStyles.Icon}><Image src='/images/mail.svg' alt='' layout="fill" objectFit="scale-down" /></div>
                         <input type="email" placeholder="Enter Email" className="nearwhite" />
                     </div>
-                    <div className="subbtn ml-4">SUBSCRIBE</div>
+                    <div className="subbtn">SUBSCRIBE</div>
                 </div>
             </div>
             <div className="w-full  pl-20 p-4 pt-8 hidden md:flow-root nearwhite text-xs" style={{ background: "#523922" }}>

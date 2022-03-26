@@ -65,6 +65,14 @@ a {
   padding-bottom: 12px;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  align-items: flex-start;
+}
+
 .subbtn {
   text-align: center;
   width: 160px;
@@ -73,8 +81,11 @@ a {
   font-family: Tenor Sans;
   margin-top: 20px;
   padding: 6px;
-
   color: #523922;
+}
+
+.fs-15 {
+  font-size: 15px;
 }
 
 .divider {
@@ -498,19 +509,6 @@ textarea {
   background-color: #1bcacd;
   opacity: 1;
 }
-
-/* @media only screen and (max-width: 375px) {
-  .CenterBox {
-    background-size: 100% 90%;
-  }
-}
-
-
-@media screen and (max-width: 424px) {
-  .CenterBox {
-    background-size: 100% 100%;
-  }
-} */
 
 @media screen and (min-width: 768px) {
   .greenbtn {
