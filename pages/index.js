@@ -5,6 +5,7 @@ import { useState, useCallback, useEffect } from 'react';
 import Image from 'next/image';
 import useInterval from '../components/useInterval'
 import Main from './main';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Landing = ({ text, pos, imgUrl, opacity }) => {
   return (
