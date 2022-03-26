@@ -35,7 +35,7 @@
     line-height: 19px;
     text-align: center;
     text-transform: uppercase;
-    margin: 20px 0;
+    margin-top: 12px;
     padding: 8px;
 
     color: #FFFFFF;
@@ -61,15 +61,6 @@
     }
     .content {
         background-image: url('../public/images/5/bg-mb.png');
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .head1 {
-        font-size: 20px;
-    }
-    .startbtn {
-        width: auto;
     }
 }
 

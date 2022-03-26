@@ -3,17 +3,17 @@ import Image from "next/image";
 import Navbar, { MBFooter, Footer } from "../navbar";
 import { useRouter } from "next/router";
 
-const username = "Jane Doe";
+const username = "Re:Qi";
 const data = [
   {
-    tag: "Mindifulness",
-    title: "Morning Affirmation Meditation",
+    tag: "Acupressure",
+    title: "Bedtime Wind-down Ritual",
     // img: "/images/25/Rectangle 19.png",
     img: "/images/25/img1.png",
   },
   {
-    tag: "Acupressure",
-    title: "Evening Tension Relief Ritual",
+    tag: "Qigong",
+    title: "Six Healing Sounds",
     // img: "/images/25/Rectangle 19.png",
     img: "/images/25/img2.png",
   },
@@ -54,15 +54,17 @@ export default function Content25() {
       <div className={styles.container}>
         <div className="container mx-auto pt-12 p-4">
           <div className="flex flex-row">
-            <div className="w-28 h-28 relative">
+            {/* <div className="w-28 h-28 relative">
               <Image
                 src="/images/25/ava.png"
                 alt=""
                 layout="fill"
                 objectFit="contain"
               />
-            </div>
-            <div className="grid grid-rows-2 gap-2 pl-6 pt-3">
+            </div> */}
+            <div style={{width:'85px', height:'85px', borderRadius:'50%', display:'flex', justifyContent:'center', alignItems:'center', background:"#073E0D", fontSize:"20px", color:'white'}}>Re:Qi</div>
+
+            <div className="grid grid-rows-2 gap-2 pl-6 pt-1">
               <div>
                 <h1 className="text-4xl nearwhite">{username}</h1>
               </div>
@@ -76,14 +78,10 @@ export default function Content25() {
             </div>
           </div>
           <p className="nearwhite pt-6 pb-6">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-            aliquet nec, vulputate eget, arcu.
+          Re:Qi organizes holistic wellness retreats and experiences that offer a mindful space for leaders and change makers to step away from the frantic pace of life to reconnect with our whole self and become more aware of our surroundings. Their programs feature a wide array of awe-inspiring experiences bridging Asian healing traditions with modern wellness techniques, and curated to flow according to our inner energy and body clock.
           </p>
           <div className="divider"></div>
+          <h1 className={styles.header4}>Other guided practices by Re:Qi </h1>
           <div className="grid grid-cols-2 gap-6 pt-4 pb-2">
             {data.map((content, index) => (
               <div className="relative flow-root h-72 p-4 md:p-8" key={index}>

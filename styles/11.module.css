@@ -1,14 +1,24 @@
-.container {
-  background-image: url("/images/11/BG.png");
-  background-size: 100% 100%;
-  height: 100%;
-}
-
-@media screen and (max-width: 768px) {
+@media (orientation: portrait) {
   .container {
-    background-image: url("/images/11/BGMobile.png");
-    background-size: 100% 100%;
+    background-image: url("/images/11/BG.png");
+    background-size: 350%;
+    background-repeat: no-repeat;
+  }
+  .content {
+    opacity: 1;
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (orientation: landscape) {
+  .container {
+    background-image: url("/images/11/BG.png");
+    background-size: 150%;
+    background-repeat: no-repeat;
   }
   .content {
     opacity: 1;
@@ -21,21 +31,10 @@
   }
 }
 
-.copyright {
-  display: block;
-  font-size: 10px;
-  text-align: center;
-  color: white;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
-}
-
 .container {
   width: 100%;
   height: 100vh;
+  background-color: rgba(77, 42, 25, 0.4);
   background-blend-mode: multiply;
 }
 
@@ -45,18 +44,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-.TextBox {
-  padding-top: 2.5rem;
 }
 .CenterBox {
   position: relative;
   width: 470px;
-  height: 500px;
+  height: 548px;
   background-image: url("/images/11/login-2.png");
   background-position: center;
-  background-size: 100% 90%;
+  background-size: contain;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -68,7 +63,8 @@
   position: relative;
   font-family: Tenor Sans;
   font-weight: 400;
-  width: 100%;
+  width: 80%;
+  height: 50px;
   font-family: Tenor Sans;
   font-style: normal;
   font-weight: 400;
@@ -76,7 +72,7 @@
   line-height: 23px;
   color: #523922;
   margin-top: 0px;
-  padding: 12px 29px 12px;
+  padding: 12px;
   text-align: right;
 }
 
@@ -96,11 +92,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-  padding: 0 39px;
 }
-
-
 .inputBoxChange {
   height: 41px;
   width: 300px;
@@ -114,7 +106,7 @@
 }
 .Icon {
   width: 40px;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid white;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,11 +116,11 @@
 }
 .inputBox input {
   height: 41px;
-  width: calc(100% - 40px);
+  width: 300px;
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
   margin-bottom: 1rem;
 
   font-family: Tenor Sans;
@@ -137,26 +129,25 @@
   color: #523922;
 }
 
-
-.inputPass input {
-  width: calc(100% - 80px);
+@media only screen and (max-width: 768px) {
+  .inputBox input {
+    width: 250px;
+  }
+  .CenterBox {
+    width: 90vw;
+    height: calc(90vw * 1.4);
+  }
 }
-
-
 
 .checking {
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 70%;
   left: 0;
-  width: 100%;
 }
 .checking div {
-  margin: 0;
-}
-.checking label:last-child {
-  margin: 0;
-  padding: 14px 39px 0;
+  margin: 0 0 0 -20px;
 }
 .label {
   font-family: Tenor Sans !important;
@@ -176,74 +167,24 @@
 }
 
 .footer {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 8rem;
 }
 
 .socialSpan {
+  width: 180px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   cursor: pointer;
-  padding-bottom: 11px;
-  padding-top: 11px;
-}
-
-.spaceRight {
-  margin-right: 10px;
-}
-
-.spaceLeft {
-  margin-left: 10px;
-}
-
-.signBtn {
-  position: absolute;
-  bottom: 8px;
-}
-
-.signUpUsing {
-  padding-top: 22px;
-  color: white;
-  font-size: 12px;
 }
 
 .a {
   text-decoration: underline;
-  color: white;
+  color: #523922;
   cursor: pointer;
-  font-size: 12px;
-}
-
-.rowText {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 39px;
-}
-
-.rowText .text-left, .rowText .flow-root {
-  width: 50%;
-}
-
-.rowText .flow-root .nearblack a {
-  font-size: 10px;
-}
-
-@media screen and (min-width: 768px) {
-  .CenterBox {
-    width: 90vw;
-    height: calc(90vw * 1.4);
-  }
-  .copyright {
-    display: none;
-  }
-  .TextBox {
-    padding-top: 0;
-  }
-  .signBtn {
-    bottom: 10px;
-  }
-  .signUpUsing {
-    padding-top: 30px;
-  }
 }
