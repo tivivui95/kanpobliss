@@ -113,7 +113,7 @@
     .content .selection {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        /* width: 30%; */
     }
     .content .container .block{
         padding: 0.5rem;
@@ -158,9 +158,9 @@
     padding-top: 5rem;
     padding-left: 12px;
     padding-right: 12px;
-    width:80%;
+    width:90%;
     height: fit-content;
-    background-color: #cfa88a;
+    /* background-color: #cfa88a; */
     display: flex;
     padding-bottom: 5rem;
 }

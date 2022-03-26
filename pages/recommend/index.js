@@ -123,6 +123,8 @@ const EmblaCarousel = ({ slides, imgurls }) => {
 };
 
 const MBContent21 = ({ alldata }) => {
+  const router = useRouter();
+
   return (
       <>
      <div className={styles.container}>
