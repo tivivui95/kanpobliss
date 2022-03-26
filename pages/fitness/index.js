@@ -9,17 +9,17 @@ import EmblaStyles from "../../styles/embla.module.css";
 import useInterval from "../../components/useInterval";
 const data = [
     {
-        url: '/images/21/Rectangle 15.png',
+        url: '/images/21/img1.png',
         title: '30mins Cycling',
         content: 'Lorem ipsum dolor sit amet.'
     },
     {
-        url: '/images/21/Rectangle 16.png',
+        url: '/images/21/img2.png',
         title: '30mins HIIT',
         content: 'Lorem ipsum dolor sit amet.'
     },
     {
-        url: '/images/21/Rectangle 17.png',
+        url: '/images/21/img3.png',
         title: '45mins Yoga',
         content: 'Lorem ipsum dolor sit amet.'
     },
@@ -56,12 +56,12 @@ const EmblaCarousel = ({ slides, imgurls }) => {
       <>
         <div className={EmblaStyles.embla}>
           <div className={EmblaStyles.embla__viewport} ref={viewportRef}>
-            <div className={EmblaStyles.embla__container}>
+            <div className={EmblaStyles.embla__container2}>
               {imgurls.map((data, index) => (
-                <div className={EmblaStyles.embla__slide} key={index}>
-                  <div className='overflow-hidden h-96 relative'>
-                    <div className="flex flex-col w-40 md:w-full">
-                        <div className="w-full block h-56 md:h-96 relative">
+                <div className={EmblaStyles.embla__slide1} key={index}>
+                  <div className='relative'>
+                    <div className="flex flex-col w-40 md:w-full" style={{height: '100% !important'}}>
+                        <div className="w-full block h-56 md:h-96 relative" style={{height: '100% !important'}}>
                             <div className={styles.main__img}>
                                 <Image src={data.url} alt='' layout="fill" objectFit="cover" className="rounded-custom" />
                             </div>
@@ -69,6 +69,7 @@ const EmblaCarousel = ({ slides, imgurls }) => {
                                 <h1 className='nearwhite text-2xl md:text-4xl p-4'>{data.title}</h1>
                                 <p className='nearwhite p-4 text-base md:text-xl'>{data.content}</p>
                             </div>
+                            
                         </div>
                     </div>
                   </div>
@@ -79,7 +80,7 @@ const EmblaCarousel = ({ slides, imgurls }) => {
           <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
           <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
         </div>
-        <div className="embla__dots float-left">
+        <div className="embla__dots float-left" style={{marginTop: "70px"}}>
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -142,12 +143,20 @@ function MainContent21({ Mantra }) {
         </div>
 
         <div className='float-root pb-4'>
-            <div className='float-right'>
+            <div style={{ }}>
+              <div style={{display:'flex', marginTop: "70px", marginBottom: "50px", display:'flex', justifyContent: "end"}} >
+              <Link href="#">
+                    <a className={styles.btnitem} style={{marginRight: '22px', background: "#073E0D"}}>
+                    CHECK GYM AVAILABILITY
+                    </a>
+                </Link>
                 <Link href="/recommend">
                     <a className={styles.btnitem}>
                         ALL RECOMMENDATIONS
                     </a>
                 </Link>
+              </div>
+          
             </div>        
         </div>
         </div>

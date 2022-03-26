@@ -10,14 +10,14 @@ import Image from "next/image";
 
 const defaultContents = [
   {
-    img: "/images/17/img2.png",
+    img: "/images/17/img1.png",
     text1: "Food",
     text2: "&",
     text3: "Drinks",
     url:'/food-and-drinks'
   },
   {
-    img: "/images/17/img1.png",
+    img: "/images/17/img2.png",
     text1: "Fitness",
     text2: "&",
     text3: "Movement",
@@ -112,6 +112,11 @@ const EmblaCarousel = ({ slides, imgurls }) => {
           onClick={() => scrollTo(index)}
         />
       ))}
+      {/* <div className={styles.navbar}>
+            <div className={pos == 0 ? styles.activenav : styles.next}></div>
+            <div className={pos == 1 ? styles.activenav : styles.next}></div>
+            <div className={pos == 2 ? styles.activenav : styles.next}></div>
+      </div> */}
     </div>
     </>
   );
