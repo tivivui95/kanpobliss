@@ -58,12 +58,18 @@ const LandingURL = [
 const delaySlide = 4;
 const totalSlide = LandingURL.length;
 
+const LANDING_MOBILE_URL = [
+  '/images/landing1.png',
+  '/images/landing2.png',
+  '/images/landing3_mobile.png',
+]
 export default function Home() {
   const [Mstate, setMstate] = useState(0);
   const [data, setData] = useState([]);
   const [opa, setOpacity] = useState(0);
 
   const [load, onLoad] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
 
   useInterval(() => {
     if (Mstate < delaySlide * totalSlide + 1) {
@@ -75,7 +81,7 @@ export default function Home() {
     onLoad(true);
     if (isStepWelcomeHome()) {
       setMstate(delaySlide * totalSlide + 1);
-      setData([LandingText[totalSlide - 1], 2, LandingURL[totalSlide - 1]]);
+      setData([LandingText[totalSlide - 1], 2, isMobile ? LANDING_MOBILE_URL[totalSlide - 1] : LandingURL[totalSlide - 1]]);
       onLoad(false);
       return;
     } else {
@@ -89,7 +95,7 @@ export default function Home() {
       setData([
         LandingText[currentSlide],
         currentSlide,
-        LandingURL[currentSlide],
+        isMobile ? LANDING_MOBILE_URL[currentSlide] : LandingURL[currentSlide],
       ]);
       setOpacity(Mstate % delaySlide === 0 ? 0 : 1);
       if (Mstate === delaySlide * totalSlide + 1) {

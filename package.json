@@ -21,6 +21,7 @@
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
     "react-drag-reorder": "^1.2.0",
+    "react-responsive": "^9.0.0-beta.6",
     "reactstrap": "^9.0.1",
     "start": "^5.1.0",
     "swr": "^1.2.2"
