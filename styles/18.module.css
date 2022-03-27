@@ -113,7 +113,7 @@
   .content .selection {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    /* width: 30%; */
   }
   .content .container .block {
     padding: 0.5rem;
