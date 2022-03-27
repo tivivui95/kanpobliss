@@ -8,7 +8,7 @@ import EmblaStyles from "../styles/embla.module.css";
 import Autoplay from 'embla-carousel-autoplay';
 import { useState } from 'react';
 import Link from "next/link";
-
+ 
 const FirstContent = () => {
     return (
         <>
