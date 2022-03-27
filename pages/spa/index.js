@@ -70,10 +70,10 @@ const EmblaCarousel = ({ imgurls }) => {
     <>
       <div className={EmblaStyles.embla}>
         <div className={EmblaStyles.embla__viewport} ref={viewportRef}>
-          <div className={EmblaStyles.embla__container}>
+          <div className={EmblaStyles.embla__container2}>
             {imgurls.map((data, index) => (
-              <div className={EmblaStyles.embla__slide} key={index}>
-                <div className="overflow-hidden h-96 relative">
+              <div className={EmblaStyles.embla__slide1} key={index}>
+                <div className="relative">
                   <div className="flex flex-col w-40 md:w-full">
                     <div className="w-full block h-56 md:h-96 relative" style={{cursor: 'pointer'}} onClick={() => router.push(`/spa/${data._id}`)}>
                       <div className={styles.main__img}>
@@ -103,7 +103,7 @@ const EmblaCarousel = ({ imgurls }) => {
         <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
         <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
       </div>
-      <div className="embla__dots float-left">
+      <div className="embla__dots float-left" style={{marginTop: "70px"}}>
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -117,22 +117,18 @@ const EmblaCarousel = ({ imgurls }) => {
 };
 
 const MBContent21 = ({ alldata }) => {
+  const router = useRouter();
+
   return (
     <>
       <div className="grid grid-flow-row gap-4 m-2">
         {alldata.map((data, index) => (
           <div key={index}>
-            <div className="overflow-hidden h-56 relative">
-              <div className="flex flex-col w-full md:w-full">
-                <div className="w-full block h-56 relative" style={{cursor: 'pointer'}} onClick={() => router.push(`/spa/${data._id}`)}>
+            <div className="overflow-hidden relative" style={{cursor: 'pointer'}} onClick={() => router.push(`/spa/${data._id}`)}>
+             
                   <div className={styles.main__img}>
-                    <Image
-                      src={data.images.length!==0?data.images[0]:'/images/21/spa_bg.jpg'}
-                      alt=""
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-custom"
-                    />
+                   
+                    <img src={data.images.length!==0?data.images[0]:'/images/21/spa_bg.jpg'} alt="" />
                   </div>
                   <div className={styles.itemcontent}>
                     <h1 className="nearwhite text-2xl md:text-4xl md:p-4">
@@ -144,8 +140,7 @@ const MBContent21 = ({ alldata }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+          
         ))}
       </div>
     </>
@@ -184,13 +179,24 @@ export default function Spa({ listSpa, listSpaDetails }) {
           <MBContent21 alldata={listSpaDetails} />
         </div>
 
-        <div className="float-root pb-4" style={{marginBottom: '75px', marginTop: '15px', marginRight: "80px"}}>
-          <div className="float-right">
-            <Link href="/recommend">
-              <a className={styles.btnitem}>ALL RECOMMENDATIONS</a>
-            </Link>
-          </div>
+        <div className='float-root pb-4' style={{marginBottom: '75px', marginTop: '15px', marginRight: "80px"}}>
+            <div style={{ }}>
+              <div className={styles.groupButton}  >
+              <Link href="#">
+                    <a className={styles.btnitem} style={{marginRight: '22px', background: "#073E0D"}}>
+                    CHECK SPA AVAILABILITY
+                    </a>
+                </Link>
+                <Link href="/recommend">
+                    <a className={styles.btnitem}>
+                        ALL RECOMMENDATIONS
+                    </a>
+                </Link>
+              </div>
+          
+            </div>        
         </div>
+
       </div>
       <MBFooter />
       <Footer />

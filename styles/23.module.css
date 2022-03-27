@@ -19,6 +19,7 @@
     .contain {
         left: 0% !important;
         width: 100% !important;
+        padding-left: 12px !important;
     }
     .containbox {
         margin: 0 !important;
@@ -86,6 +87,10 @@
 }
 
 @media(orientation: landscape){
+    .contain {
+        width: 100% !important;
+        margin-left: 100px !important;
+    }
     .header{
         flex-direction: row;
     }
@@ -101,6 +106,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-left: 20px;
     }
     .content{
         display: flex;
@@ -154,9 +160,7 @@
 .contain {
     position: relative;
     flex-direction: column;
-    left: 10%;
     padding-top: 5rem;
-    padding-left: 12px;
     padding-right: 12px;
     width:90%;
     height: fit-content;
